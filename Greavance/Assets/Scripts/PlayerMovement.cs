@@ -1,47 +1,54 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private Rigidbody2D rb;
     [SerializeField] private GameObject levelAt;
-    private List<TeleportDoor> doors;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private GameObject[] doors;
+
+    private Vector2 input;
+    [SerializeField] private float moveSpeed = 5.0f;
+    
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        doors = GameObject.FindGameObjectsWithTag("door");
     }
 
-    // Update is called once per frame
     void Update()
     {
         //normal movement
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-
-        }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-
-        }
+        input.x = Input.GetAxisRaw("Horizontal");
+        input.y = Input.GetAxisRaw("Vertical");
+        
+        input.Normalize();
 
         //climb stairs
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            CheckDoor();
+            CheckDoors();
         }
     }
 
-    private bool CheckDoor()
+    private void FixedUpdate()
     {
-        foreach (TeleportDoor door in doors)
+        rb.linearVelocity = input * moveSpeed;
+    }
+
+    private void CheckDoors()
+    {
+        foreach (GameObject door in doors)
         {
-            if (door.IsAtDoor())
+            TeleportDoor tele = door.GetComponent<TeleportDoor>();
+            if (tele.IsAtDoor())
             {
-                return true;
+                transform.position = tele.getDestination().transform.position;
+                levelAt = tele.getLevelAt();
             }
         }
-        return false;
     }
 }
