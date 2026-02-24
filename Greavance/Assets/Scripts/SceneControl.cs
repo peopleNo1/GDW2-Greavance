@@ -5,6 +5,6 @@ public class SceneControl : MonoBehaviour
 {
     public void GoToGamePlay()
     {
-        SceneManager.LoadScene("GreyBoxing");
+        SceneManager.LoadScene("GamePlay");
     }
 }

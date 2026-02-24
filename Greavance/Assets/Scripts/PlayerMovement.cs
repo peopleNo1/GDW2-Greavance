@@ -7,16 +7,26 @@ public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
     [SerializeField] private GameObject levelAt;
+    [SerializeField] private GameObject[] roomList;
 
     private GameObject[] doors;
 
+    //replace by other code
     private Vector2 input;
     [SerializeField] private float moveSpeed = 5.0f;
     
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        doors = GameObject.FindGameObjectsWithTag("door");
+        doors = GameObject.FindGameObjectsWithTag("Door");
+
+        foreach (GameObject room in roomList)
+        {
+            if (room.name != levelAt.name)
+            {
+                room.SetActive(false);
+            }
+        }
     }
 
     void Update()
@@ -44,10 +54,14 @@ public class PlayerMovement : MonoBehaviour
         foreach (GameObject door in doors)
         {
             TeleportDoor tele = door.GetComponent<TeleportDoor>();
-            if (tele.IsAtDoor())
+
+            if (levelAt.name == LayerMask.LayerToName(door.layer) && tele.IsAtDoor())
             {
-                transform.position = tele.getDestination().transform.position;
-                levelAt = tele.getLevelAt();
+                tele.GetLevelAt().SetActive(false);
+                levelAt = tele.GetDestination();
+                levelAt.SetActive(true);
+
+                transform.position = tele.GetEnterPosition().transform.position;
             }
         }
     }

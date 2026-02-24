@@ -4,6 +4,8 @@
 TagManager:
   serializedVersion: 3
   tags:
+  - Door
+  - Enemy
   - door
   layers:
   - Default
@@ -12,10 +14,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Dungeon
+  - Room 1
+  - Room 2
+  - Boss Room
   - 
   - 
   - 
