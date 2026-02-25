@@ -35,7 +35,8 @@ public class Explosion : Ability
 
             if (Vector3.Distance(_player.position, _targetPos) <= _explosionRadius)
             {
-                //Implement damage to player later
+                //_player = GameObject.FindGameObjectWithTag("Player");
+                //_player.TakeDamage(_damage);
                 Debug.Log($"Player hit for {_damage} damage!");
             }
 
@@ -55,7 +56,8 @@ public class Explosion : Ability
 
                 if (Vector3.Distance(_player.position, _platformPos) <= _explosionRadius)
                 {
-                    //Implement damage to player later
+                    //_player = GameObject.FindGameObjectWithTag("Player");
+                    //_player.TakeDamage(_damage);
                     Debug.Log($"Player hit for {_damage} damage!");
                 }
 

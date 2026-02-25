@@ -140,7 +140,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             _player = GameObject.FindGameObjectWithTag("Player");
-            // _player.TakeDamage(_contactDamage);
+            //_player.TakeDamage(_contactDamage);
         }
     }
 }
