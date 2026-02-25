@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: b7d4eef56e23e5c46a7ea1a17503f6bc
+guid: 1995daba164a57a4f84bfac1e69fd6c5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7969074798775154926
-    second: mapDraft_0
+      213: -5626563875709333634
+    second: FireballSimpleSprite_0
+  - first:
+      213: -2907943433575004135
+    second: FireballSimpleSprite_1
+  - first:
+      213: 3499437272829197590
+    second: FireballSimpleSprite_2
+  - first:
+      213: -8564838114427725754
+    second: FireballSimpleSprite_3
+  - first:
+      213: 1733039964549125135
+    second: FireballSimpleSprite_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +112,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mapDraft_0
+      name: FireballSimpleSprite_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 978
-        height: 1029
+        x: 23
+        y: 6
+        width: 78
+        height: 122
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2174d7641b8286190800000000000000
-      internalID: -7969074798775154926
+      spriteID: e7fcc4247fd6ae1b0800000000000000
+      internalID: -5626563875709333634
       vertices: []
       indices: 
       edges: []
@@ -125,7 +137,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 09f7043358c7dcb4983fe7764d4c5f93
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +147,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      mapDraft_0: -7969074798775154926
+      FireballSimpleSprite_0: -5626563875709333634
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

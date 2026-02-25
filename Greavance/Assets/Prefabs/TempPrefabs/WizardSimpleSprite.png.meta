@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b7d4eef56e23e5c46a7ea1a17503f6bc
+guid: 4d4ff11f8cd07004891105f9ec017cb4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7969074798775154926
-    second: mapDraft_0
+      213: -5956389258680212496
+    second: WizardSimpleSprite_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mapDraft_0
+      name: WizardSimpleSprite_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 978
-        height: 1029
+        x: 13
+        y: 16
+        width: 59
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2174d7641b8286190800000000000000
-      internalID: -7969074798775154926
+      spriteID: 0f3e96c0787a65da0800000000000000
+      internalID: -5956389258680212496
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      mapDraft_0: -7969074798775154926
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
