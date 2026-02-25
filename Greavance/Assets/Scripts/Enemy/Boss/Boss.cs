@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 
 public class Boss : Enemy
 {
@@ -26,12 +25,10 @@ public class Boss : Enemy
 
     //Patrol settings
     [Header("Patrol Settings")]
-    private float _patrolTimer;
-    [SerializeField] private float _patrolDuration = 2f;
     private Transform _currentMovingTarget;
     [SerializeField] private Transform _pointA;
     [SerializeField] private Transform _pointB;
-    [SerializeField] private float _movingSpeed = 2f;
+    [SerializeField] private float _movingSpeed = 8f;
 
     protected override void Awake()
     {
@@ -57,10 +54,8 @@ public class Boss : Enemy
 
     private void Start()
     {
-        if (_pointA != null)
-        {
-            _currentMovingTarget = _pointA;
-        }
+        _currentMovingTarget = _pointB;
+
         nextActionTime = Time.time;
 
         ResetHealth();
@@ -127,26 +122,16 @@ public class Boss : Enemy
     {
         isActing = true;
 
-        _patrolTimer = 0f;
+        Transform targetPoint = (_currentMovingTarget == _pointA) ? _pointB : _pointA;
 
-        Transform _target = (_currentMovingTarget == _pointA) ? _pointB : _pointA;
-
-        while (_patrolTimer < _patrolDuration)
+        while (Vector3.Distance(transform.position, targetPoint.position) > 0.01f)
         {
-            if (_pointA && _pointB != null)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, _target.position, _movingSpeed * Time.deltaTime);
-
-                if (Vector3.Distance(transform.position, _target.position) < 0.1f)
-                {
-                    _currentMovingTarget = _target;
-                    _target = (_target == _pointA) ? _pointB : _pointA;
-                }
-            }
-
-            _patrolTimer += Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, targetPoint.position, _movingSpeed * Time.deltaTime);
             yield return null;
         }
+
+        _currentMovingTarget = targetPoint;
+
 
         BossAbilities abilities = GetComponent<BossAbilities>();
         if (abilities != null)
