@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Regeneration prefab_0: -1313911567947821123
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
