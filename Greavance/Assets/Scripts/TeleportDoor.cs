@@ -5,6 +5,7 @@ public class TeleportDoor : MonoBehaviour
     [SerializeField] private GameObject levelAt;
     [SerializeField] private GameObject destination;
     [SerializeField] private GameObject enterPosition;
+    [SerializeField] private GameObject key;
 
     private bool isAtDoor = false;
 
@@ -36,5 +37,10 @@ public class TeleportDoor : MonoBehaviour
     public GameObject GetEnterPosition()
     {
         return enterPosition;
+    }
+
+    public GameObject GetKey()
+    {
+        return key;
     }
 }

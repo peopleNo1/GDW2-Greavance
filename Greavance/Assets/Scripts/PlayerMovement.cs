@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject[] roomList;
 
     private GameObject[] doors;
+    private GameObject[] keys;
 
     //replace by other code
     private Vector2 input;
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         doors = GameObject.FindGameObjectsWithTag("Door");
+        keys = GameObject.FindGameObjectsWithTag("Key");
 
         foreach (GameObject room in roomList)
         {
@@ -42,6 +44,10 @@ public class PlayerMovement : MonoBehaviour
         {
             CheckDoors();
         }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            CheckKeys();
+        }
     }
 
     private void FixedUpdate()
@@ -55,13 +61,27 @@ public class PlayerMovement : MonoBehaviour
         {
             TeleportDoor tele = door.GetComponent<TeleportDoor>();
 
-            if (levelAt.name == LayerMask.LayerToName(door.layer) && tele.IsAtDoor())
+            if (levelAt.name == LayerMask.LayerToName(door.layer) && tele.IsAtDoor() && tele.GetKey() == null)
             {
                 tele.GetLevelAt().SetActive(false);
                 levelAt = tele.GetDestination();
                 levelAt.SetActive(true);
 
                 transform.position = tele.GetEnterPosition().transform.position;
+                break;
+            }
+        }
+    }
+
+    private void CheckKeys()
+    {
+        foreach (GameObject key in keys)
+        {
+            KeyBehaviour qed = key.GetComponent<KeyBehaviour>();
+            if (qed.Enter())
+            {
+                qed.Collected();
+                break;
             }
         }
     }
