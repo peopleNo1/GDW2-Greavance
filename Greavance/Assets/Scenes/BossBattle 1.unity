@@ -1073,6 +1073,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6711045925899034022, guid: 74f39a3c479e8fc47ad246c50d917f2d, type: 3}
     - target: {fileID: 5601252460638216015, guid: b946c503b70a38845976add10d7669f5, type: 3}
+      propertyPath: isPhase2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5601252460638216015, guid: b946c503b70a38845976add10d7669f5, type: 3}
       propertyPath: _startInPhase2
       value: 1
       objectReference: {fileID: 0}

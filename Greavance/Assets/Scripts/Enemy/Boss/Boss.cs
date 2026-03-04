@@ -63,9 +63,6 @@ public class Boss : Enemy
 
     private void UpdatePhase1()
     {
-        // _animator.SetBool("isActing", isActing);
-        // _animator.SetBool("isCasting", isCasting);
-
         if (isActing)
         {
             return;

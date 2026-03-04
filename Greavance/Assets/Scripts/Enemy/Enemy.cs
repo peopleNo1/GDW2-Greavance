@@ -12,19 +12,34 @@ public class Enemy : MonoBehaviour
     public float _currentHealth;
 
     public float _contactDamage = 10.0f;
+    public float _damageCooldown = 1.0f;
+
+    public float _lastDamageTime;
+    private PlayerController playerController;
 
     Vector3 _dirToPlayer;
-    static GameObject _player;
+    public GameObject _player;
     public Transform _playerPos;
     bool _calculatedThisFrame = false;
-    public float _enemySpeed = 5.0f;
+    public float _enemySpeed = 1.0f;
     public float _enemyDamage = 0.5f;
-    public float _visionRange = 10.0f;
+    public float _visionRange = 1.0f;
+
+    [Header("Border Controls")]
+    private Vector2 startingPos;
+
+    [Header("Movement")]
+    [SerializeField] private float leftBoundary = -5f;
+    [SerializeField] private float rightBoundary = 5f;
+    [SerializeField] private bool switchSides = true; // True = right, False = left
 
     protected virtual void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+
+        _lastDamageTime = Time.time;
     }
 
     private void Start()
@@ -45,6 +60,9 @@ public class Enemy : MonoBehaviour
     public virtual void UpdateEnemy()
     {
         KillIfDead();
+        _dirToPlayer = GetDirToPlayer();
+        SeekPlayer(_dirToPlayer);
+
     }
 
     public void ResetHealth()
@@ -86,12 +104,62 @@ public class Enemy : MonoBehaviour
 
     public void SeekPlayer(Vector3 dirToPlayer)
     {
-        _rb.linearVelocity = dirToPlayer.normalized * _enemySpeed;
+        float targetX;
+        bool willHit;
+
+        if (CanSeePlayer(_visionRange))
+        {
+            targetX = dirToPlayer.x * _enemySpeed;
+
+            willHit = WillHitBoundary(targetX);
+
+            if (willHit)
+            {
+                _rb.linearVelocityX = 0;
+            }
+
+            else
+            {
+                _rb.linearVelocityX = targetX;
+            }
+        }
+        else
+        {
+            float direction = switchSides ? 1f : -1f;
+            targetX = direction * _enemySpeed;
+            
+            willHit = WillHitBoundary(targetX);
+
+            if (willHit)
+            {
+                _rb.linearVelocityX = 0;
+                switchSides = !switchSides;
+                Debug.Log($"Enemy reversing direction at {transform.position.x}");
+            }
+            else
+            {
+                _rb.linearVelocityX = targetX;
+            }
+        }
     }
 
-    public void FleePlayer(Vector3 dirToPlayer)
+    public bool WillHitBoundary(float targetX)
     {
-        _rb.linearVelocity = dirToPlayer.normalized * -_enemySpeed;
+        bool willHit;
+        if (targetX > 0 && transform.position.x >= rightBoundary)
+        {
+            willHit = true;
+        }
+        else if (targetX < 0 && transform.position.x <= leftBoundary)
+        {
+            willHit = true;
+        }
+        else
+        {
+            willHit = false;
+        }
+
+        return willHit;
     }
 
     public Vector3 GetDirToPlayer()
@@ -100,7 +168,7 @@ public class Enemy : MonoBehaviour
 
         if (!_calculatedThisFrame)
         {
-            dirToPlayer = _player.transform.position - transform.position;
+            dirToPlayer = _playerPos.transform.position - transform.position;
             _dirToPlayer = dirToPlayer;
             _calculatedThisFrame = true;
         }
@@ -137,10 +205,17 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (Time.time >= _lastDamageTime + _damageCooldown)
         {
-            _player = GameObject.FindGameObjectWithTag("Player");
-            //_player.TakeDamage(_contactDamage);
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                if (playerController != null)
+                {
+                    Debug.Log($"Damage delt to player: {_contactDamage}");
+                    playerController.TakeDamage(_contactDamage);
+                    _lastDamageTime = Time.time;
+                }
+            }
         }
     }
 }
