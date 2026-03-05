@@ -5,20 +5,20 @@ using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D rb;
+    //private Rigidbody2D rb;
     [SerializeField] private GameObject levelAt;
     [SerializeField] private GameObject[] roomList;
 
     private GameObject[] doors;
     private GameObject[] keys;
 
-    //replace by other code
-    private Vector2 input;
-    [SerializeField] private float moveSpeed = 5.0f;
+    ////replace by other code
+    //private Vector2 input;
+    //[SerializeField] private float moveSpeed = 5.0f;
     
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        //rb = GetComponent<Rigidbody2D>();
         doors = GameObject.FindGameObjectsWithTag("Door");
         keys = GameObject.FindGameObjectsWithTag("Key");
 
@@ -33,14 +33,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        //normal movement
-        input.x = Input.GetAxisRaw("Horizontal");
-        input.y = Input.GetAxisRaw("Vertical");
+        ////normal movement
+        //input.x = Input.GetAxisRaw("Horizontal");
+        //input.y = Input.GetAxisRaw("Vertical");
         
-        input.Normalize();
+        //input.Normalize();
 
         //climb stairs
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             CheckDoors();
         }
@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = input * moveSpeed;
+        //rb.linearVelocity = input * moveSpeed;
     }
 
     private void CheckDoors()
