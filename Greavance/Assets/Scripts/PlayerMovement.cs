@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
         {
             TeleportDoor tele = door.GetComponent<TeleportDoor>();
 
-            if (levelAt.name == LayerMask.LayerToName(door.layer) && tele.IsAtDoor() && tele.GetKey() == null)
+            if (levelAt.name == LayerMask.LayerToName(door.layer) && tele.IsAtDoor() && Unlocked(tele.GetKeys()))
             {
                 tele.GetLevelAt().SetActive(false);
                 levelAt = tele.GetDestination();
@@ -73,15 +73,30 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private bool Unlocked(GameObject[] keysForDoor)
+    {
+        foreach(GameObject key in keysForDoor)
+        {
+            if (key != null)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
     private void CheckKeys()
     {
         foreach (GameObject key in keys)
         {
-            KeyBehaviour qed = key.GetComponent<KeyBehaviour>();
-            if (qed.Enter())
+            if (key != null)
             {
-                qed.Collected();
-                break;
+                KeyBehaviour qed = key.GetComponent<KeyBehaviour>();
+                if (qed.Enter())
+                {
+                    qed.Collected();
+                    break;
+                }
             }
         }
     }
