@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7708516076468074126}
   - component: {fileID: 777401712154328205}
   - component: {fileID: 6847064553065711749}
-  - component: {fileID: 371951378637529962}
+  - component: {fileID: 6351669180685654454}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -163,7 +163,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &371951378637529962
+--- !u!114 &6351669180685654454
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,10 +172,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 9007665492696259180}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36dae6d5e00609e479adb6427bafd364, type: 3}
+  m_Script: {fileID: 11500000, guid: 06874409f782c0440a5492e0bfa7322e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxHealth: 50
+  _currentHealth: 0
+  _contactDamage: 10
+  _damageCooldown: 1
+  _lastDamageTime: 0
+  _player: {fileID: 0}
+  _playerPos: {fileID: 0}
+  _enemySpeed: 1
+  _enemyDamage: 0.5
+  _visionRange: 1
   leftBoundary: -5
   rightBoundary: 5
-  speed: 2
   switchSides: 1
