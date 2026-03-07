@@ -11,7 +11,6 @@ public class GamePlayControl : MonoBehaviour
     private void Start()
     {
         bloodBar = healthBar.GetComponent<Image>();
-        setHealth(50);
     }
 
     public void setHealth(float health)

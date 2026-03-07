@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float maxHP = 100;
     [SerializeField] public float currentHP;
 
+    private GamePlayControl UIControl;
+
     [SerializeField] private CameraFollow cameraPlayer;
     [SerializeField] private ArmController arm;
     public Transform armSpawnPoint;
@@ -31,6 +33,7 @@ public class PlayerController : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _ani = GetComponent<Animator>();
+        UIControl = GetComponent<GamePlayControl>();
 
         ResetHealth();
     }
@@ -107,6 +110,7 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHP -= damage;
+        UIControl.setHealth(currentHP);
 
         Debug.Log($"Current HP: {currentHP}");
     }
