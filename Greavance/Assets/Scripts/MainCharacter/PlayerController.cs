@@ -6,6 +6,12 @@ using System;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Player Stats")]
+    [SerializeField] public float maxHP = 100;
+    [SerializeField] public float currentHP;
+
+    private GamePlayControl UIControl;
+
     [SerializeField] private CameraFollow cameraPlayer;
     [SerializeField] private AttackController attackCon;
     public Transform armSpawnPoint;
@@ -29,6 +35,9 @@ public class PlayerController : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _ani = GetComponent<Animator>();
+        UIControl = GetComponent<GamePlayControl>();
+
+        ResetHealth();
     }
 
     // Update is called once per frame
@@ -84,6 +93,36 @@ public class PlayerController : MonoBehaviour
             _dir.x *= -1f;
             transform.localScale = _dir;
         }
+    }
+
+    public void KillIfDead()
+    {
+        if (CheckIfDead())
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public bool CheckIfDead()
+    {
+        if (currentHP <= 0.0f)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public void TakeDamage(float damage)
+    {
+        currentHP -= damage;
+        UIControl.setHealth(currentHP);
+
+        Debug.Log($"Current HP: {currentHP}");
+    }
+
+    public void ResetHealth()
+    {
+        currentHP = maxHP;
     }
 
     //Checks if player is touching the ground.
