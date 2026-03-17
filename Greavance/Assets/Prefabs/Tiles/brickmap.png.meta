@@ -1,43 +1,10 @@
 fileFormatVersion: 2
-guid: c798f1f3f1ac14343ad1416ec0ecea3c
+guid: fa5e46e415d88f04e864b2f9f69bc4de
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8514904351332854816
-    second: Jump-Sheet_0
-  - first:
-      213: 6410117835993900320
-    second: Jump-Sheet_1
-  - first:
-      213: 8778145040096701731
-    second: Jump-Sheet_2
-  - first:
-      213: 2307569148452509018
-    second: Jump-Sheet_3
-  - first:
-      213: 859979031330678828
-    second: Jump-Sheet_4
-  - first:
-      213: 3770386835238207479
-    second: Jump-Sheet_5
-  - first:
-      213: -1144117658616818544
-    second: Jump-Sheet_6
-  - first:
-      213: -1055865424037605928
-    second: Jump-Sheet_7
-  - first:
-      213: -6380995540111236087
-    second: Jump-Sheet_8
-  - first:
-      213: 8795221733660068501
-    second: Jump-Sheet_9
-  - first:
-      213: -7114536027570843760
-    second: Jump-Sheet_10
-  - first:
-      213: -3289788676501274013
-    second: Jump-Sheet_11
+      213: 136358372591016194
+    second: brickmap_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -108,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -133,7 +100,139 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jump-Sheet_0
+      name: brickmap_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2091078a73174e100800000000000000
+      internalID: 136358372591016194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brickmap_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38cc0af84b113c443a903d18298f2220
+      internalID: 1935209174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brickmap_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a073060ea90c9b345ac6f42d770cee09
+      internalID: 1025282574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brickmap_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e116e6840850ea641bab49877a0d6ae6
+      internalID: 526380244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brickmap_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 311a40c99ebab9e4ca87d4bab1a962e8
+      internalID: 768066489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brickmap_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e30df8828694a64418a05cc1514f6b62
+      internalID: 1062492062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: brickmap_6
       rect:
         serializedVersion: 2
         x: 0
@@ -141,21 +240,21 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa5a25b0cd8bc2844871c19c32650cbd
-      internalID: -558898968
+      spriteID: c3fd6b3e343383544981d4cb38fd3fea
+      internalID: 1246975784
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jump-Sheet_1
+      name: brickmap_7
       rect:
         serializedVersion: 2
         x: 32
@@ -163,21 +262,21 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c0e493c5e8244947b1127e3024860ea
-      internalID: -828377197
+      spriteID: d88c5401c7d60664b8bcddb81e807d5c
+      internalID: 877512947
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jump-Sheet_2
+      name: brickmap_8
       rect:
         serializedVersion: 2
         x: 64
@@ -185,213 +284,15 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c295cf7bc44b9b546822158600699320
-      internalID: 1328067006
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jump-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7500d6438d3152e46bebf6864d8810b1
-      internalID: 808761209
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jump-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6a9f9427097894f4590e523cf82f8f1c
-      internalID: 1799185112
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jump-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a2a0caadc54cf44fb25048a25ccba26
-      internalID: -1712665632
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jump-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b329c479abc791a4da304999b5c5c889
-      internalID: 661621095
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jump-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 555bb418cda25f24193fc3d7b8e70afa
-      internalID: -928871213
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jump-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3fd1f890e4368754aa181bbb251b8c2e
-      internalID: 1156473329
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jump-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1eec5dbe94b2ebf46a0953083328bbd8
-      internalID: 225807481
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jump-Sheet_10
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b243950e0f8f5bd4f98fa2bf91353256
-      internalID: 790395461
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jump-Sheet_11
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 09dc6e2ab336d804698a8ab3d10327e5
-      internalID: -1468713032
+      spriteID: f48d0b0d3d2cd5f4eb41c824cb9bf473
+      internalID: -2057724822
       vertices: []
       indices: 
       edges: []
@@ -400,7 +301,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 30bac7a6e0e34794389d1806c1ab3f7d
+    spriteID: 507840a47b24a9645b98448a353c4c2d
     internalID: 0
     vertices: []
     indices: 
@@ -410,18 +311,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Jump-Sheet_0: -558898968
-      Jump-Sheet_1: -828377197
-      Jump-Sheet_10: 790395461
-      Jump-Sheet_11: -1468713032
-      Jump-Sheet_2: 1328067006
-      Jump-Sheet_3: 808761209
-      Jump-Sheet_4: 1799185112
-      Jump-Sheet_5: -1712665632
-      Jump-Sheet_6: 661621095
-      Jump-Sheet_7: -928871213
-      Jump-Sheet_8: 1156473329
-      Jump-Sheet_9: 225807481
+      brickmap_0: 136358372591016194
+      brickmap_1: 1935209174
+      brickmap_2: 1025282574
+      brickmap_3: 526380244
+      brickmap_4: 768066489
+      brickmap_5: 1062492062
+      brickmap_6: 1246975784
+      brickmap_7: 877512947
+      brickmap_8: -2057724822
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

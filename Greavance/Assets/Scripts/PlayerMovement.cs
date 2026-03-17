@@ -13,8 +13,8 @@ public class PlayerMovement : MonoBehaviour
     private GameObject[] keys;
 
     ////replace by other code
-    //private Vector2 input;
-    //[SerializeField] private float moveSpeed = 5.0f;
+    private Vector2 input;
+    [SerializeField] private float moveSpeed = 5.0f;
     
     void Start()
     {
@@ -33,13 +33,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        ////normal movement
-        //input.x = Input.GetAxisRaw("Horizontal");
-        //input.y = Input.GetAxisRaw("Vertical");
+        // //normal movement
+        input.x = Input.GetAxisRaw("Horizontal");
+        input.y = Input.GetAxisRaw("Vertical");
         
-        //input.Normalize();
+        input.Normalize();
 
-        //climb stairs
+        // climb stairs
         if (Input.GetKeyDown(KeyCode.W))
         {
             CheckDoors();
