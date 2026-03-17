@@ -4,7 +4,8 @@ using System.Collections.Generic;
 
 public class AttackController : MonoBehaviour
 {
-    public Transform _player;
+    public PlayerController _player;
+    public Transform _playerTrans;
     public float _speed = 2.0f;
     private float _distance;
 
@@ -14,14 +15,26 @@ public class AttackController : MonoBehaviour
     public bool attack = false;
     private bool attackForward = false;
     private bool attackBack = false;
+
+    Renderer myRenderer;
+    public HeadController head;
+
+    private void Awake()
+    {
+        myRenderer = GetComponent<Renderer>();
+        myRenderer.enabled = false;
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && attack == false)
+        //Checks if; player clicks button, is not attacking, its head's turn, and players isnt dead
+        if (Input.GetKeyDown(KeyCode.Mouse0) && attack == false && head.HeadTurn == false && _player._dead == false)
         {
             _distance = 0f;
             attackForward = true;
             attackBack = false;
             attack = true;
+            myRenderer.enabled = true;
         }
 
         if (attack)
@@ -58,16 +71,16 @@ public class AttackController : MonoBehaviour
             //Checks when player comes back to playyer
             if (_distance <= _moveBackDistance)
             {
-                transform.position = _player.position;
+                transform.position = _playerTrans.position;
                 _distance = 0f;
                 attackBack = false;
                 attackForward = false;
                 attack = false;
+                myRenderer.enabled = false;
             }
         }
-        
+
     }
 }
 
 
-        

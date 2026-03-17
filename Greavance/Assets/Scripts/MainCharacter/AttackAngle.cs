@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class AttackAngle : MonoBehaviour
 {
     public Transform _player;
-    public GameObject _ArmAngle;
+    public GameObject _armAngle;
     public float _damage = 5;
 
     public void Update()
@@ -18,13 +18,13 @@ public class AttackAngle : MonoBehaviour
         //Look at dir
         Vector2 lookAtDir;
 
-        Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(_ArmAngle.transform.position);
+        Vector3 playerScreenPoint = Camera.main.WorldToScreenPoint(_armAngle.transform.position);
         lookAtDir = aimPos - new Vector2(playerScreenPoint.x, playerScreenPoint.y);
         lookAtDir.Normalize();
 
         float angle = Mathf.Atan2(-lookAtDir.x, lookAtDir.y) * Mathf.Rad2Deg;
 
         //Quaternion angle axis around forward
-        _ArmAngle.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        _armAngle.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 }
