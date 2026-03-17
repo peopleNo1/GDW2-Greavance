@@ -12,9 +12,11 @@ public class PlayerMovement : MonoBehaviour
     private GameObject[] doors;
     private GameObject[] keys;
 
+    [SerializeField] Animated guideAni;
+
     ////replace by other code
-    private Vector2 input;
-    [SerializeField] private float moveSpeed = 5.0f;
+    //private Vector2 input;
+    //[SerializeField] private float moveSpeed = 5.0f;
     
     void Start()
     {
@@ -33,20 +35,25 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        // //normal movement
-        input.x = Input.GetAxisRaw("Horizontal");
-        input.y = Input.GetAxisRaw("Vertical");
+        ////normal movement
+        //input.x = Input.GetAxisRaw("Horizontal");
+        //input.y = Input.GetAxisRaw("Vertical");
         
-        input.Normalize();
+        //input.Normalize();
 
         // climb stairs
         if (Input.GetKeyDown(KeyCode.W))
         {
             CheckDoors();
         }
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             CheckKeys();
+        }
+        //test
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            guideAni.Flip();
         }
     }
 

@@ -9,7 +9,7 @@ public class HeadController : MonoBehaviour
     [SerializeField] private CameraFollow cameraArm;
     public List<Transform> _pos;
 
-    public bool ArmTurn = false;
+    public bool HeadTurn = false;
 
     //Movement Input
     float horizontalInput;
@@ -31,69 +31,26 @@ public class HeadController : MonoBehaviour
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal"); // A/D keys, Left/Right arrow keys
-        
+
         Vector2 MoveDirection = new Vector2(horizontalInput * _moveSpeed, 0f);
 
         _rb.AddForce(MoveDirection);
 
     }
 
-
-
-    /*
-    
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-         //Horizontal Input system
-         horizontalInput = Input.GetAxis("Horizontal");
-
-         FlipSprite();
-
-         
-        
-    }
-
-    private void FixedUpdate()
-    {
-        if (ArmTurn)
-        {
-            //Moves player when Input for horizontal movement is pressed
-            _rb.linearVelocity = new Vector2(horizontalInput * _moveSpeed, _rb.linearVelocity.y);
-
-            _ani.SetFloat("xVelocity", Math.Abs(_rb.linearVelocity.x));
-        }
-
-    }
-
-    
-    //Flips the arm if sprite is in wrong direction
-    void FlipSprite()
-    {
-        if (_facingRight && horizontalInput < 0f || !_facingRight && horizontalInput > 0f)
-        {
-            _facingRight = !_facingRight;
-            Vector3 _dir = transform.localScale;
-            _dir.x *= -1f;
-            transform.localScale = _dir;
-        }
-    }
-    */
-
-    public void TeleportArm(bool ArmTurn)
+    public void TeleportHead(bool HeadTurn)
     {
         //Check if it can teleport to player
-        if (ArmTurn == true)
+        if (HeadTurn == true)
         {
             _rb.position = _pos[0].transform.position;
         }
         //Check if it can teleport to home
-        else if (ArmTurn == false)
+        else if (HeadTurn == false)
         {
             _rb.position = _pos[1].transform.position;
         }
     }
+
 }
 

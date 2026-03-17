@@ -6,12 +6,6 @@ using System;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Player Stats")]
-    [SerializeField] public float maxHP = 100;
-    [SerializeField] public float currentHP;
-
-    private GamePlayControl UIControl;
-
     [SerializeField] private CameraFollow cameraPlayer;
     [SerializeField] private AttackController attackCon;
     public Transform armSpawnPoint;
@@ -19,23 +13,28 @@ public class PlayerController : MonoBehaviour
 
     float horizontalInput;
     public float _moveSpeed = 5f;
-    
+
 
     public float _jumpForce = 7f;
     bool _isGrounded = false;
 
     bool _facingRight = false;
     private Vector2 _moveInput;
-    
+
+    public bool _dead = false;
+
     Rigidbody2D _rb;
     Animator _ani;
 
-    
+    [SerializeField] float maxHealth = 100;
+    private float currentHealth;
+    private GamePlayControl gamePlayControl;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _ani = GetComponent<Animator>();
-        UIControl = GetComponent<GamePlayControl>();
+        gamePlayControl = GetComponent<GamePlayControl>();
 
         ResetHealth();
     }
@@ -43,86 +42,77 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        //Checks if player is dead
+        if (!_dead)
         {
-            //Camera changes to arm
-            cameraPlayer.ChangeTarget();
-        }
 
-        if (PlayerTurn)
-        {
-            //Horizontal Input system
-            horizontalInput = Input.GetAxis("Horizontal");
-
-            FlipSprite();
-
-            if (Input.GetButtonDown("Jump") && _isGrounded)
+            //Makes head appear when pressing Q and player is grounded
+            if (Input.GetKeyDown(KeyCode.Q) && _isGrounded)
             {
-                _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, _jumpForce);
-                _isGrounded = false;
-                _ani.SetBool("isJumping", !_isGrounded);
+                //Camera changes to arm
+                cameraPlayer.ChangeTarget();
+                //If its not players turn, player plays no head animation
+                if (!PlayerTurn)
+                {
+                    _ani.SetBool("withHead", false);
+                }
+                else
+                {
+                    _ani.SetBool("withHead", true);
+                }
             }
 
-            
+            //Hotkey for player dead  FIX THIS PART TO CONNECT WITH HEALTH
+            //now jusst test is working
+            if (Input.GetKeyDown(KeyCode.K) && _isGrounded)
+            {
+                _dead = true;
+            }
+
+            if (PlayerTurn)
+            {
+                //Horizontal Input system
+                horizontalInput = Input.GetAxis("Horizontal");
+
+                FlipSprite();
+
+                if (Input.GetButtonDown("Jump") && _isGrounded)
+                {
+                    _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, _jumpForce);
+                    _isGrounded = false;
+                    _ani.SetBool("isJumping", !_isGrounded);
+                }
+            }
+
         }
-
-
+        else
+        {
+            _ani.SetBool("Dead", true);
+        }
     }
 
     private void FixedUpdate()
     {
-        if (PlayerTurn)
+        if (PlayerTurn && !_dead)
         {
             //Moves player when Input for horizontal movement is pressed
             _rb.linearVelocity = new Vector2(horizontalInput * _moveSpeed, _rb.linearVelocity.y);
             _ani.SetFloat("xVelocity", Math.Abs(_rb.linearVelocity.x));
             _ani.SetFloat("yVelocity", _rb.linearVelocity.y);
             _ani.SetBool("attacking", attackCon.attack);
-            
-            
         }
     }
 
     //Flips the player if sprite is in wrong direction
     private void FlipSprite()
     {
-        if(_facingRight && horizontalInput < 0f || !_facingRight && horizontalInput > 0f)
+        if (_facingRight && horizontalInput < 0f || !_facingRight && horizontalInput > 0f)
         {
             _facingRight = !_facingRight;
             Vector3 _dir = transform.localScale;
             _dir.x *= -1f;
             transform.localScale = _dir;
         }
-    }
-
-    public void KillIfDead()
-    {
-        if (CheckIfDead())
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    public bool CheckIfDead()
-    {
-        if (currentHP <= 0.0f)
-        {
-            return true;
-        }
-        return false;
-    }
-
-    public void TakeDamage(float damage)
-    {
-        currentHP -= damage;
-        UIControl.setHealth(currentHP);
-
-        Debug.Log($"Current HP: {currentHP}");
-    }
-
-    public void ResetHealth()
-    {
-        currentHP = maxHP;
     }
 
     //Checks if player is touching the ground.
@@ -132,5 +122,23 @@ public class PlayerController : MonoBehaviour
         _ani.SetBool("isJumping", !_isGrounded);
     }
 
-   
+    public void  ResetHealth()
+    {
+        currentHealth = maxHealth;
+    }
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+        Debug.Log(currentHealth);
+        if (currentHealth <= 0f)
+        {
+            gamePlayControl.setHealth(0);
+            _dead = true;
+            Debug.Log("dead by damage");
+        }
+        else
+        {
+            gamePlayControl.setHealth(currentHealth);
+        }
+    }
 }
