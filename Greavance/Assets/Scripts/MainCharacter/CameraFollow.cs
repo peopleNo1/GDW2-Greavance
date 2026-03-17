@@ -6,7 +6,7 @@ public class CameraFollow : MonoBehaviour
 {
     public List<Transform> targetList = new List<Transform>();  // Targets for camera
     [SerializeField] private PlayerController Player;
-    [SerializeField] private ArmController Arm;
+    [SerializeField] private HeadController Head;
 
     public float distance = 5f;  // distance behind the player
     public float height = 3f; // height above the player
@@ -41,8 +41,8 @@ public class CameraFollow : MonoBehaviour
         if (target == targetList[0])
         {
             Player.PlayerTurn = false;
-            Arm.ArmTurn = true;
-            Arm.TeleportArm(true);
+            Head.ArmTurn = true;
+            Head.TeleportArm(true);
 
             target = targetList[1];
         }
@@ -50,9 +50,9 @@ public class CameraFollow : MonoBehaviour
         else if (target == targetList[1])
         {
             Player.PlayerTurn = true;
-            Arm.ArmTurn = false;
+            Head.ArmTurn = false;
 
-            Arm.TeleportArm(false);
+            Head.TeleportArm(false);
 
             target = targetList[0];
         }
