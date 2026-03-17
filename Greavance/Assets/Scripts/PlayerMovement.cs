@@ -31,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
                 room.SetActive(false);
             }
         }
+        Debug.Log(doors.Length);
+        Debug.Log(keys.Length);
     }
 
     void Update()
@@ -42,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         input.Normalize();
 
         // climb stairs
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             CheckDoors();
         }
@@ -68,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
         {
             TeleportDoor tele = door.GetComponent<TeleportDoor>();
 
-            if (levelAt.name == LayerMask.LayerToName(door.layer) && tele.IsAtDoor() && Unlocked(tele.GetKeys()))
+            if (tele.IsAtDoor() && Unlocked(tele.GetKeys()))
             {
                 tele.GetLevelAt().SetActive(false);
                 levelAt = tele.GetDestination();
