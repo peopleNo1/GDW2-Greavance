@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     private GameObject[] doors;
     private GameObject[] keys;
 
+    [SerializeField] Animated guideAni;
+
     ////replace by other code
     //private Vector2 input;
     //[SerializeField] private float moveSpeed = 5.0f;
@@ -47,6 +49,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C))
         {
             CheckKeys();
+        }
+        //test
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            guideAni.Flip();
         }
     }
 
