@@ -28,11 +28,13 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] float maxHealth = 100;
     private float currentHealth;
+    private GamePlayControl gamePlayControl;
 
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _ani = GetComponent<Animator>();
+        gamePlayControl = GetComponent<GamePlayControl>();
 
         ResetHealth();
     }
@@ -130,8 +132,13 @@ public class PlayerController : MonoBehaviour
         Debug.Log(currentHealth);
         if (currentHealth <= 0f)
         {
+            gamePlayControl.setHealth(0);
             _dead = true;
             Debug.Log("dead by damage");
+        }
+        else
+        {
+            gamePlayControl.setHealth(currentHealth);
         }
     }
 }
