@@ -17,7 +17,10 @@ public class HeadController : MonoBehaviour
     //bool _facingRight = false;
     private Vector2 _moveInput;
 
+
     Rigidbody2D _rb;
+
+    [SerializeField] float maxSpeed = 5;
 
 
     void Start()
@@ -36,6 +39,14 @@ public class HeadController : MonoBehaviour
 
         _rb.AddForce(MoveDirection);
 
+    }
+
+    private void FixedUpdate()
+    {
+        if (_rb.linearVelocity.magnitude > maxSpeed)
+        {
+            _rb.linearVelocity = Vector3.ClampMagnitude(_rb.linearVelocity, maxSpeed);
+        }
     }
 
     public void TeleportHead(bool HeadTurn)

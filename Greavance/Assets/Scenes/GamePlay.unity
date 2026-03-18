@@ -22397,6 +22397,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1593068575235731109, guid: 24424830b7da75d4facea84e564c7796, type: 3}
+      propertyPath: maxSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1593068575235731109, guid: 24424830b7da75d4facea84e564c7796, type: 3}
       propertyPath: cameraArm
       value: 
       objectReference: {fileID: 8864290863320606404}
