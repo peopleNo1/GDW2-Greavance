@@ -129,12 +129,10 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
-        Debug.Log(currentHealth);
         if (currentHealth <= 0f)
         {
             gamePlayControl.setHealth(0);
             _dead = true;
-            Debug.Log("dead by damage");
         }
         else
         {

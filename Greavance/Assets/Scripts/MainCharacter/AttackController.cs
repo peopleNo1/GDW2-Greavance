@@ -19,6 +19,8 @@ public class AttackController : MonoBehaviour
     Renderer myRenderer;
     public HeadController head;
 
+    [SerializeField] float attackDamage = 30;
+
     private void Awake()
     {
         myRenderer = GetComponent<Renderer>();
@@ -81,6 +83,12 @@ public class AttackController : MonoBehaviour
         }
 
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(attackDamage);
+        }
+    }
 }
-
-

@@ -20,6 +20,8 @@ public class ArmController : MonoBehaviour
     Rigidbody2D _rb;
     Animator _ani;
 
+    [SerializeField] float attackDamage = 30;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -31,13 +33,10 @@ public class ArmController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
          //Horizontal Input system
          horizontalInput = Input.GetAxis("Horizontal");
 
          FlipSprite();
-
-         
         
     }
 
@@ -76,6 +75,15 @@ public class ArmController : MonoBehaviour
         else if (ArmTurn == false)
         {
             _rb.position = _pos[1].transform.position;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log("attack");
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(attackDamage);
         }
     }
 }

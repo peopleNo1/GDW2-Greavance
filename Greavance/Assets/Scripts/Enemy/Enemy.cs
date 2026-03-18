@@ -207,7 +207,7 @@ public class Enemy : MonoBehaviour
     {
         if (Time.time >= _lastDamageTime + _damageCooldown)
         {
-            if (collision.gameObject.CompareTag("Player"))
+            if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Head"))
             {
                 if (playerController != null)
                 {
