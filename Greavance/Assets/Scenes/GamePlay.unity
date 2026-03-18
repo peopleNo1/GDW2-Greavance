@@ -1163,7 +1163,7 @@ PrefabInstance:
     - target: {fileID: 6073690433846968449, guid: 52f07484c7956ee479ef6611ef3ddd41, type: 3}
       propertyPath: enterPosition
       value: 
-      objectReference: {fileID: 7874671323693746681}
+      objectReference: {fileID: 6782929153358274605}
     - target: {fileID: 6073690433846968449, guid: 52f07484c7956ee479ef6611ef3ddd41, type: 3}
       propertyPath: keys.Array.size
       value: 0
@@ -3230,12 +3230,12 @@ PrefabInstance:
       objectReference: {fileID: 7890111305634878101}
     - target: {fileID: 6531368586719149763, guid: 873249354e4cd804d945795abc2c97a0, type: 3}
       propertyPath: keys.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6531368586719149763, guid: 873249354e4cd804d945795abc2c97a0, type: 3}
       propertyPath: 'keys.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 9106403726678877523}
     - target: {fileID: 7271230426087291875, guid: 873249354e4cd804d945795abc2c97a0, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.05
@@ -3289,6 +3289,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 873249354e4cd804d945795abc2c97a0, type: 3}
+--- !u!1 &872624620 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5414247356402212200, guid: 873249354e4cd804d945795abc2c97a0, type: 3}
+  m_PrefabInstance: {fileID: 872624619}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &872624621 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7271230426087291875, guid: 873249354e4cd804d945795abc2c97a0, type: 3}
@@ -5187,12 +5192,12 @@ PrefabInstance:
       objectReference: {fileID: 2605714939230675187}
     - target: {fileID: 6531368586719149763, guid: 873249354e4cd804d945795abc2c97a0, type: 3}
       propertyPath: keys.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6531368586719149763, guid: 873249354e4cd804d945795abc2c97a0, type: 3}
       propertyPath: 'keys.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1433359661258306068}
     - target: {fileID: 7271230426087291875, guid: 873249354e4cd804d945795abc2c97a0, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.05
@@ -5249,6 +5254,11 @@ PrefabInstance:
 --- !u!4 &1679618494 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7271230426087291875, guid: 873249354e4cd804d945795abc2c97a0, type: 3}
+  m_PrefabInstance: {fileID: 1679618493}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1679618495 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5414247356402212200, guid: 873249354e4cd804d945795abc2c97a0, type: 3}
   m_PrefabInstance: {fileID: 1679618493}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1714669380 stripped
@@ -5361,7 +5371,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5414247356402212200, guid: 873249354e4cd804d945795abc2c97a0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6531368586719149763, guid: 873249354e4cd804d945795abc2c97a0, type: 3}
       propertyPath: key
@@ -5381,12 +5391,16 @@ PrefabInstance:
       objectReference: {fileID: 773321466796995648}
     - target: {fileID: 6531368586719149763, guid: 873249354e4cd804d945795abc2c97a0, type: 3}
       propertyPath: keys.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6531368586719149763, guid: 873249354e4cd804d945795abc2c97a0, type: 3}
       propertyPath: 'keys.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1328128259759357212}
+    - target: {fileID: 6531368586719149763, guid: 873249354e4cd804d945795abc2c97a0, type: 3}
+      propertyPath: 'keys.Array.data[1]'
+      value: 
+      objectReference: {fileID: 3353114730080481314}
     - target: {fileID: 7271230426087291875, guid: 873249354e4cd804d945795abc2c97a0, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.05
@@ -8032,7 +8046,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &52857058650819579
 Transform:
   m_ObjectHideFlags: 0
@@ -12869,7 +12883,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.3254902, g: 0.4901961, b: 0.3019608, a: 1}
+  m_Color: {r: 0.40000004, g: 0.31764707, b: 0.31764707, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -13878,7 +13892,7 @@ GameObject:
   - component: {fileID: 8635613101728901906}
   - component: {fileID: 6263022493543160086}
   m_Layer: 0
-  m_Name: DoorToRoom1
+  m_Name: DoorToDungeon
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17184,61 +17198,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!212 &3837851250184076465
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7874671323693746681}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.2924528, g: 0.23313455, b: 0.23313455, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!212 &3858259278705292563
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19736,8 +19695,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelAt: {fileID: 8519175628109196467}
-  destination: {fileID: 8519175626972736270}
-  enterPosition: {fileID: 42645793275712975}
+  destination: {fileID: 5926371834765217806}
+  enterPosition: {fileID: 872624620}
   keys: []
 --- !u!4 &4788115691415503338
 Transform:
@@ -19753,21 +19712,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3982583409194499073}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4792866965347299186
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7874671323693746681}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.18085107, y: -0.10000001, z: 0}
-  m_LocalScale: {x: 0.021276597, y: 0.06666667, z: 0}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 6887910315453288458}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4797875342286106515
 Transform:
@@ -20889,7 +20833,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5137255, g: 0.39607847, b: 0.60784316, a: 1}
+  m_Color: {r: 0.4009434, g: 0.3158375, b: 0.3158375, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -22333,7 +22277,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.5176471, g: 0.39607847, b: 0.60784316, a: 1}
+  m_Color: {r: 0.40000004, g: 0.31764707, b: 0.31764707, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -23240,8 +23184,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelAt: {fileID: 8519175626972736270}
-  destination: {fileID: 4362745311993754285}
-  enterPosition: {fileID: 6782929153358274605}
+  destination: {fileID: 5926371834765217806}
+  enterPosition: {fileID: 1679618495}
   keys: []
 --- !u!61 &6274720088702751768
 BoxCollider2D:
@@ -24639,7 +24583,7 @@ GameObject:
   - component: {fileID: 8049607818839296234}
   - component: {fileID: 7632339432189204344}
   m_Layer: 0
-  m_Name: DoorToRoom2
+  m_Name: DoorToDungeons
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24785,7 +24729,6 @@ Transform:
   m_Children:
   - {fileID: 7438938056565092415}
   - {fileID: 5503898363790515237}
-  - {fileID: 4792866965347299186}
   - {fileID: 3706162252845060849}
   - {fileID: 8504019332525769655}
   - {fileID: 4895141312727893776}
@@ -26529,10 +26472,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelAt: {fileID: 4362745311993754285}
-  destination: {fileID: 8519175626972736270}
-  enterPosition: {fileID: 2605714939230675187}
-  keys:
-  - {fileID: 1433359661258306068}
+  destination: {fileID: 5926371834765217806}
+  enterPosition: {fileID: 373122471}
+  keys: []
 --- !u!4 &7639962965674401655
 Transform:
   m_ObjectHideFlags: 0
@@ -27025,52 +26967,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!61 &7865077963906463956
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7874671323693746681}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &7866790743906267662
 GameObject:
   m_ObjectHideFlags: 0
@@ -27144,25 +27040,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &7874671323693746681
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4792866965347299186}
-  - component: {fileID: 3837851250184076465}
-  - component: {fileID: 7865077963906463956}
-  - component: {fileID: 8993446081245293138}
-  m_Layer: 0
-  m_Name: DoorToDungeon
-  m_TagString: Door
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &7890111305634878101
 GameObject:
   m_ObjectHideFlags: 0
@@ -27176,7 +27053,7 @@ GameObject:
   - component: {fileID: 4248148322101489047}
   - component: {fileID: 4777621114798031748}
   m_Layer: 0
-  m_Name: DoorToRoom2
+  m_Name: DoorToDungeon
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29576,22 +29453,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8993446081245293138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7874671323693746681}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d39716e73ed087469a95bfef6c75102, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  levelAt: {fileID: 4362745311993754285}
-  destination: {fileID: 5926371834765217806}
-  enterPosition: {fileID: 373122471}
-  keys: []
 --- !u!4 &9000402511369806022
 Transform:
   m_ObjectHideFlags: 0
