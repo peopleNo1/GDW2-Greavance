@@ -6,7 +6,7 @@ public class CameraFollow : MonoBehaviour
 {
     public List<Transform> targetList = new List<Transform>();  // Targets for camera
     [SerializeField] private PlayerController Player;
-    [SerializeField] private ArmController Arm;
+    [SerializeField] private HeadController Head;
 
     public float distance = 5f;  // distance behind the player
     public float height = 3f; // height above the player
@@ -21,38 +21,38 @@ public class CameraFollow : MonoBehaviour
     void LateUpdate()
     {
         // calculate camera position based on player's position, forward, and height
-        
-            Vector3 pos = target.position
-                        - target.forward * distance
-                        + Vector3.up * height;
 
-            // Move the camera to that position
-            transform.position = pos;
+        Vector3 pos = target.position
+                    - target.forward * distance
+                    + Vector3.up * height;
 
-            // Make the camera look at the player
-            transform.LookAt(target);
-        
-       
+        // Move the camera to that position
+        transform.position = pos;
+
+        // Make the camera look at the player
+        transform.LookAt(target);
+
+
     }
 
     public void ChangeTarget()
     {
-        //Check if its player turn to switch to arm
+        //Check if its player turn to switch to head
         if (target == targetList[0])
         {
             Player.PlayerTurn = false;
-            Arm.ArmTurn = true;
-            Arm.TeleportArm(true);
+            Head.HeadTurn = true;
+            Head.TeleportHead(true);
 
             target = targetList[1];
         }
-        //Check if its arm turn to switch to player
+        //Check if its head turn to switch to player
         else if (target == targetList[1])
         {
             Player.PlayerTurn = true;
-            Arm.ArmTurn = false;
+            Head.HeadTurn = false;
 
-            Arm.TeleportArm(false);
+            Head.TeleportHead(false);
 
             target = targetList[0];
         }

@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class IgnoreLayerCollision : MonoBehaviour
 {
-   
+
     void Start()
     {
-        Physics.IgnoreLayerCollision(6, 7);
+        Physics.IgnoreLayerCollision(12, 13);
     }
 
-    
+
 }

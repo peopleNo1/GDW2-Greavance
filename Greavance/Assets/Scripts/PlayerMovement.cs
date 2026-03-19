@@ -12,10 +12,12 @@ public class PlayerMovement : MonoBehaviour
     private GameObject[] doors;
     private GameObject[] keys;
 
+    [SerializeField] Animated guideAni;
+
     ////replace by other code
     //private Vector2 input;
-    //[SerializeField] private float moveSpeed = 5.0f;
-    
+    //[SerializeField] private float moveSpeed = 12.0f;
+
     void Start()
     {
         //rb = GetComponent<Rigidbody2D>();
@@ -36,24 +38,29 @@ public class PlayerMovement : MonoBehaviour
         ////normal movement
         //input.x = Input.GetAxisRaw("Horizontal");
         //input.y = Input.GetAxisRaw("Vertical");
-        
+
         //input.Normalize();
 
-        //climb stairs
+        // climb stairs
         if (Input.GetKeyDown(KeyCode.W))
         {
             CheckDoors();
         }
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             CheckKeys();
         }
+        //test
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            guideAni.Flip();
+        }
     }
 
-    private void FixedUpdate()
-    {
-        //rb.linearVelocity = input * moveSpeed;
-    }
+    //private void FixedUpdate()
+    //{
+    //    rb.linearVelocity = input * moveSpeed;
+    //}
 
     private void CheckDoors()
     {
@@ -61,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
         {
             TeleportDoor tele = door.GetComponent<TeleportDoor>();
 
-            if (levelAt.name == LayerMask.LayerToName(door.layer) && tele.IsAtDoor() && Unlocked(tele.GetKeys()))
+            if (tele.IsAtDoor() && Unlocked(tele.GetKeys()))
             {
                 tele.GetLevelAt().SetActive(false);
                 levelAt = tele.GetDestination();

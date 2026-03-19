@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Boss
   - Key
+  - Head
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,8 @@ TagManager:
   - Ground
   - Projectile
   - Platform
-  - 
+  - Player
+  - Head
   - 
   - 
   - 
