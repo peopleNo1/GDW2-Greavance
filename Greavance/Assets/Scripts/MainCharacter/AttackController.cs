@@ -84,7 +84,7 @@ public class AttackController : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
@@ -94,7 +94,8 @@ public class AttackController : MonoBehaviour
         if (collision.gameObject.tag == "Boss")
         {
             Debug.Log("Player damaged boss");
-            collision.gameObject.GetComponent<Boss>().TakeDamage(attackDamage);
+            Boss boss = collision.gameObject.GetComponent<Boss>();
+            boss.TakeDamage(attackDamage);
         }
     }
 }

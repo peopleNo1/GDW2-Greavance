@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class Boss : MonoBehaviour
 {
+    Rigidbody2D _rb;
     protected PhaseManager phaseManager;
     protected BossBasicAttacks bossBasicAttacks;
 
@@ -39,6 +40,7 @@ public class Boss : MonoBehaviour
 
     protected void Awake()
     {
+        _rb = GetComponent<Rigidbody2D>();
         phaseManager = GetComponent<PhaseManager>();
         bossBasicAttacks = GetComponent<BossBasicAttacks>();
         _spriteMovement = GetComponent<BossSpriteMovement>();
@@ -72,8 +74,24 @@ public class Boss : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        Debug.Log($"=== BOSS DAMAGE DEBUG ===");
+        Debug.Log($"Damage received: {damage}");
+        Debug.Log($"Current health BEFORE: {_currentHealth}");
+        Debug.Log($"Max health: {_maxHealth}");
+        
         _currentHealth -= damage;
-        Debug.Log($"Boss took {damage} damage!");
+        
+        Debug.Log($"Current health AFTER: {_currentHealth}");
+        
+        if (_currentHealth <= 0)
+        {
+            Debug.Log("BOSS HEALTH <= 0 - Boss will be destroyed!");
+            Destroy(gameObject);
+        }
+        else
+        {
+            Debug.Log($"BOSS STILL ALIVE: {_currentHealth} health remaining");
+        }
     }
 
     private void UpdatePhase1()
@@ -212,5 +230,11 @@ public class Boss : MonoBehaviour
     public void TriggerCasting()
     {
         _animator.SetTrigger("CastTrigger");
+    }
+
+    private void OnDestroy()
+    {
+        Debug.LogError($"BOSS IS BEING DESTROYED! Health was: {_currentHealth}/{_maxHealth}");
+        Debug.LogError($"Destroy called from: {StackTraceUtility.ExtractStackTrace()}");
     }
 }
