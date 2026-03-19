@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2343672279766566431}
   - component: {fileID: 358419056748837426}
   - component: {fileID: 4397562987987102716}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 1352170311990077843}
   - component: {fileID: 7532948143769426015}
   - component: {fileID: 6981287808740350520}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: FlameParticle
   m_TagString: Player
   m_Icon: {fileID: 0}
