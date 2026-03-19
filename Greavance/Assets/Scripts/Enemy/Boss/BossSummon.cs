@@ -24,12 +24,14 @@ public class BossSummon : Ability
 
     private Transform _player;
     private PhaseManager _phaseManager;
+    private Boss boss;
 
     protected override void Awake()
     {
         base.Awake();
         _player = GameObject.FindGameObjectWithTag("Player").transform;
         _phaseManager = GetComponent<PhaseManager>();
+        boss = GetComponent<Boss>();
 
         if (_platformSpawnPoints != null)
         {
@@ -41,6 +43,16 @@ public class BossSummon : Ability
                 }
             }
         }
+    }
+
+    public override bool CanUse()
+    {
+        if (_phaseManager.isPhase2 == false)
+        {
+            return false;
+        }
+        float healthPercent = boss._currentHealth / boss._maxHealth * 100f;
+        return healthPercent <= 50f;
     }
 
     public override IEnumerator Execute()

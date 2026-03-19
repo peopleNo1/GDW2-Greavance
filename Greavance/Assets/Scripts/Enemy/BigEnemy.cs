@@ -54,22 +54,14 @@ public class BigEnemy : Enemy
         }
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    protected override float GetDamageAmount()
     {
-        if (collision.gameObject.CompareTag("Boss")) {return;}
-            
-        if (Time.time >= _lastDamageTime + _damageCooldown)
-        {
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                if (playerController != null)
-                {
-                    Debug.Log($"Damage delt to player: {_damage}");
-                    animator.SetTrigger("Attack");
-                    playerController.TakeDamage(_damage);
-                    _lastDamageTime = Time.time;
-                }
-            }
-        }
+        return _damage;
+    }
+
+    protected override void TriggerAttackAnimation()
+    {
+        if (animator != null)
+            animator.SetTrigger("Attack");
     }
 }

@@ -204,4 +204,32 @@ public class Enemy : MonoBehaviour
         float angle = Mathf.Atan2(-dir.x, dir.y) * Mathf.Rad2Deg;
         gameObject.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
+
+    protected virtual void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Boss")) return;
+        
+        if (Time.time < _lastDamageTime + _damageCooldown) return;
+        
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+            if (player != null)
+            {
+                float damage = GetDamageAmount();
+                player.TakeDamage(damage);
+                _lastDamageTime = Time.time;
+            }
+        }
+    }
+
+    protected virtual float GetDamageAmount()
+    {
+        return 10f;
+    }
+
+    protected virtual void TriggerAttackAnimation()
+    {
+        // Override in derived classes
+    }
 }

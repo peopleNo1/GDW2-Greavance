@@ -51,7 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damageCooldown: 1
   _enemySpeed: 1
-  _visionRange: 1
+  _visionRange: 2
   _playerPos: {fileID: 0}
   leftBoundary: -5
   rightBoundary: 5
@@ -63,7 +63,7 @@ MonoBehaviour:
   animator: {fileID: 569146239692249869}
   _desiredMaxHp: 300
   _desiredCooldown: 0.5
-  _damage: 20
+  _damage: 3
   wasDamaged: 0
 --- !u!95 &569146239692249869
 Animator:

@@ -44,6 +44,24 @@ public class Boss : MonoBehaviour
         phaseManager = GetComponent<PhaseManager>();
         bossBasicAttacks = GetComponent<BossBasicAttacks>();
         _spriteMovement = GetComponent<BossSpriteMovement>();
+
+        Debug.Log("=== BOSS COMPONENTS ===");
+        Component[] components = GetComponents<Component>();
+        foreach (Component comp in components)
+        {
+            Debug.Log($"Component: {comp.GetType().Name} on {gameObject.name}");
+        }
+        
+        // Check children too
+        foreach (Transform child in transform)
+        {
+            Debug.Log($"Child: {child.name} with components:");
+            Component[] childComps = child.GetComponents<Component>();
+            foreach (Component comp in childComps)
+            {
+                Debug.Log($"  - {comp.GetType().Name}");
+            }
+        }
     }
 
     public void Update()
@@ -236,5 +254,8 @@ public class Boss : MonoBehaviour
     {
         Debug.LogError($"BOSS IS BEING DESTROYED! Health was: {_currentHealth}/{_maxHealth}");
         Debug.LogError($"Destroy called from: {StackTraceUtility.ExtractStackTrace()}");
+
+        System.Diagnostics.StackTrace stackTrace = new System.Diagnostics.StackTrace(true);
+        Debug.LogError(stackTrace.ToString());
     }
 }

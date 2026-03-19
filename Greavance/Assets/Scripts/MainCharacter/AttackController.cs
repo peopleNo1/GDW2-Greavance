@@ -86,6 +86,8 @@ public class AttackController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(!attack){return;}
+
         if (collision.gameObject.tag == "Enemy")
         {
             Debug.Log("Player damaged enemy");

@@ -61,7 +61,7 @@ MonoBehaviour:
   _lastDamageTime: 0
   animator: {fileID: 0}
   _desiredMaxHp: 50
-  _damage: 10
+  _damage: 1
   wasDamaged: 0
 --- !u!50 &8088902591269908676
 Rigidbody2D:
