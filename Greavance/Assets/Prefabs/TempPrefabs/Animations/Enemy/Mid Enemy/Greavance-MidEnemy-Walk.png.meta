@@ -359,7 +359,17 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Greavance-MidEnemy-Walk_0: 8325551766258336950
+      Greavance-MidEnemy-Walk_1: -6559127154257950784
+      Greavance-MidEnemy-Walk_2: -5461503069035171569
+      Greavance-MidEnemy-Walk_3: 8276202147759020043
+      Greavance-MidEnemy-Walk_4: 8720272152394539165
+      Greavance-MidEnemy-Walk_5: -3683201046061571379
+      Greavance-MidEnemy-Walk_6: -6584756378583516636
+      Greavance-MidEnemy-Walk_7: 6240353971623665119
+      Greavance-MidEnemy-Walk_8: 953437326082694296
+      Greavance-MidEnemy-Walk_9: -2231487929924176044
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

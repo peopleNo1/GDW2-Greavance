@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Greavance-Archer_0: 101147856462060850
+      Greavance-Archer_1: -2275298623044025494
+      Greavance-Archer_2: 1662148559360880064
+      Greavance-Archer_3: 6972253282025502784
+      Greavance-Archer_4: -7088745482859124682
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

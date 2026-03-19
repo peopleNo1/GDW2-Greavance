@@ -309,7 +309,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Greavance-Enemy_0: 197907575850270098
+      Greavance-Enemy_1: 4905713960884626509
+      Greavance-Enemy_2: 8695765502931858236
+      Greavance-Enemy_3: 654744503595659957
+      Greavance-Enemy_4: 6838198836596625100
+      Greavance-Enemy_5: -5682699671621356058
+      Greavance-Enemy_6: -6119448856687866311
+      Greavance-Enemy_7: 7747097315270182892
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

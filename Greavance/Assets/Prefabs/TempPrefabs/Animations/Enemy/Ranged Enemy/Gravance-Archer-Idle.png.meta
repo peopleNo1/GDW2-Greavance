@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Gravance-Archer-Idle_0: -7401906599331599602
+      Gravance-Archer-Idle_1: 2610111959106762909
+      Gravance-Archer-Idle_2: 3626977573260220281
+      Gravance-Archer-Idle_3: -2436610822926034852
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
