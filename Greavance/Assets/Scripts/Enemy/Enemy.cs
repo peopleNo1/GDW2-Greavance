@@ -29,11 +29,13 @@ public class Enemy : MonoBehaviour
     public Vector3 _dirToPlayer;
     public float _lastDamageTime;
 
+    PlayerController player;
     protected virtual void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
 
         _lastDamageTime = Time.time;
     }
@@ -231,9 +233,8 @@ public class Enemy : MonoBehaviour
 
         if (Time.time < _lastDamageTime + _damageCooldown) return;
 
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Head"))
         {
-            PlayerController player = collision.gameObject.GetComponent<PlayerController>();
             if (player != null)
             {
                 float damage = GetDamageAmount();
