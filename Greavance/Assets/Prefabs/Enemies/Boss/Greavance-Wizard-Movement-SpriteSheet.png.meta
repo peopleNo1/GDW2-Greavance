@@ -210,11 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Greavance-Wizard-Attack-SpriteSheet_0: 8818484659360347558
-      Greavance-Wizard-Attack-SpriteSheet_1: 5344621281533151481
-      Greavance-Wizard-Attack-SpriteSheet_2: 3148106753252744148
-      Greavance-Wizard-Attack-SpriteSheet_3: -4913785440874712196
-      Greavance-Wizard-Attack-SpriteSheet_4: -890507573251755198
+      Greavance-Wizard-Movement-SpriteSheet_0: -734102444529668662
+      Greavance-Wizard-Movement-SpriteSheet_1: -507702931357760663
+      Greavance-Wizard-Movement-SpriteSheet_2: -1860924688408537541
+      Greavance-Wizard-Movement-SpriteSheet_3: -6952993591049740882
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

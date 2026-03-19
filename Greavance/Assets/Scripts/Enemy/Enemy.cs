@@ -22,8 +22,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private bool switchSides = true; // True = right, False = left
 
     [HideInInspector]
-    public float _maxHealth;
-    public float _currentHealth;
+    public float _maxHealth = 150f;
+    public float _currentHealth = 150f;
     bool _calculatedThisFrame = false;
     public Vector3 _dirToPlayer;
     public float _lastDamageTime;
@@ -52,7 +52,10 @@ public class Enemy : MonoBehaviour
         _calculatedThisFrame = false;
     }
 
-    public virtual void UpdateEnemy(){}
+    public virtual void UpdateEnemy()
+    {
+        KillIfDead();
+    }
 
     public void ResetHealth()
     {
@@ -78,6 +81,7 @@ public class Enemy : MonoBehaviour
     {
         if (CheckIfDead())
         {
+            Debug.Log($"{this.gameObject} died!");
             Destroy(gameObject);
         }
     }

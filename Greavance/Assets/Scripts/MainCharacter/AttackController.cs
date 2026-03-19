@@ -84,11 +84,18 @@ public class AttackController : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            Debug.Log("Player damaged enemy");
             collision.gameObject.GetComponent<Enemy>().TakeDamage(attackDamage);
+        }
+        if (collision.gameObject.tag == "Boss")
+        {
+            Debug.Log("Player damaged boss");
+            Boss boss = collision.gameObject.GetComponent<Boss>();
+            boss.TakeDamage(attackDamage);
         }
     }
 }

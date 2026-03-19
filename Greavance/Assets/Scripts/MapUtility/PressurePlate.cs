@@ -147,6 +147,4 @@ public class PressurePlate : MonoBehaviour
         }
         _resetCoroutine = null;
     }
-
-
 }

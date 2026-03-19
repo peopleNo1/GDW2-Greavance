@@ -73,7 +73,7 @@ public class BossAbilities : MonoBehaviour
             abilityHistory.Dequeue();
         }
 
-        Debug.Log($"Boss using ability: {ability.name}");
+        // Debug.Log($"Boss using ability: {ability.name}");
 
         yield return ability.Execute();
 
