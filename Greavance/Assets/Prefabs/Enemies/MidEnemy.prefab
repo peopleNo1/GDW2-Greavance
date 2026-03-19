@@ -52,6 +52,7 @@ MonoBehaviour:
   _damageCooldown: 1
   _enemySpeed: 1
   _visionRange: 2
+  damage: 10
   _playerPos: {fileID: 0}
   leftBoundary: 1.554
   rightBoundary: 8.3
@@ -63,7 +64,7 @@ MonoBehaviour:
   animator: {fileID: 8171587958200395488}
   _desiredMaxHp: 150
   _desiredCooldown: 0.5
-  _damage: 2
+  _damage: 10
   wasDamaged: 0
 --- !u!95 &8171587958200395488
 Animator:

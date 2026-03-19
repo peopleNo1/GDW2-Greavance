@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class PlayerMovement : MonoBehaviour
@@ -70,6 +71,11 @@ public class PlayerMovement : MonoBehaviour
 
             if (tele.IsAtDoor() && Unlocked(tele.GetKeys()))
             {
+                if (tele.gameObject.name == "DoorToBoss")
+                {
+                    SceneManager.LoadScene("BossBattle1");
+                    return;
+                }
                 tele.GetLevelAt().SetActive(false);
                 levelAt = tele.GetDestination();
                 levelAt.SetActive(true);

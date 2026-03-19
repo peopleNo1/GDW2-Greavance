@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     public float _damageCooldown = 1.0f;
     public float _enemySpeed = 1.0f;
     public float _visionRange = 1.0f;
+    public float damage = 10.0f;
 
     [Header("Border Controls")]
     private Vector2 startingPos;
@@ -207,16 +208,36 @@ public class Enemy : MonoBehaviour
 
     protected virtual void OnTriggerStay2D(Collider2D collision)
     {
+        //if (collision.gameObject.CompareTag("Boss")) return;
+        
+        //if (Time.time < _lastDamageTime + _damageCooldown) return;
+        
+        //if (collision.gameObject.CompareTag("Player"))
+        //{
+        //    Debug.Log("enemy touch player");
+        //    PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+        //    if (player != null)
+        //    {
+        //        float damage = GetDamageAmount();
+        //        player.TakeDamage(damage);
+        //        _lastDamageTime = Time.time;
+        //    }
+        //}
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
         if (collision.gameObject.CompareTag("Boss")) return;
-        
+
         if (Time.time < _lastDamageTime + _damageCooldown) return;
-        
+
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerController player = collision.gameObject.GetComponent<PlayerController>();
             if (player != null)
             {
                 float damage = GetDamageAmount();
+                Debug.Log(damage);
                 player.TakeDamage(damage);
                 _lastDamageTime = Time.time;
             }

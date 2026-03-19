@@ -51,6 +51,7 @@ MonoBehaviour:
   _damageCooldown: 1
   _enemySpeed: 1
   _visionRange: 2.5
+  damage: 10
   _playerPos: {fileID: 0}
   leftBoundary: -8.136
   rightBoundary: -0.985
@@ -61,7 +62,7 @@ MonoBehaviour:
   _lastDamageTime: 0
   animator: {fileID: 0}
   _desiredMaxHp: 50
-  _damage: 1
+  _damage: 5
   wasDamaged: 0
 --- !u!50 &8088902591269908676
 Rigidbody2D:
