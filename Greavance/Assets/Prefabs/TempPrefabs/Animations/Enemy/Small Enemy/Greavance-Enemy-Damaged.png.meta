@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Greavance-Enemy-Damaged_0: -5697075597170274273
+      Greavance-Enemy-Damaged_1: 4784812142019655652
+      Greavance-Enemy-Damaged_2: 6873144601994152399
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

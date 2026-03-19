@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Greavance-BigEnemy-Walk_0: 4197409047818742191
+      Greavance-BigEnemy-Walk_1: -5892217537825230447
+      Greavance-BigEnemy-Walk_2: -8012413217603053221
+      Greavance-BigEnemy-Walk_3: 5356112373676016197
+      Greavance-BigEnemy-Walk_4: -3287331461967058746
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

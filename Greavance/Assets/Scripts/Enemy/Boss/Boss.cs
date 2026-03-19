@@ -73,7 +73,7 @@ public class Boss : MonoBehaviour
     public void TakeDamage(float damage)
     {
         _currentHealth -= damage;
-        Debug.Log($"Enemy took {damage} damage!");
+        Debug.Log($"Boss took {damage} damage!");
     }
 
     private void UpdatePhase1()

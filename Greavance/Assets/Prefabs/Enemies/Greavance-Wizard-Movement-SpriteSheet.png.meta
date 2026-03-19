@@ -209,7 +209,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Greavance-Wizard-Movement-SpriteSheet_0: -734102444529668662
+      Greavance-Wizard-Movement-SpriteSheet_1: -507702931357760663
+      Greavance-Wizard-Movement-SpriteSheet_2: -1860924688408537541
+      Greavance-Wizard-Movement-SpriteSheet_3: -6952993591049740882
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

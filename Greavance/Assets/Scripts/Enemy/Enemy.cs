@@ -52,7 +52,10 @@ public class Enemy : MonoBehaviour
         _calculatedThisFrame = false;
     }
 
-    public virtual void UpdateEnemy(){}
+    public virtual void UpdateEnemy()
+    {
+        KillIfDead();
+    }
 
     public void ResetHealth()
     {
