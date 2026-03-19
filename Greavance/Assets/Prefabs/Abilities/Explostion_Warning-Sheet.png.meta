@@ -1,0 +1,783 @@
+fileFormatVersion: 2
+guid: ee1a11a5399475c45a6bb2e8a5659f03
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2088650554479767216
+    second: Explostion_Warning-Sheet_0
+  - first:
+      213: -1937631695653392715
+    second: Explostion_Warning-Sheet_1
+  - first:
+      213: 8682464322633050816
+    second: Explostion_Warning-Sheet_2
+  - first:
+      213: 302239862358060606
+    second: Explostion_Warning-Sheet_3
+  - first:
+      213: 7370081480816874682
+    second: Explostion_Warning-Sheet_4
+  - first:
+      213: -1553291453430792087
+    second: Explostion_Warning-Sheet_5
+  - first:
+      213: -6347500403333593886
+    second: Explostion_Warning-Sheet_6
+  - first:
+      213: -9220867125693882212
+    second: Explostion_Warning-Sheet_7
+  - first:
+      213: 7355131759831387237
+    second: Explostion_Warning-Sheet_8
+  - first:
+      213: -5528574283893324020
+    second: Explostion_Warning-Sheet_9
+  - first:
+      213: 5596603384157397022
+    second: Explostion_Warning-Sheet_10
+  - first:
+      213: 1655024195261373878
+    second: Explostion_Warning-Sheet_11
+  - first:
+      213: 4881192014850831798
+    second: Explostion_Warning-Sheet_12
+  - first:
+      213: -3113526212717180647
+    second: Explostion_Warning-Sheet_13
+  - first:
+      213: -8826853323767813696
+    second: Explostion_Warning-Sheet_14
+  - first:
+      213: 2810342437330494313
+    second: Explostion_Warning-Sheet_15
+  - first:
+      213: 9148082192167501049
+    second: Explostion_Warning-Sheet_16
+  - first:
+      213: -107452914839633180
+    second: Explostion_Warning-Sheet_17
+  - first:
+      213: 4194444273356807142
+    second: Explostion_Warning-Sheet_18
+  - first:
+      213: 4969893140649796254
+    second: Explostion_Warning-Sheet_19
+  - first:
+      213: 176965770546716361
+    second: Explostion_Warning-Sheet_20
+  - first:
+      213: 8316183275657263904
+    second: Explostion_Warning-Sheet_21
+  - first:
+      213: -748433618088515592
+    second: Explostion_Warning-Sheet_22
+  - first:
+      213: 5882233486190605518
+    second: Explostion_Warning-Sheet_23
+  - first:
+      213: -5991713994912289411
+    second: Explostion_Warning-Sheet_24
+  - first:
+      213: -436442572010690534
+    second: Explostion_Warning-Sheet_25
+  - first:
+      213: -7622613401361142088
+    second: Explostion_Warning-Sheet_26
+  - first:
+      213: 3443108276461652158
+    second: Explostion_Warning-Sheet_27
+  - first:
+      213: 8732423707413972087
+    second: Explostion_Warning-Sheet_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 8
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88cbc118f747fc24faaeabd2060dada9
+      internalID: -1483560236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 11
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87d8cc141c2e69245993aefcf74f35f4
+      internalID: -1261119313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 11
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7664be9b91ced714ba9c528ee3a61202
+      internalID: 1639286755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 11
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45ce1037477f00347bd09bf3c2956b46
+      internalID: 654403511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 12
+        width: 11
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4300dfd98a8c1cf4a83994f3731d475a
+      internalID: -2129070551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 13
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6712400d5d2c4b418e3e139585df13b
+      internalID: -2022843638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 9
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c6a10b58a1ce824e8150bcf4d09826c
+      internalID: -1187964547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 8
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 249fdd6674e64dc4eaeff83cc0a27551
+      internalID: 1406941159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 8
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9148e2517d40414ebd364367cb26c3c
+      internalID: -471765197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 8
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43f70d008b06c8342973819365d31391
+      internalID: -889014352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 8
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9608a1070143c2b408d2247d3ecd4b03
+      internalID: 553723758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 1
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c9f3c18066b504c9a5f52a1f2a21ed
+      internalID: -331448680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 1
+        width: 33
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f67739d704be02d4fa639f947cbbd89f
+      internalID: 1822994127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 1
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3099d9c03e903464084ed36265a9aa0f
+      internalID: -1892189902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 1
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c48a1737505f1714598c0f0017e598fd
+      internalID: 215979681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 1
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1198519dbe1ce847986fa6e3a1fa08f
+      internalID: -2042326674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 3
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 536255bee1f5d52468023b763e2176e2
+      internalID: 323111234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 3
+        width: 23
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3087ed1413986c7499575b0130e92a40
+      internalID: 1354479832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 6
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbefd1b411a0ce1478d9b167cdc20f09
+      internalID: -1899918721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 614
+        y: 7
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ce69e3ec1b6d0e4da4bff81fac7eb2d
+      internalID: -1198035550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 9
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d274f6fd4fc44541a1327f2c36d0904
+      internalID: 386331884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 11
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71e8e79b70bcb3441a8345829933bdd9
+      internalID: -1015465120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 9
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5fc2c2818db0db429f90a473bcae75f
+      internalID: -960970836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 11
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae3231a9f15ad0244ade168687d5646e
+      internalID: 2133043233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Explostion_Warning-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 12
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10be3ccb8b6e5c24598eef34dbe50f44
+      internalID: -884053783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 239ecb60b847a2b419412c49c34f876c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Explostion_Warning-Sheet_0: -2129070551
+      Explostion_Warning-Sheet_1: -2022843638
+      Explostion_Warning-Sheet_10: -1483560236
+      Explostion_Warning-Sheet_11: -331448680
+      Explostion_Warning-Sheet_12: 1822994127
+      Explostion_Warning-Sheet_13: -1892189902
+      Explostion_Warning-Sheet_14: 215979681
+      Explostion_Warning-Sheet_15: -2042326674
+      Explostion_Warning-Sheet_16: 323111234
+      Explostion_Warning-Sheet_17: 1354479832
+      Explostion_Warning-Sheet_18: -1899918721
+      Explostion_Warning-Sheet_19: -1198035550
+      Explostion_Warning-Sheet_2: -1261119313
+      Explostion_Warning-Sheet_20: 386331884
+      Explostion_Warning-Sheet_21: -1015465120
+      Explostion_Warning-Sheet_22: -960970836
+      Explostion_Warning-Sheet_23: 2133043233
+      Explostion_Warning-Sheet_24: -884053783
+      Explostion_Warning-Sheet_29: -176138996
+      Explostion_Warning-Sheet_3: 1639286755
+      Explostion_Warning-Sheet_30: 707712681
+      Explostion_Warning-Sheet_31: 88154121
+      Explostion_Warning-Sheet_32: -1935646010
+      Explostion_Warning-Sheet_4: 654403511
+      Explostion_Warning-Sheet_5: -1187964547
+      Explostion_Warning-Sheet_6: 1406941159
+      Explostion_Warning-Sheet_7: -471765197
+      Explostion_Warning-Sheet_8: -889014352
+      Explostion_Warning-Sheet_9: 553723758
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

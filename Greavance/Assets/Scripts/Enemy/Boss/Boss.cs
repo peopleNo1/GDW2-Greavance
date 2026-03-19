@@ -2,19 +2,26 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Boss : Enemy
+public class Boss : MonoBehaviour
 {
     protected PhaseManager phaseManager;
     protected BossBasicAttacks bossBasicAttacks;
+
+    public Transform _playerPos;
 
     public bool isActing = false;
     public bool isCasting = false;
     public float actionCooldown = 5f;
     public float nextActionTime = 0f;
 
+    [Header("Base Enemy Stats")]
+    public float _maxHealth = 500.0f;
+    public float _currentHealth;
+
     [Header("Animation")]
-    [SerializeField] private Animator _animator;
+    [SerializeField] public Animator _animator;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private BossSpriteMovement _spriteMovement;
 
     [Header("Basic Attack Settings")]
     [SerializeField] private int _basicAttackUsed = 0;
@@ -30,18 +37,15 @@ public class Boss : Enemy
     [SerializeField] private Transform _pointB;
     [SerializeField] private float _movingSpeed = 8f;
 
-    protected override void Awake()
+    protected void Awake()
     {
-        base.Awake();
-
         phaseManager = GetComponent<PhaseManager>();
         bossBasicAttacks = GetComponent<BossBasicAttacks>();
+        _spriteMovement = GetComponent<BossSpriteMovement>();
     }
 
-    public override void UpdateEnemy()
+    public void Update()
     {
-        base.UpdateEnemy();
-
         if (!phaseManager.isPhase2)
         {
             UpdatePhase1();
@@ -59,6 +63,11 @@ public class Boss : Enemy
         nextActionTime = Time.time;
 
         ResetHealth();
+    }
+
+    private void ResetHealth()
+    {
+        _currentHealth = _maxHealth;
     }
 
     private void UpdatePhase1()
@@ -121,10 +130,33 @@ public class Boss : Enemy
 
         Transform targetPoint = (_currentMovingTarget == _pointA) ? _pointB : _pointA;
 
+        Vector2 startPosition = transform.position;
+
+        if(_spriteMovement != null) {_spriteMovement.StartMoving();}
+
+        bool movingRight = targetPoint.position.x > transform.position.x;
+        _spriteMovement.SetFacingDirection(movingRight);
+
         while (Vector3.Distance(transform.position, targetPoint.position) > 0.01f)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPoint.position, _movingSpeed * Time.deltaTime);
             yield return null;
+        }
+
+        if (_spriteMovement != null) {_spriteMovement.StopMoving();}
+
+        float movedDistance = targetPoint.position.x - startPosition.x;
+
+        if (_spriteMovement != null)
+        {
+            if (movedDistance > 0)
+            {
+                _spriteMovement.SetFacingDirection(true);
+            }
+            else if (movedDistance < 0)
+            {
+                _spriteMovement.SetFacingDirection(false);
+            }
         }
 
         _currentMovingTarget = targetPoint;

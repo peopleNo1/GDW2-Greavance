@@ -5,33 +5,28 @@ using System.Collections.Generic;
 public class Enemy : MonoBehaviour
 {
     Rigidbody2D _rb;
+    protected PlayerController playerController;
 
     [Header("Base Enemy Stats")]
-    public float _maxHealth = 50.0f;
-
-    public float _currentHealth;
-
-    public float _contactDamage = 10.0f;
     public float _damageCooldown = 1.0f;
-
-    public float _lastDamageTime;
-    private PlayerController playerController;
-
-    Vector3 _dirToPlayer;
-    public GameObject _player;
-    public Transform _playerPos;
-    bool _calculatedThisFrame = false;
     public float _enemySpeed = 1.0f;
-    public float _enemyDamage = 0.5f;
     public float _visionRange = 1.0f;
 
     [Header("Border Controls")]
     private Vector2 startingPos;
 
     [Header("Movement")]
+    public Transform _playerPos;
     [SerializeField] private float leftBoundary = -5f;
     [SerializeField] private float rightBoundary = 5f;
     [SerializeField] private bool switchSides = true; // True = right, False = left
+
+    [HideInInspector]
+    public float _maxHealth;
+    public float _currentHealth;
+    bool _calculatedThisFrame = false;
+    public Vector3 _dirToPlayer;
+    public float _lastDamageTime;
 
     protected virtual void Awake()
     {
@@ -42,35 +37,29 @@ public class Enemy : MonoBehaviour
         _lastDamageTime = Time.time;
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         ResetHealth();
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         UpdateEnemy();
     }
 
-    private void LateUpdate()
+    protected virtual void LateUpdate()
     {
         _calculatedThisFrame = false;
     }
 
-    public virtual void UpdateEnemy()
-    {
-        KillIfDead();
-        _dirToPlayer = GetDirToPlayer();
-        SeekPlayer(_dirToPlayer);
-
-    }
+    public virtual void UpdateEnemy(){}
 
     public void ResetHealth()
     {
         _currentHealth = _maxHealth;
     }
 
-    public void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     {
         _currentHealth -= damage;
     }
@@ -102,6 +91,12 @@ public class Enemy : MonoBehaviour
         return false;
     }
 
+    public void SetCustomBoundaries(float left, float right)
+    {
+        leftBoundary = left;
+        rightBoundary = right;
+    }
+
     public void SeekPlayer(Vector3 dirToPlayer)
     {
         float targetX;
@@ -116,11 +111,13 @@ public class Enemy : MonoBehaviour
             if (willHit)
             {
                 _rb.linearVelocityX = 0;
+                transform.rotation = Quaternion.Euler(0, targetX > 0 ? 0 : 180, 0);
             }
 
             else
             {
                 _rb.linearVelocityX = targetX;
+                transform.rotation = Quaternion.Euler(0, targetX > 0 ? 0 : 180, 0);
             }
         }
         else
@@ -134,11 +131,12 @@ public class Enemy : MonoBehaviour
             {
                 _rb.linearVelocityX = 0;
                 switchSides = !switchSides;
-                Debug.Log($"Enemy reversing direction at {transform.position.x}");
+                transform.rotation = Quaternion.Euler(0, targetX > 0 ? 180 : 0, 0);
             }
             else
             {
                 _rb.linearVelocityX = targetX;
+                transform.rotation = Quaternion.Euler(0, targetX > 0 ? 0 : 180, 0);
             }
         }
     }
@@ -201,21 +199,5 @@ public class Enemy : MonoBehaviour
     {
         float angle = Mathf.Atan2(-dir.x, dir.y) * Mathf.Rad2Deg;
         gameObject.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (Time.time >= _lastDamageTime + _damageCooldown)
-        {
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                if (playerController != null)
-                {
-                    Debug.Log($"Damage delt to player: {_contactDamage}");
-                    playerController.TakeDamage(_contactDamage);
-                    _lastDamageTime = Time.time;
-                }
-            }
-        }
     }
 }

@@ -8,18 +8,19 @@ public class Fireball : Ability
 
     [Header("Fireball Settings")]
     [SerializeField] private float _fireballHeight = 4f;
+    [SerializeField] private float _damage = 10.0f;
 
     private Transform _player;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         _player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     public override IEnumerator Execute()
     {
-        Debug.Log("Fireball!");
-
         Debug.Log("Boss: Fireball!");
 
         Vector3 _spawnPos = _player.position + Vector3.up * _fireballHeight;
@@ -29,22 +30,26 @@ public class Fireball : Ability
         yield return new WaitForSeconds(0.3f);
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            //_player = GameObject.FindGameObjectWithTag("Player");
-            //_player.TakeDamage(_contactDamage);
+            PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
+            playerController.TakeDamage(_damage);
             Destroy(gameObject);
         }
-        else if (collision.gameObject.layer == LayerMask.NameToLayer("Boss") || collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        else if (collision.gameObject.CompareTag("Boss") || collision.gameObject.CompareTag("Enemy"))
         {
-            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GetComponent<Collider2D>());
+            return;
+        }
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Platform"))
+        {
             return;
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 }

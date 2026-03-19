@@ -6,23 +6,27 @@ public class BossBasicAttacks : MonoBehaviour
 {
     [SerializeField] public float _damage = 10.0f;
     [SerializeField] public float _speed = 3f;
+    PlayerController _player;
     private Vector2 _direction = Vector2.down;
 
     private void Update()
     {
         transform.Translate(_direction * _speed * Time.deltaTime);
+        _player = GetComponent<PlayerController>();
     }
 
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (collision.gameObject.CompareTag("Boss")) {return;}
+            
+        if (collision.gameObject.CompareTag("Player"))
         {
-            //_player = GameObject.FindGameObjectWithTag("Player");
-            //_player.TakeDamage(_contactDamage);
+            _player.TakeDamage(_damage);
             Destroy(gameObject);
         }
-        else if (collision.gameObject.layer == LayerMask.NameToLayer("Boss") || collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        else if (collision.gameObject.CompareTag("Boss") || 
+                collision.gameObject.CompareTag("Enemy"))
         {
             Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
             return;
@@ -32,6 +36,4 @@ public class BossBasicAttacks : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
 }
