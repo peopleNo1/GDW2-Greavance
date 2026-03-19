@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Greavance_Title_Page_0: -31350757452161502
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

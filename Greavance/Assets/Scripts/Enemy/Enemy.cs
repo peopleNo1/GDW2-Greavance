@@ -62,6 +62,7 @@ public class Enemy : MonoBehaviour
     public virtual void TakeDamage(float damage)
     {
         _currentHealth -= damage;
+        Debug.Log($"Enemy took {damage} damage!");
     }
 
     public void HealDamage(float heal)
@@ -199,21 +200,5 @@ public class Enemy : MonoBehaviour
     {
         float angle = Mathf.Atan2(-dir.x, dir.y) * Mathf.Rad2Deg;
         gameObject.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-    }
-
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        if (Time.time >= _lastDamageTime + _damageCooldown)
-        {
-            if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Head"))
-            {
-                if (playerController != null)
-                {
-                    Debug.Log($"Damage delt to player: {_contactDamage}");
-                    playerController.TakeDamage(_contactDamage);
-                    _lastDamageTime = Time.time;
-                }
-            }
-        }
     }
 }

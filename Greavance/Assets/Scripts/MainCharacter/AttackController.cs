@@ -88,7 +88,13 @@ public class AttackController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            collision.gameObject.GetComponent<Enemy>().TakeDamage(attackDamage);
+            Debug.Log("Player damaged enemy");
+            collision.gameObject.GetComponent<BigEnemy>().TakeDamage(attackDamage);
+        }
+        if (collision.gameObject.tag == "Boss")
+        {
+            Debug.Log("Player damaged boss");
+            collision.gameObject.GetComponent<Boss>().TakeDamage(attackDamage);
         }
     }
 }

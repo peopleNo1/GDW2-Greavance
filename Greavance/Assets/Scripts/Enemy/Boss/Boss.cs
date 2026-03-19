@@ -70,6 +70,12 @@ public class Boss : MonoBehaviour
         _currentHealth = _maxHealth;
     }
 
+    public void TakeDamage(float damage)
+    {
+        _currentHealth -= damage;
+        Debug.Log($"Enemy took {damage} damage!");
+    }
+
     private void UpdatePhase1()
     {
         if (isActing)
