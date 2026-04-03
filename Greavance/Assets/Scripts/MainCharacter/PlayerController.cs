@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     private GamePlayControl gamePlayControl;
 
     bool start = true;
+    public bool isbossfight;
 
     void Start()
     {
@@ -49,10 +50,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (start && Input.anyKeyDown)
+        if (!isbossfight)
         {
-            start = false;
-            FindObjectOfType<Timer>().SetDone(true);
+            if (start && Input.anyKeyDown)
+            {
+                start = false;
+                FindObjectOfType<Timer>().SetDone(true);
+            }
         }
 
         //Checks if player is dead
@@ -155,12 +159,18 @@ public class PlayerController : MonoBehaviour
         currentHealth -= damage;
         if (currentHealth <= 0f)
         {
-            gamePlayControl.setHealth(0);
+            if (!isbossfight)
+            {
+                gamePlayControl.setHealth(0);
+            }
             _dead = true;
         }
         else
         {
-            gamePlayControl.setHealth(currentHealth);
+            if (!isbossfight)
+            {
+                gamePlayControl.setHealth(currentHealth);
+            }
         }
     }
 
