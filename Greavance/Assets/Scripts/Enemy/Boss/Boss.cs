@@ -1,12 +1,14 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class Boss : MonoBehaviour
 {
     Rigidbody2D _rb;
     protected PhaseManager phaseManager;
     protected BossBasicAttacks bossBasicAttacks;
+    [SerializeField] protected Slider slider;
 
     public Transform _playerPos;
 
@@ -46,24 +48,6 @@ public class Boss : MonoBehaviour
         phaseManager = GetComponent<PhaseManager>();
         bossBasicAttacks = GetComponent<BossBasicAttacks>();
         _spriteMovement = GetComponent<BossSpriteMovement>();
-
-        Debug.Log("=== BOSS COMPONENTS ===");
-        Component[] components = GetComponents<Component>();
-        foreach (Component comp in components)
-        {
-            Debug.Log($"Component: {comp.GetType().Name} on {gameObject.name}");
-        }
-        
-        // Check children too
-        foreach (Transform child in transform)
-        {
-            Debug.Log($"Child: {child.name} with components:");
-            Component[] childComps = child.GetComponents<Component>();
-            foreach (Component comp in childComps)
-            {
-                Debug.Log($"  - {comp.GetType().Name}");
-            }
-        }
     }
 
     public void Update()
@@ -92,6 +76,8 @@ public class Boss : MonoBehaviour
     private void ResetHealth()
     {
         _currentHealth = _maxHealth;
+        slider.maxValue = _maxHealth;
+        slider.value = _maxHealth;
     }
 
     public void TakeDamage(float damage)
@@ -99,6 +85,7 @@ public class Boss : MonoBehaviour
         _animator.SetTrigger("WasDamaged");
 
         _currentHealth -= damage;
+        slider.value -= damage;
 
         Debug.Log($"Boss received {damage} damage!");
     }
