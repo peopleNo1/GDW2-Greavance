@@ -8,14 +8,13 @@ public class RangedEnemy : Enemy
     [SerializeField] private Animator animator;
 
     [Header("Stats")]
-    [SerializeField] public float _desiredMaxHp = 50.0f;
+    [SerializeField] public float _desiredMaxHp = 50.0f; //Desired max hp overrides the default hp from enemy script
     [SerializeField] public float _damage = 10.0f;
     [SerializeField] private float _arrowCooldown = 2.0f;
     [SerializeField] private GameObject _arrowPrefab;
     [SerializeField] private Transform _firePoint;
 
     [HideInInspector]
-    public bool wasDamaged;
     private float _timeSinceLastArrow = 0.0f;
 
     protected override void Awake()
@@ -33,9 +32,9 @@ public class RangedEnemy : Enemy
     {
         base.Update();
 
-        CheckIFDamaged();
-
         _timeSinceLastArrow += Time.deltaTime;
+
+        animator = GetComponent<Animator>();
     }
 
     protected override void LateUpdate()
@@ -53,12 +52,30 @@ public class RangedEnemy : Enemy
         }
     }
 
-    public void CheckIFDamaged()
+    public override void TakeDamage(float damage)
     {
-        if (wasDamaged)
+        if (animator == null)
         {
-            animator.SetTrigger("wasDamaged");
+            Debug.LogError($"Animator is NULL on MidEnemy: {gameObject.name}");
+            animator = GetComponent<Animator>();
+
+            if (animator == null)
+            {
+                Debug.LogError($"Still couldn't find Animator on {gameObject.name}");
+            }
         }
+
+        if (animator != null)
+        {
+            Debug.Log($"Setting WasDamaged trigger on {gameObject.name}");
+            animator.SetTrigger("WasDamaged");
+        }
+        else
+        {
+            Debug.LogError($"Cannot play animation - animator is null on {gameObject.name}");
+        }
+
+        base.TakeDamage(damage);
     }
 
     private void ShootArrow()

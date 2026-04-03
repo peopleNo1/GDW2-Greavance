@@ -26,7 +26,6 @@ public class Enemy : MonoBehaviour
     public float _currentHealth = 150f;
     bool _calculatedThisFrame = false;
     public Vector3 _dirToPlayer;
-    public float _lastDamageTime;
     private bool changeDirection = false;
 
     protected virtual void Awake()
@@ -34,8 +33,6 @@ public class Enemy : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-
-        _lastDamageTime = Time.time;
     }
 
     protected virtual void Start()
@@ -215,8 +212,6 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Boss")) return;
         
-        if (Time.time < _lastDamageTime + _damageCooldown) return;
-        
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerController player = collision.gameObject.GetComponent<PlayerController>();
@@ -224,7 +219,6 @@ public class Enemy : MonoBehaviour
             {
                 float damage = GetDamageAmount();
                 player.TakeDamage(damage);
-                _lastDamageTime = Time.time;
             }
         }
     }

@@ -21,6 +21,10 @@ public class AttackController : MonoBehaviour
 
     [SerializeField] float attackDamage = 30;
 
+    private List<GameObject> damagedEnemiesThisAttack = new List<GameObject>(); //Keeps a list of damaged enemies
+
+    private bool hasDamagedOnForward = false; // Track if attack is in forward or backward phase
+
     private void Awake()
     {
         myRenderer = GetComponent<Renderer>();
@@ -37,6 +41,8 @@ public class AttackController : MonoBehaviour
             attackBack = false;
             attack = true;
             myRenderer.enabled = true;
+
+            damagedEnemiesThisAttack.Clear(); // Clear the list for this new attack
         }
 
         if (attack)
@@ -84,33 +90,37 @@ public class AttackController : MonoBehaviour
 
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if(!attack){return;}
-
-    //    if (collision.gameObject.tag == "Enemy")
-    //    {
-    //        Debug.Log("Player damaged enemy");
-    //        collision.gameObject.GetComponent<Enemy>().TakeDamage(attackDamage);
-    //    }
-    //    if (collision.gameObject.tag == "Boss")
-    //    {
-    //        Debug.Log("Player damaged boss");
-    //        Boss boss = collision.gameObject.GetComponent<Boss>();
-    //        boss.TakeDamage(attackDamage);
-    //    }
-    //}
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!attack) { return; }
 
+        if (!collision.isTrigger)
+        {
+            return; // ignores trigger collider from enemy.
+        }
+
+        if (attackBack)
+        {
+            return;
+        }
+
         if (collision.gameObject.tag == "Enemy")
         {
+            if (damagedEnemiesThisAttack.Contains(collision.gameObject))
+            {
+                return; // Returns if enemy was already damaged.
+            }
+
             Debug.Log("Player damaged enemy");
             collision.gameObject.GetComponent<Enemy>().TakeDamage(attackDamage);
         }
         if (collision.gameObject.tag == "Boss")
         {
+            if (damagedEnemiesThisAttack.Contains(collision.gameObject))
+            {
+                return;
+            }
+
             Debug.Log("Player damaged boss");
             Boss boss = collision.gameObject.GetComponent<Boss>();
             boss.TakeDamage(attackDamage);

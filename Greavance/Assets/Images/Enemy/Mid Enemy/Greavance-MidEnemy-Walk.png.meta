@@ -1,46 +1,37 @@
 fileFormatVersion: 2
-guid: 222d11d4180b11a46b85a66f6bf29a19
+guid: c8168ad733a264149a67a26824b8464b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2441381058494623623
-    second: Greavance-BigEnemy-Attack_0
+      213: 8325551766258336950
+    second: Greavance-MidEnemy-Walk_0
   - first:
-      213: 8022884081524926782
-    second: Greavance-BigEnemy-Attack_1
+      213: -6559127154257950784
+    second: Greavance-MidEnemy-Walk_1
   - first:
-      213: -5951239827249911655
-    second: Greavance-BigEnemy-Attack_2
+      213: -5461503069035171569
+    second: Greavance-MidEnemy-Walk_2
   - first:
-      213: 642902770641697512
-    second: Greavance-BigEnemy-Attack_3
+      213: 8276202147759020043
+    second: Greavance-MidEnemy-Walk_3
   - first:
-      213: -8665295706003128564
-    second: Greavance-BigEnemy-Attack_4
+      213: 8720272152394539165
+    second: Greavance-MidEnemy-Walk_4
   - first:
-      213: 910071431655836070
-    second: Greavance-BigEnemy-Attack_5
+      213: -3683201046061571379
+    second: Greavance-MidEnemy-Walk_5
   - first:
-      213: -3822135423500612448
-    second: Greavance-BigEnemy-Attack_6
+      213: -6584756378583516636
+    second: Greavance-MidEnemy-Walk_6
   - first:
-      213: 4613652078739302599
-    second: Greavance-BigEnemy-Attack_7
+      213: 6240353971623665119
+    second: Greavance-MidEnemy-Walk_7
   - first:
-      213: 4328552234334939351
-    second: Greavance-BigEnemy-Attack_8
+      213: 953437326082694296
+    second: Greavance-MidEnemy-Walk_8
   - first:
-      213: -5610391132080948839
-    second: Greavance-BigEnemy-Attack_9
-  - first:
-      213: -8053661094351562711
-    second: Greavance-BigEnemy-Attack_10
-  - first:
-      213: 3180990510647171310
-    second: Greavance-BigEnemy-Attack_11
-  - first:
-      213: 4379506300970523037
-    second: Greavance-BigEnemy-Attack_12
+      213: -2231487929924176044
+    second: Greavance-MidEnemy-Walk_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -136,221 +127,221 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Greavance-BigEnemy-Attack_0
+      name: Greavance-MidEnemy-Walk_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 20
-        width: 125
-        height: 197
+        x: 0
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9709f0fbcd87e1ed0800000000000000
-      internalID: -2441381058494623623
+      spriteID: 6b444f2883d4a8370800000000000000
+      internalID: 8325551766258336950
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Greavance-BigEnemy-Attack_2
+      name: Greavance-MidEnemy-Walk_1
       rect:
         serializedVersion: 2
-        x: 214
-        y: 20
-        width: 144
-        height: 197
+        x: 192
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 998ac9b78e2f86da0800000000000000
-      internalID: -5951239827249911655
+      spriteID: 0c706ddda9c49f4a0800000000000000
+      internalID: -6559127154257950784
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Greavance-BigEnemy-Attack_4
+      name: Greavance-MidEnemy-Walk_2
       rect:
         serializedVersion: 2
-        x: 408
-        y: 20
-        width: 157
-        height: 200
+        x: 384
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c0f37f1577faeb780800000000000000
-      internalID: -8665295706003128564
+      spriteID: f01f37e15e7d434b0800000000000000
+      internalID: -5461503069035171569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Greavance-BigEnemy-Attack_5
+      name: Greavance-MidEnemy-Walk_3
       rect:
         serializedVersion: 2
-        x: 617
-        y: 20
-        width: 143
-        height: 197
+        x: 576
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6a9c314352931ac00800000000000000
-      internalID: 910071431655836070
+      spriteID: b085082110afad270800000000000000
+      internalID: 8276202147759020043
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Greavance-BigEnemy-Attack_6
+      name: Greavance-MidEnemy-Walk_4
       rect:
         serializedVersion: 2
-        x: 812
-        y: 20
-        width: 149
-        height: 197
+        x: 768
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0ac0fc6351c05fac0800000000000000
-      internalID: -3822135423500612448
+      spriteID: d9025341251a40970800000000000000
+      internalID: 8720272152394539165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Greavance-BigEnemy-Attack_7
+      name: Greavance-MidEnemy-Walk_5
       rect:
         serializedVersion: 2
-        x: 1007
-        y: 20
-        width: 149
-        height: 197
+        x: 960
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7c8af761f1cf60040800000000000000
-      internalID: 4613652078739302599
+      spriteID: dc2272db924a2ecc0800000000000000
+      internalID: -3683201046061571379
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Greavance-BigEnemy-Attack_8
+      name: Greavance-MidEnemy-Walk_6
       rect:
         serializedVersion: 2
-        x: 1202
-        y: 20
-        width: 143
-        height: 197
+        x: 1152
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7d8e14fc25b121c30800000000000000
-      internalID: 4328552234334939351
+      spriteID: 42aba0216fe3e94a0800000000000000
+      internalID: -6584756378583516636
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Greavance-BigEnemy-Attack_9
+      name: Greavance-MidEnemy-Walk_7
       rect:
         serializedVersion: 2
-        x: 1397
-        y: 20
-        width: 143
-        height: 197
+        x: 1344
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 99930519df2e322b0800000000000000
-      internalID: -5610391132080948839
+      spriteID: fdd9357dfd03a9650800000000000000
+      internalID: 6240353971623665119
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Greavance-BigEnemy-Attack_10
+      name: Greavance-MidEnemy-Walk_8
       rect:
         serializedVersion: 2
-        x: 1586
-        y: 20
-        width: 152
-        height: 197
+        x: 1536
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9289ac1a7e5ab3090800000000000000
-      internalID: -8053661094351562711
+      spriteID: 89cd1c0523a4b3d00800000000000000
+      internalID: 953437326082694296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Greavance-BigEnemy-Attack_11
+      name: Greavance-MidEnemy-Walk_9
       rect:
         serializedVersion: 2
-        x: 1772
-        y: 20
-        width: 125
-        height: 197
+        x: 1728
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ee8530d0406252c20800000000000000
-      internalID: 3180990510647171310
+      spriteID: 4573c48fc892801e0800000000000000
+      internalID: -2231487929924176044
       vertices: []
       indices: 
       edges: []
@@ -359,7 +350,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 08fec2f82d6a65e4a83e1050332e84c3
+    spriteID: 821a11b71ec611e4fb26b18b202559cd
     internalID: 0
     vertices: []
     indices: 
@@ -369,16 +360,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Greavance-BigEnemy-Attack_0: -2441381058494623623
-      Greavance-BigEnemy-Attack_10: -8053661094351562711
-      Greavance-BigEnemy-Attack_11: 3180990510647171310
-      Greavance-BigEnemy-Attack_2: -5951239827249911655
-      Greavance-BigEnemy-Attack_4: -8665295706003128564
-      Greavance-BigEnemy-Attack_5: 910071431655836070
-      Greavance-BigEnemy-Attack_6: -3822135423500612448
-      Greavance-BigEnemy-Attack_7: 4613652078739302599
-      Greavance-BigEnemy-Attack_8: 4328552234334939351
-      Greavance-BigEnemy-Attack_9: -5610391132080948839
+      Greavance-MidEnemy-Walk_0: 8325551766258336950
+      Greavance-MidEnemy-Walk_1: -6559127154257950784
+      Greavance-MidEnemy-Walk_2: -5461503069035171569
+      Greavance-MidEnemy-Walk_3: 8276202147759020043
+      Greavance-MidEnemy-Walk_4: 8720272152394539165
+      Greavance-MidEnemy-Walk_5: -3683201046061571379
+      Greavance-MidEnemy-Walk_6: -6584756378583516636
+      Greavance-MidEnemy-Walk_7: 6240353971623665119
+      Greavance-MidEnemy-Walk_8: 953437326082694296
+      Greavance-MidEnemy-Walk_9: -2231487929924176044
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

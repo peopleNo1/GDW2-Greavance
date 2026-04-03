@@ -20,6 +20,7 @@ public class BigEnemy : Enemy
         base.Awake();
         _maxHealth = _desiredMaxHp;
         _damageCooldown = _desiredCooldown;
+        animator = GetComponent<Animator>();
     }
 
     protected override void Start()
@@ -30,8 +31,6 @@ public class BigEnemy : Enemy
     protected override void Update()
     {
         base.Update();
-
-        CheckIFDamaged();
     }
 
     protected override void LateUpdate()
@@ -46,12 +45,11 @@ public class BigEnemy : Enemy
         SeekPlayer(_dirToPlayer);
     }
 
-    public void CheckIFDamaged()
+    public override void TakeDamage(float damage)
     {
-        if (wasDamaged)
-        {
-            animator.SetTrigger("wasDamaged");
-        }
+        animator.SetTrigger("WasDamaged");
+
+        base.TakeDamage(damage);
     }
 
     protected override float GetDamageAmount()

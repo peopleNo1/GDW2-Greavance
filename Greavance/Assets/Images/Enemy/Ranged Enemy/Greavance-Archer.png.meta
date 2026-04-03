@@ -1,16 +1,22 @@
 fileFormatVersion: 2
-guid: 10dbbf0b91c612749a84d5f107d99972
+guid: 9838e3ae1251fc748ad810512866fb7b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5697075597170274273
-    second: Greavance-Enemy-Damaged_0
+      213: 101147856462060850
+    second: Greavance-Archer_0
   - first:
-      213: 4784812142019655652
-    second: Greavance-Enemy-Damaged_1
+      213: -2275298623044025494
+    second: Greavance-Archer_1
   - first:
-      213: 6873144601994152399
-    second: Greavance-Enemy-Damaged_2
+      213: 1662148559360880064
+    second: Greavance-Archer_2
+  - first:
+      213: 6972253282025502784
+    second: Greavance-Archer_3
+  - first:
+      213: -7088745482859124682
+    second: Greavance-Archer_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,7 +60,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -106,67 +112,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Greavance-Enemy-Damaged_0
+      name: Greavance-Archer_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 29
-        width: 65
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 164
+        height: 144
+      alignment: 9
+      pivot: {x: 0.3429319, y: 0.49337482}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f109e14cdebefe0b0800000000000000
-      internalID: -5697075597170274273
+      spriteID: 23d96368079576100800000000000000
+      internalID: 101147856462060850
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Greavance-Enemy-Damaged_1
+      name: Greavance-Archer_1
       rect:
         serializedVersion: 2
-        x: 104
-        y: 29
-        width: 65
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 164
+        y: 0
+        width: 164
+        height: 144
+      alignment: 9
+      pivot: {x: 0.3429319, y: 0.4933748}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4e7be0aca41176240800000000000000
-      internalID: 4784812142019655652
+      spriteID: a63868715f38c60e0800000000000000
+      internalID: -2275298623044025494
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Greavance-Enemy-Damaged_2
+      name: Greavance-Archer_2
       rect:
         serializedVersion: 2
-        x: 203
-        y: 29
-        width: 65
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 327
+        y: 0
+        width: 164
+        height: 144
+      alignment: 9
+      pivot: {x: 0.3429319, y: 0.4933748}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fc941cb9990526f50800000000000000
-      internalID: 6873144601994152399
+      spriteID: 0cde1acee43211710800000000000000
+      internalID: 1662148559360880064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greavance-Archer_3
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 0
+        width: 164
+        height: 144
+      alignment: 9
+      pivot: {x: 0.3429319, y: 0.4933748}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0487e2f5b6b62c060800000000000000
+      internalID: 6972253282025502784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greavance-Archer_4
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 0
+        width: 164
+        height: 144
+      alignment: 9
+      pivot: {x: 0.3429319, y: 0.4933748}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 638e6078a87bf9d90800000000000000
+      internalID: -7088745482859124682
       vertices: []
       indices: 
       edges: []
@@ -175,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9dc633b44cbbd4e488cb63be1fe8a54a
     internalID: 0
     vertices: []
     indices: 
@@ -185,9 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Greavance-Enemy-Damaged_0: -5697075597170274273
-      Greavance-Enemy-Damaged_1: 4784812142019655652
-      Greavance-Enemy-Damaged_2: 6873144601994152399
+      Greavance-Archer_0: 101147856462060850
+      Greavance-Archer_1: -2275298623044025494
+      Greavance-Archer_2: 1662148559360880064
+      Greavance-Archer_3: 6972253282025502784
+      Greavance-Archer_4: -7088745482859124682
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

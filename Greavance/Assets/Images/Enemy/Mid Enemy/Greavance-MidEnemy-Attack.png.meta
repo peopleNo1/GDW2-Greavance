@@ -142,20 +142,20 @@ TextureImporter:
       name: Greavance-MidEnemy-Attack_0
       rect:
         serializedVersion: 2
-        x: 35
-        y: 8
-        width: 101
-        height: 128
+        x: 0
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 91db782f1379a2be0800000000000000
-      internalID: -1501221284996465383
+      spriteID: 4d05664100ff32143bc985cbc62a3565
+      internalID: 275582583
       vertices: []
       indices: 
       edges: []
@@ -164,20 +164,20 @@ TextureImporter:
       name: Greavance-MidEnemy-Attack_1
       rect:
         serializedVersion: 2
-        x: 227
-        y: 8
-        width: 119
-        height: 125
+        x: 192
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 59542625aecb1d430800000000000000
-      internalID: 3806030874695320981
+      spriteID: 910ee4f656730e14c928f6f1cb338aeb
+      internalID: -1839522512
       vertices: []
       indices: 
       edges: []
@@ -186,20 +186,42 @@ TextureImporter:
       name: Greavance-MidEnemy-Attack_2
       rect:
         serializedVersion: 2
-        x: 419
-        y: 8
-        width: 131
-        height: 125
+        x: 384
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 550be5909f82f05b0800000000000000
-      internalID: -5400052378124767147
+      spriteID: e2333ddf98bc72443946f3059a00d4c9
+      internalID: -772466199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greavance-MidEnemy-Attack_3
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a322c758ef3bd414b810f6172bcdc9f0
+      internalID: -128784871
       vertices: []
       indices: 
       edges: []
@@ -208,20 +230,42 @@ TextureImporter:
       name: Greavance-MidEnemy-Attack_4
       rect:
         serializedVersion: 2
-        x: 596
-        y: 8
-        width: 167
-        height: 127
+        x: 768
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9a7fb05fd795909e0800000000000000
-      internalID: -1654692990564960343
+      spriteID: 34a25489ee80f134b9b7708dfd3bab89
+      internalID: -2040552375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greavance-MidEnemy-Attack_5
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9067a6f980a4bc49a0e9552cb0d8938
+      internalID: -2250018
       vertices: []
       indices: 
       edges: []
@@ -230,20 +274,42 @@ TextureImporter:
       name: Greavance-MidEnemy-Attack_6
       rect:
         serializedVersion: 2
-        x: 790
-        y: 8
-        width: 165
-        height: 126
+        x: 1152
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fa6436cad4305cb00800000000000000
-      internalID: 848087736968758959
+      spriteID: 4187d8717e83e27459050935227dd525
+      internalID: 344682056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greavance-MidEnemy-Attack_7
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d070fdf407034d646b7e3ada3e97c3fa
+      internalID: -467534220
       vertices: []
       indices: 
       edges: []
@@ -252,108 +318,42 @@ TextureImporter:
       name: Greavance-MidEnemy-Attack_8
       rect:
         serializedVersion: 2
-        x: 982
-        y: 8
-        width: 165
-        height: 127
+        x: 1536
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 901d1d0cd0dbd1130800000000000000
-      internalID: 3539192748950278409
+      spriteID: ac19bb6efe0a6034fa499f2ee3c543ac
+      internalID: 1451816592
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Greavance-MidEnemy-Attack_10
+      name: Greavance-MidEnemy-Attack_9
       rect:
         serializedVersion: 2
-        x: 1173
-        y: 8
-        width: 166
-        height: 127
+        x: 1728
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5b6c0550bf569edd0800000000000000
-      internalID: -2456319992953518411
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Greavance-MidEnemy-Attack_11
-      rect:
-        serializedVersion: 2
-        x: 1379
-        y: 8
-        width: 131
-        height: 125
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b11af17abd1120300800000000000000
-      internalID: 216755367166583067
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Greavance-MidEnemy-Attack_12
-      rect:
-        serializedVersion: 2
-        x: 1571
-        y: 8
-        width: 119
-        height: 125
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8f4f24514af36df90800000000000000
-      internalID: -6929281002699033352
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Greavance-MidEnemy-Attack_13
-      rect:
-        serializedVersion: 2
-        x: 1763
-        y: 8
-        width: 101
-        height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e70f38aa0e3369920800000000000000
-      internalID: 2996639642088108158
+      spriteID: 3728dc8459273e249b28c99c55a34794
+      internalID: 2092438482
       vertices: []
       indices: 
       edges: []
@@ -372,7 +372,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Greavance-MidEnemy-Attack_14: 1693343783
+      Greavance-MidEnemy-Attack_0: 275582583
+      Greavance-MidEnemy-Attack_1: -1839522512
+      Greavance-MidEnemy-Attack_2: -772466199
+      Greavance-MidEnemy-Attack_3: -128784871
+      Greavance-MidEnemy-Attack_4: -2040552375
+      Greavance-MidEnemy-Attack_5: -2250018
+      Greavance-MidEnemy-Attack_6: 344682056
+      Greavance-MidEnemy-Attack_7: -467534220
+      Greavance-MidEnemy-Attack_8: 1451816592
+      Greavance-MidEnemy-Attack_9: 2092438482
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

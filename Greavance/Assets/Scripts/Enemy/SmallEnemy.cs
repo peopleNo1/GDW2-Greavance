@@ -11,12 +11,11 @@ public class SmallEnemy : Enemy
     [SerializeField] public float _desiredMaxHp = 50.0f;
     [SerializeField] public float _damage = 10.0f;
 
-    public bool wasDamaged;
-
     protected override void Awake()
     {
         base.Awake();
         _maxHealth = _desiredMaxHp;
+        animator = GetComponent<Animator>();
     }
 
     protected override void Start()
@@ -27,8 +26,6 @@ public class SmallEnemy : Enemy
     protected override void Update()
     {
         base.Update();
-
-        CheckIFDamaged();
     }
 
     protected override void LateUpdate()
@@ -43,12 +40,30 @@ public class SmallEnemy : Enemy
         SeekPlayer(_dirToPlayer);
     }
 
-    public void CheckIFDamaged()
+    public override void TakeDamage(float damage)
     {
-        if (wasDamaged)
+        if (animator == null)
         {
-            animator.SetTrigger("wasDamaged");
+            Debug.LogError($"Animator is NULL on MidEnemy: {gameObject.name}");
+            animator = GetComponent<Animator>();
+
+            if (animator == null)
+            {
+                Debug.LogError($"Still couldn't find Animator on {gameObject.name}");
+            }
         }
+
+        if (animator != null)
+        {
+            Debug.Log($"Setting WasDamaged trigger on {gameObject.name}");
+            animator.SetTrigger("WasDamaged");
+        }
+        else
+        {
+            Debug.LogError($"Cannot play animation - animator is null on {gameObject.name}");
+        }
+
+        base.TakeDamage(damage);
     }
 
     protected override float GetDamageAmount()
