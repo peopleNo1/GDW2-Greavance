@@ -22,6 +22,7 @@ public class BossSummon : Ability
     private Dictionary<Transform, bool> _platformOccupancy = new Dictionary<Transform, bool>();
     private Dictionary<Transform, GameObject> _spawnedEnemies = new Dictionary<Transform, GameObject>();
 
+    //Keep track of which platform has an enemy on
     private List<Vector3> _spawnPositions = new List<Vector3>();
     private List<float> _leftBoundaries = new List<float>();
     private List<float> _rightBoundaries = new List<float>();
@@ -60,104 +61,6 @@ public class BossSummon : Ability
         return healthPercent <= 50f;
     }
 
-    // public override IEnumerator Execute()
-    // {
-    //     int enemyCount = Random.Range(_minEnemies, _maxEnemies + 1);
-
-    //     List<SpawnPointInfo> groundSpawns = new List<SpawnPointInfo>();
-    //     List<SpawnPointInfo> platformSpawns = new List<SpawnPointInfo>();
-
-    //     foreach (Transform point in _groundSpawnPoints)
-    //     {
-    //         if (point != null)
-    //         {
-    //             SpawnPointInfo info = GetSpawnPointInfo(point, false);
-    //             if (info != null)
-    //             {
-    //                 groundSpawns.Add(info);
-    //             }
-    //         }
-    //     }
-
-    //     foreach (Transform point in _platformSpawnPoints)
-    //     {
-    //         if (point != null)
-    //         {
-    //             if (_platformOccupancy.ContainsKey(point) && _platformOccupancy[point])
-    //             {
-    //                 continue;
-    //             }
-    //             SpawnPointInfo info = GetSpawnPointInfo(point, true);
-    //             if (info != null)
-    //             {
-    //                 info.platformTransform = point;
-    //                 platformSpawns.Add(info);
-    //             }
-    //         }
-    //     }
-
-    //     List<SpawnPointInfo> availableSpawns = new List<SpawnPointInfo>();
-    //     availableSpawns.AddRange(groundSpawns);
-    //     availableSpawns.AddRange(platformSpawns);
-
-    //     if (availableSpawns.Count == 0)
-    //     {
-    //         yield break;
-    //     }
-
-    //     int actualSpawnCount = Mathf.Min(enemyCount, availableSpawns.Count);
-
-    //     for (int i = 0; i < actualSpawnCount; i++)
-    //     {
-    //         if (_enemyPrefabs == null || _enemyPrefabs.Length == 0)
-    //         {
-    //             Debug.LogError("No enemy prefabs assigned!");
-    //             yield break;
-    //         }
-
-    //         GameObject enemyPrefab = _enemyPrefabs[Random.Range(0, _enemyPrefabs.Length)];
-
-    //         int spawnIndex = Random.Range(0, availableSpawns.Count);
-    //         SpawnPointInfo spawnInfo = availableSpawns[spawnIndex];
-
-    //         GameObject summonEffect = null;
-    //         if (_summonCirclePrefab != null)
-    //         {
-    //             summonEffect = Instantiate(_summonCirclePrefab, spawnInfo.position, Quaternion.identity);
-    //         }
-
-    //         yield return new WaitForSeconds(_animationDuration);
-
-    //         if (summonEffect != null)
-    //         {
-    //             Destroy(summonEffect);
-    //         }
-
-    //         GameObject newEnemy = Instantiate(enemyPrefab, spawnInfo.position, Quaternion.identity);
-
-    //         Enemy enemyComponent = newEnemy.GetComponent<Enemy>();
-    //         if (enemyComponent != null)
-    //         {
-    //             enemyComponent.SetCustomBoundaries(spawnInfo.leftBoundary, spawnInfo.rightBoundary);
-    //             Debug.Log($"Spawned {enemyPrefab.name} with boundaries: {spawnInfo.leftBoundary} to {spawnInfo.rightBoundary}");
-    //         }
-
-    //         if (spawnInfo.platformTransform != null)
-    //         {
-    //             _platformOccupancy[spawnInfo.platformTransform] = true;
-    //             _spawnedEnemies[spawnInfo.platformTransform] = newEnemy;
-
-    //             StartCoroutine(MonitorEnemyDeath(newEnemy, spawnInfo.platformTransform));
-    //         }
-
-    //         availableSpawns.RemoveAt(spawnIndex);
-
-    //         if (i < enemyCount - 1)
-    //         {
-    //             yield return new WaitForSeconds(_spawnDelay);
-    //         }
-    //     }
-    // }
     public override IEnumerator Execute()
     {
         int enemyCount = Random.Range(_minEnemies, _maxEnemies + 1);

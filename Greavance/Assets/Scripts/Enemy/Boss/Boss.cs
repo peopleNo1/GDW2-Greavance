@@ -40,7 +40,7 @@ public class Boss : MonoBehaviour
     [SerializeField] private Transform _pointB;
     [SerializeField] private float _movingSpeed = 8f;
 
-    private int reachedTarget = 0;
+    private int reachedTarget = 0; // A count so that the boss doesnt flip when phase 2 starts
 
     protected void Awake()
     {
@@ -102,17 +102,17 @@ public class Boss : MonoBehaviour
     {
         if (isActing)
         {
-            return;
+            return; // if acting, finish the action before moving again
         }
 
         if (isCasting)
         {
-            return;
+            return; // If casting, finish casting before moving again
         }
 
         if (Time.time < nextActionTime)
         {
-            return;
+            return; // Time between actions
         }
 
         if (_basicAttackUsed < _basicAttackToUse)
@@ -124,6 +124,7 @@ public class Boss : MonoBehaviour
         {
             _animator.SetTrigger("CastTrigger");
 
+            //Selects a random ability from the ability list (This is for phase 1)
             BossAbilities abilities = GetComponent<BossAbilities>();
             if (abilities != null)
             {
@@ -155,7 +156,7 @@ public class Boss : MonoBehaviour
         StartCoroutine(PatrolBeforeAbility());
     }
 
-    private IEnumerator PatrolBeforeAbility()
+    private IEnumerator PatrolBeforeAbility() // Move between point A and B. Afterwards, execute an ability
     {
         isActing = true;
 

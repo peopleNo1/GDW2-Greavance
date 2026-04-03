@@ -28,7 +28,7 @@ public class BossAbilities : MonoBehaviour
         if (_regenerateAbility != null) _availableAbilities.Add(_regenerateAbility);
     }
 
-    public Ability GetRandomAbility()
+    public Ability GetRandomAbility() // Get a random ability from the ability scripts and adds to a valid abilities list(should only add abilities not used in the last 2)
     {
         List<Ability> validAbilities = new List<Ability>();
 
