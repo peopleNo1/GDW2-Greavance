@@ -22,6 +22,11 @@ public class BossSummon : Ability
     private Dictionary<Transform, bool> _platformOccupancy = new Dictionary<Transform, bool>();
     private Dictionary<Transform, GameObject> _spawnedEnemies = new Dictionary<Transform, GameObject>();
 
+    private List<Vector3> _spawnPositions = new List<Vector3>();
+    private List<float> _leftBoundaries = new List<float>();
+    private List<float> _rightBoundaries = new List<float>();
+    private List<Transform> _platformTransforms = new List<Transform>();
+
     private Transform _player;
     private PhaseManager _phaseManager;
     private Boss boss;
@@ -55,22 +60,118 @@ public class BossSummon : Ability
         return healthPercent <= 50f;
     }
 
+    // public override IEnumerator Execute()
+    // {
+    //     int enemyCount = Random.Range(_minEnemies, _maxEnemies + 1);
+
+    //     List<SpawnPointInfo> groundSpawns = new List<SpawnPointInfo>();
+    //     List<SpawnPointInfo> platformSpawns = new List<SpawnPointInfo>();
+
+    //     foreach (Transform point in _groundSpawnPoints)
+    //     {
+    //         if (point != null)
+    //         {
+    //             SpawnPointInfo info = GetSpawnPointInfo(point, false);
+    //             if (info != null)
+    //             {
+    //                 groundSpawns.Add(info);
+    //             }
+    //         }
+    //     }
+
+    //     foreach (Transform point in _platformSpawnPoints)
+    //     {
+    //         if (point != null)
+    //         {
+    //             if (_platformOccupancy.ContainsKey(point) && _platformOccupancy[point])
+    //             {
+    //                 continue;
+    //             }
+    //             SpawnPointInfo info = GetSpawnPointInfo(point, true);
+    //             if (info != null)
+    //             {
+    //                 info.platformTransform = point;
+    //                 platformSpawns.Add(info);
+    //             }
+    //         }
+    //     }
+
+    //     List<SpawnPointInfo> availableSpawns = new List<SpawnPointInfo>();
+    //     availableSpawns.AddRange(groundSpawns);
+    //     availableSpawns.AddRange(platformSpawns);
+
+    //     if (availableSpawns.Count == 0)
+    //     {
+    //         yield break;
+    //     }
+
+    //     int actualSpawnCount = Mathf.Min(enemyCount, availableSpawns.Count);
+
+    //     for (int i = 0; i < actualSpawnCount; i++)
+    //     {
+    //         if (_enemyPrefabs == null || _enemyPrefabs.Length == 0)
+    //         {
+    //             Debug.LogError("No enemy prefabs assigned!");
+    //             yield break;
+    //         }
+
+    //         GameObject enemyPrefab = _enemyPrefabs[Random.Range(0, _enemyPrefabs.Length)];
+
+    //         int spawnIndex = Random.Range(0, availableSpawns.Count);
+    //         SpawnPointInfo spawnInfo = availableSpawns[spawnIndex];
+
+    //         GameObject summonEffect = null;
+    //         if (_summonCirclePrefab != null)
+    //         {
+    //             summonEffect = Instantiate(_summonCirclePrefab, spawnInfo.position, Quaternion.identity);
+    //         }
+
+    //         yield return new WaitForSeconds(_animationDuration);
+
+    //         if (summonEffect != null)
+    //         {
+    //             Destroy(summonEffect);
+    //         }
+
+    //         GameObject newEnemy = Instantiate(enemyPrefab, spawnInfo.position, Quaternion.identity);
+
+    //         Enemy enemyComponent = newEnemy.GetComponent<Enemy>();
+    //         if (enemyComponent != null)
+    //         {
+    //             enemyComponent.SetCustomBoundaries(spawnInfo.leftBoundary, spawnInfo.rightBoundary);
+    //             Debug.Log($"Spawned {enemyPrefab.name} with boundaries: {spawnInfo.leftBoundary} to {spawnInfo.rightBoundary}");
+    //         }
+
+    //         if (spawnInfo.platformTransform != null)
+    //         {
+    //             _platformOccupancy[spawnInfo.platformTransform] = true;
+    //             _spawnedEnemies[spawnInfo.platformTransform] = newEnemy;
+
+    //             StartCoroutine(MonitorEnemyDeath(newEnemy, spawnInfo.platformTransform));
+    //         }
+
+    //         availableSpawns.RemoveAt(spawnIndex);
+
+    //         if (i < enemyCount - 1)
+    //         {
+    //             yield return new WaitForSeconds(_spawnDelay);
+    //         }
+    //     }
+    // }
     public override IEnumerator Execute()
     {
         int enemyCount = Random.Range(_minEnemies, _maxEnemies + 1);
 
-        List<SpawnPointInfo> groundSpawns = new List<SpawnPointInfo>();
-        List<SpawnPointInfo> platformSpawns = new List<SpawnPointInfo>();
+        _spawnPositions.Clear();
+        _leftBoundaries.Clear();
+        _rightBoundaries.Clear();
+        _platformTransforms.Clear();
 
         foreach (Transform point in _groundSpawnPoints)
         {
             if (point != null)
             {
-                SpawnPointInfo info = GetSpawnPointInfo(point, false);
-                if (info != null)
-                {
-                    groundSpawns.Add(info);
-                }
+                GetSpawnPointData(point, false);
             }
         }
 
@@ -80,27 +181,18 @@ public class BossSummon : Ability
             {
                 if (_platformOccupancy.ContainsKey(point) && _platformOccupancy[point])
                 {
-                    continue;
+                    continue; // Skip occupied platforms
                 }
-                SpawnPointInfo info = GetSpawnPointInfo(point, true);
-                if (info != null)
-                {
-                    info.platformTransform = point;
-                    platformSpawns.Add(info);
-                }
+                GetSpawnPointData(point, true);
             }
         }
 
-        List<SpawnPointInfo> availableSpawns = new List<SpawnPointInfo>();
-        availableSpawns.AddRange(groundSpawns);
-        availableSpawns.AddRange(platformSpawns);
-
-        if (availableSpawns.Count == 0)
+        if (_spawnPositions.Count == 0)
         {
             yield break;
         }
 
-        int actualSpawnCount = Mathf.Min(enemyCount, availableSpawns.Count);
+        int actualSpawnCount = Mathf.Min(enemyCount, _spawnPositions.Count);
 
         for (int i = 0; i < actualSpawnCount; i++)
         {
@@ -112,13 +204,18 @@ public class BossSummon : Ability
             
             GameObject enemyPrefab = _enemyPrefabs[Random.Range(0, _enemyPrefabs.Length)];
 
-            int spawnIndex = Random.Range(0, availableSpawns.Count);
-            SpawnPointInfo spawnInfo = availableSpawns[spawnIndex];
+            int spawnIndex = Random.Range(0, _spawnPositions.Count);
+            
+            // Get spawn data from lists
+            Vector3 spawnPos = _spawnPositions[spawnIndex];
+            float leftBoundary = _leftBoundaries[spawnIndex];
+            float rightBoundary = _rightBoundaries[spawnIndex];
+            Transform platformTransform = _platformTransforms[spawnIndex];
 
             GameObject summonEffect = null;
             if (_summonCirclePrefab != null)
             {
-                summonEffect = Instantiate(_summonCirclePrefab, spawnInfo.position, Quaternion.identity);
+                summonEffect = Instantiate(_summonCirclePrefab, spawnPos, Quaternion.identity);
             }
 
             yield return new WaitForSeconds(_animationDuration);
@@ -128,30 +225,62 @@ public class BossSummon : Ability
                 Destroy(summonEffect);
             }
             
-            GameObject newEnemy = Instantiate(enemyPrefab, spawnInfo.position, Quaternion.identity);
+            GameObject newEnemy = Instantiate(enemyPrefab, spawnPos, Quaternion.identity);
             
             Enemy enemyComponent = newEnemy.GetComponent<Enemy>();
             if (enemyComponent != null)
             {
-                enemyComponent.SetCustomBoundaries(spawnInfo.leftBoundary, spawnInfo.rightBoundary);
-                Debug.Log($"Spawned {enemyPrefab.name} with boundaries: {spawnInfo.leftBoundary} to {spawnInfo.rightBoundary}");
+                enemyComponent.SetCustomBoundaries(leftBoundary, rightBoundary);
+                Debug.Log($"Spawned {enemyPrefab.name} with boundaries: {leftBoundary} to {rightBoundary}");
             }
 
-            if (spawnInfo.platformTransform != null)
+            // Mark platform as occupied if it's a platform spawn
+            if (platformTransform != null)
             {
-                _platformOccupancy[spawnInfo.platformTransform] = true;
-                _spawnedEnemies[spawnInfo.platformTransform] = newEnemy;
-
-                StartCoroutine(MonitorEnemyDeath(newEnemy, spawnInfo.platformTransform));
+                _platformOccupancy[platformTransform] = true;
+                _spawnedEnemies[platformTransform] = newEnemy;
+                StartCoroutine(MonitorEnemyDeath(newEnemy, platformTransform));
             }
 
-            availableSpawns.RemoveAt(spawnIndex);
+            // Remove used spawn point
+            _spawnPositions.RemoveAt(spawnIndex);
+            _leftBoundaries.RemoveAt(spawnIndex);
+            _rightBoundaries.RemoveAt(spawnIndex);
+            _platformTransforms.RemoveAt(spawnIndex);
             
             if (i < enemyCount - 1)
             {
                 yield return new WaitForSeconds(_spawnDelay);
             }
         }
+    }
+
+    private void GetSpawnPointData(Transform point, bool isPlatform)
+    {
+        Vector3 spawnPos = point.position;
+        float leftBoundary = spawnPos.x - 2f;
+        float rightBoundary = spawnPos.x + 2f;
+        Transform platformTransform = isPlatform ? point : null;
+        
+        Collider2D[] colliders = Physics2D.OverlapPointAll(point.position);
+        
+        foreach (Collider2D col in colliders)
+        {
+            if ((isPlatform && col.gameObject.layer == LayerMask.NameToLayer("Platform")) || 
+                (!isPlatform && col.gameObject.layer == LayerMask.NameToLayer("Ground")))
+            {
+                Bounds bounds = col.bounds;
+                leftBoundary = bounds.min.x + 0.3f;
+                rightBoundary = bounds.max.x - 0.3f;
+                spawnPos = new Vector3(point.position.x, bounds.max.y + 0.3f, 0);
+                break;
+            }
+        }
+        
+        _spawnPositions.Add(spawnPos);
+        _leftBoundaries.Add(leftBoundary);
+        _rightBoundaries.Add(rightBoundary);
+        _platformTransforms.Add(platformTransform);
     }
 
     private IEnumerator MonitorEnemyDeath(GameObject enemy, Transform platform)
@@ -172,49 +301,9 @@ public class BossSummon : Ability
         }
     }
 
-    private SpawnPointInfo GetSpawnPointInfo(Transform point, bool isPlatform)
-    {
-        SpawnPointInfo info = new SpawnPointInfo();
-        info.position = point.position;
-        
-        Collider2D[] colliders = Physics2D.OverlapPointAll(point.position);
-        
-        foreach (Collider2D col in colliders)
-        {
-            if ((isPlatform && col.gameObject.layer == LayerMask.NameToLayer("Platform")) || (!isPlatform && col.gameObject.layer == LayerMask.NameToLayer("Ground")))
-            {
-                Bounds bounds = col.bounds;
-                info.leftBoundary = bounds.min.x + 0.3f; 
-                info.rightBoundary = bounds.max.x - 0.3f;
-                info.position = new Vector3(point.position.x, bounds.max.y + 0.3f, 0);
-
-                if (isPlatform)
-                {
-                    info.platformTransform = point;
-                }
-
-                return info;
-            }
-        }
-        
-        info.leftBoundary = point.position.x - 2f;
-        info.rightBoundary = point.position.x + 2f;
-        
-        return info;
-    }
-
     private void OnDestroy()
     {
         _platformOccupancy.Clear();
         _spawnedEnemies.Clear();
-    }
-
-    [System.Serializable]
-    private class SpawnPointInfo
-    {
-        public Vector3 position;
-        public float leftBoundary;
-        public float rightBoundary;
-        public Transform platformTransform;
     }
 }

@@ -36,6 +36,7 @@ public class Fireball : Ability
         {
             PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
             playerController.TakeDamage(_damage);
+            Destroy(this.gameObject);
         }
         else if (collision.gameObject.CompareTag("Boss") || collision.gameObject.CompareTag("Enemy"))
         {
