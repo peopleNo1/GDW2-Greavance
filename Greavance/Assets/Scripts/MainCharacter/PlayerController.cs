@@ -17,12 +17,16 @@ public class PlayerController : MonoBehaviour
 
 
     public float _jumpForce = 7f;
+    bool _jumped = false;
     bool _isGrounded = false;
 
     bool _facingRight = false;
     private Vector2 _moveInput;
 
     public bool _dead = false;
+
+    public bool _doubleJump = false;
+    
 
     Rigidbody2D _rb;
     Animator _ani;
@@ -71,6 +75,8 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
+
+
             //Hotkey for player dead  FIX THIS PART TO CONNECT WITH HEALTH
             //now jusst test is working
             if (Input.GetKeyDown(KeyCode.K) && _isGrounded)
@@ -85,14 +91,22 @@ public class PlayerController : MonoBehaviour
 
                 FlipSprite();
 
+                if (Input.GetButtonDown("Jump") && !_isGrounded && _doubleJump)
+                {
+                    _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, _jumpForce);
+                    _doubleJump = false;
+                    Debug.Log("DoubleJump");
+                }
+
                 if (Input.GetButtonDown("Jump") && _isGrounded)
                 {
                     _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, _jumpForce);
                     _isGrounded = false;
+                    _doubleJump = true;
                     _ani.SetBool("isJumping", !_isGrounded);
                 }
-            }
 
+            }
         }
         else
         {
@@ -128,6 +142,7 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         _isGrounded = true;
+        
         _ani.SetBool("isJumping", !_isGrounded);
     }
 
@@ -148,4 +163,6 @@ public class PlayerController : MonoBehaviour
             gamePlayControl.setHealth(currentHealth);
         }
     }
+
+
 }
