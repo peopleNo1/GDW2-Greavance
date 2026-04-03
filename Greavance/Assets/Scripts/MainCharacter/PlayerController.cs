@@ -1,9 +1,10 @@
-using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.InputSystem;
-using System;
 using UnityEditor;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -115,7 +116,14 @@ public class PlayerController : MonoBehaviour
         else
         {
             _ani.SetBool("Dead", true);
+            StartCoroutine(Die());
         }
+    }
+
+    public IEnumerator Die()
+    {
+        yield return new WaitForSeconds(2.5f);
+        SceneManager.LoadScene("Death");
     }
 
     private void FixedUpdate()
