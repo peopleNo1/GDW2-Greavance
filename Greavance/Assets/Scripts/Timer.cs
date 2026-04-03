@@ -9,6 +9,11 @@ public class Timer : MonoBehaviour
     bool done;
     int time;
 
+    void Start()
+    {
+        Continue();
+    }
+
     void Update()
     {
         if (done)

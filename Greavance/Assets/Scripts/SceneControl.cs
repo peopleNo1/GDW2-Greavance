@@ -7,4 +7,9 @@ public class SceneControl : MonoBehaviour
     {
         SceneManager.LoadScene("GamePlay");
     }
+
+    public void GoToTitlePage()
+    {
+        SceneManager.LoadScene("Title");
+    }
 }
