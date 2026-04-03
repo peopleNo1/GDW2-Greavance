@@ -6,7 +6,7 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] Text text;
     bool isStop;
-    bool done = true;
+    bool done;
     int time;
 
     void Update()
@@ -34,6 +34,11 @@ public class Timer : MonoBehaviour
 
         yield return new WaitForSeconds(1);
         done = true;
+    }
+
+    public void SetDone(bool isDone)
+    {
+        done = isDone;
     }
 
     public void Pause()

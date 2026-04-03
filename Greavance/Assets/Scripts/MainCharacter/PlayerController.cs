@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using System;
+using UnityEditor;
 
 public class PlayerController : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float currentHealth;
     private GamePlayControl gamePlayControl;
 
+    bool start = true;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -42,6 +45,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (start && _isGrounded && Input.anyKeyDown)
+        {
+            start = false;
+            FindObjectOfType<Timer>().SetDone(true);
+        }
+
         //Checks if player is dead
         if (!_dead)
         {
