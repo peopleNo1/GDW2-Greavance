@@ -39,7 +39,5 @@ public class Shield : MonoBehaviour
         {
             _regenerateAbility.OnShieldDestroy();
         }
-
-        Destroy(gameObject);
     }
 }

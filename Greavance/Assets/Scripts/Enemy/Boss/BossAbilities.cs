@@ -65,8 +65,6 @@ public class BossAbilities : MonoBehaviour
     {
         boss.isCasting = true;
 
-        boss.TriggerCasting();
-
         abilityHistory.Enqueue(ability.name);
         if (abilityHistory.Count > 2)
         {

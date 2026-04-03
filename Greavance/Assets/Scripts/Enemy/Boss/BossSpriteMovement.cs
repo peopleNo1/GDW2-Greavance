@@ -26,11 +26,4 @@ public class BossSpriteMovement : MonoBehaviour
     {
         _boss._animator.SetBool("isMoving", false);
     }
-
-    public void SetFacingDirection(bool facingRight)
-    {
-        Vector3 scale = transform.localScale;
-        scale.x = facingRight ? Mathf.Abs(scale.x) : -Mathf.Abs(scale.x);
-        transform.localScale = scale;
-    }
 }

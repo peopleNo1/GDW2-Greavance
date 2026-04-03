@@ -38,6 +38,8 @@ public class Boss : MonoBehaviour
     [SerializeField] private Transform _pointB;
     [SerializeField] private float _movingSpeed = 8f;
 
+    private int reachedTarget = 0;
+
     protected void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -66,6 +68,8 @@ public class Boss : MonoBehaviour
 
     public void Update()
     {
+        CheckIfDead();
+
         if (!phaseManager.isPhase2)
         {
             UpdatePhase1();
@@ -92,23 +96,18 @@ public class Boss : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        Debug.Log($"=== BOSS DAMAGE DEBUG ===");
-        Debug.Log($"Damage received: {damage}");
-        Debug.Log($"Current health BEFORE: {_currentHealth}");
-        Debug.Log($"Max health: {_maxHealth}");
-        
+        _animator.SetTrigger("WasDamaged");
+
         _currentHealth -= damage;
-        
-        Debug.Log($"Current health AFTER: {_currentHealth}");
-        
+
+        Debug.Log($"Boss received {damage} damage!");
+    }
+
+    public void CheckIfDead()
+    {
         if (_currentHealth <= 0)
         {
-            Debug.Log("BOSS HEALTH <= 0 - Boss will be destroyed!");
-            Destroy(gameObject);
-        }
-        else
-        {
-            Debug.Log($"BOSS STILL ALIVE: {_currentHealth} health remaining");
+            Destroy(this.gameObject);
         }
     }
 
@@ -131,10 +130,13 @@ public class Boss : MonoBehaviour
 
         if (_basicAttackUsed < _basicAttackToUse)
         {
+
             StartCoroutine(BasicAttackSequence());
         }
         else
         {
+            _animator.SetTrigger("CastTrigger");
+
             BossAbilities abilities = GetComponent<BossAbilities>();
             if (abilities != null)
             {
@@ -172,12 +174,7 @@ public class Boss : MonoBehaviour
 
         Transform targetPoint = (_currentMovingTarget == _pointA) ? _pointB : _pointA;
 
-        Vector2 startPosition = transform.position;
-
         if(_spriteMovement != null) {_spriteMovement.StartMoving();}
-
-        bool movingRight = targetPoint.position.x > transform.position.x;
-        _spriteMovement.SetFacingDirection(movingRight);
 
         while (Vector3.Distance(transform.position, targetPoint.position) > 0.01f)
         {
@@ -187,22 +184,16 @@ public class Boss : MonoBehaviour
 
         if (_spriteMovement != null) {_spriteMovement.StopMoving();}
 
-        float movedDistance = targetPoint.position.x - startPosition.x;
-
-        if (_spriteMovement != null)
-        {
-            if (movedDistance > 0)
-            {
-                _spriteMovement.SetFacingDirection(true);
-            }
-            else if (movedDistance < 0)
-            {
-                _spriteMovement.SetFacingDirection(false);
-            }
-        }
-
         _currentMovingTarget = targetPoint;
 
+        if (reachedTarget >= 1)
+        {
+            transform.Rotate(new Vector3(0, 1, 0), 180); // rotate boss when reach target
+        }
+
+        reachedTarget++;
+
+        _animator.SetTrigger("CastTrigger");
 
         BossAbilities abilities = GetComponent<BossAbilities>();
         if (abilities != null)
@@ -222,6 +213,8 @@ public class Boss : MonoBehaviour
     private IEnumerator BasicAttackSequence()
     {
         isActing = true;
+
+        _animator.SetTrigger("AttackTrigger");
 
         while (_basicAttackUsed < _basicAttackToUse)
         {
@@ -243,19 +236,5 @@ public class Boss : MonoBehaviour
     {
         Instantiate(_basicAttackPrefab, _basicAttackFirePoint.position, _basicAttackFirePoint.rotation);
         Debug.Log("Basic Attack Used!");
-    }
-
-    public void TriggerCasting()
-    {
-        _animator.SetTrigger("CastTrigger");
-    }
-
-    private void OnDestroy()
-    {
-        Debug.LogError($"BOSS IS BEING DESTROYED! Health was: {_currentHealth}/{_maxHealth}");
-        Debug.LogError($"Destroy called from: {StackTraceUtility.ExtractStackTrace()}");
-
-        System.Diagnostics.StackTrace stackTrace = new System.Diagnostics.StackTrace(true);
-        Debug.LogError(stackTrace.ToString());
     }
 }

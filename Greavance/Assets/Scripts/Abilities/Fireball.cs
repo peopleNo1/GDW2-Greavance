@@ -36,7 +36,6 @@ public class Fireball : Ability
         {
             PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
             playerController.TakeDamage(_damage);
-            Destroy(gameObject);
         }
         else if (collision.gameObject.CompareTag("Boss") || collision.gameObject.CompareTag("Enemy"))
         {
@@ -46,10 +45,6 @@ public class Fireball : Ability
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Platform"))
         {
             return;
-        }
-        else
-        {
-            Destroy(this.gameObject);
         }
     }
 }

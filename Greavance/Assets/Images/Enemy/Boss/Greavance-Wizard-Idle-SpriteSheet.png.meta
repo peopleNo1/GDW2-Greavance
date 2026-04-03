@@ -1,19 +1,31 @@
 fileFormatVersion: 2
-guid: 725e1b5b9df0112419bad81ca4f41628
+guid: 44af630209ebf9e4da64c32ca7de18e1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4457663794195168306
-    second: Hit_0
+      213: 6937336954093395855
+    second: Greavance-Wizard-Idle-SpriteSheet_0
   - first:
-      213: -5364657433725072944
-    second: Hit_1
+      213: 928869091584703705
+    second: Greavance-Wizard-Idle-SpriteSheet_1
   - first:
-      213: -4947864620551752270
-    second: Hit_2
+      213: 2556193216135876541
+    second: Greavance-Wizard-Idle-SpriteSheet_2
   - first:
-      213: 8733631668352107246
-    second: Hit_3
+      213: -5251951221063024534
+    second: Greavance-Wizard-Idle-SpriteSheet_3
+  - first:
+      213: -5649972227228379397
+    second: Greavance-Wizard-Idle-SpriteSheet_4
+  - first:
+      213: 278736416327596767
+    second: Greavance-Wizard-Idle-SpriteSheet_5
+  - first:
+      213: 8395223905078679259
+    second: Greavance-Wizard-Idle-SpriteSheet_6
+  - first:
+      213: 1942581810881777782
+    second: Greavance-Wizard-Idle-SpriteSheet_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,89 +121,155 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hit_0
+      name: Greavance-Wizard-Idle-SpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 81
-        y: 48
-        width: 56
-        height: 88
+        x: 0
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 23c7f156a9dccdd30800000000000000
-      internalID: 4457663794195168306
+      spriteID: 809e7bcae49468f4cbe32ee2532654fc
+      internalID: 992454943
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hit_1
+      name: Greavance-Wizard-Idle-SpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 308
-        y: 48
-        width: 77
-        height: 78
+        x: 48
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0d98829bc78ec85b0800000000000000
-      internalID: -5364657433725072944
+      spriteID: 3f54578e07e81d343a1f84f0d2804fc1
+      internalID: -1472242603
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hit_2
+      name: Greavance-Wizard-Idle-SpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 541
-        y: 48
-        width: 77
-        height: 82
+        x: 96
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2b53a4fa757a55bb0800000000000000
-      internalID: -4947864620551752270
+      spriteID: e0ef0c70dfa83fa40846513ac4cbee85
+      internalID: 1325477455
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hit_3
+      name: Greavance-Wizard-Idle-SpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 760
-        y: 48
-        width: 77
-        height: 82
+        x: 144
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ee2ca37cab7143970800000000000000
-      internalID: 8733631668352107246
+      spriteID: e59f7ccbea7866d4eaae9f19383ad95d
+      internalID: 996338477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greavance-Wizard-Idle-SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97ee83d4a0be44541a2e993fe6590a00
+      internalID: -1376082252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greavance-Wizard-Idle-SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39f083c8904d8245828908e00a213e9
+      internalID: 1412742471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greavance-Wizard-Idle-SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41bef1d057e608141a72518df695d027
+      internalID: -1688362877
       vertices: []
       indices: 
       edges: []
@@ -200,7 +278,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: dba5731e052d87f4daa37fa3eda2e63c
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +288,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Hit_0: 4457663794195168306
-      Hit_1: -5364657433725072944
-      Hit_2: -4947864620551752270
-      Hit_3: 8733631668352107246
+      Greavance-Wizard-Idle-SpriteSheet_0: 992454943
+      Greavance-Wizard-Idle-SpriteSheet_1: -1472242603
+      Greavance-Wizard-Idle-SpriteSheet_2: 1325477455
+      Greavance-Wizard-Idle-SpriteSheet_3: 996338477
+      Greavance-Wizard-Idle-SpriteSheet_4: -1376082252
+      Greavance-Wizard-Idle-SpriteSheet_5: 1412742471
+      Greavance-Wizard-Idle-SpriteSheet_6: -1688362877
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

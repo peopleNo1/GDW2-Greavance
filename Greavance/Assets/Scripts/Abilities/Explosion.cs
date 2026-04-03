@@ -237,7 +237,6 @@ public class Explosion : Ability
         {
             PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
             playerController.TakeDamage(_damage);
-            Destroy(gameObject);
         }
         else if (collision.gameObject.CompareTag("Boss") || collision.gameObject.CompareTag("Enemy"))
         {
@@ -247,10 +246,6 @@ public class Explosion : Ability
         else if (collision.gameObject.layer == LayerMask.NameToLayer("Platform") || collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             return;
-        }
-        else
-        {
-            Destroy(this.gameObject);
         }
     }
 }

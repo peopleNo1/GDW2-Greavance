@@ -1,25 +1,22 @@
 fileFormatVersion: 2
-guid: 96b9235d8e9aa004aa9c8ac3630c9cf8
+guid: 2258458aec26b7047b18a1720fa2bffb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4723107735738678597
-    second: Idle_0
+      213: 1980362234040958502
+    second: Greavance-Wizard-Attack_0
   - first:
-      213: -7385789195546760866
-    second: Idle_1
+      213: -7003445901858805544
+    second: Greavance-Wizard-Attack_1
   - first:
-      213: 3234629978573100161
-    second: Idle_2
+      213: -2855330594169694195
+    second: Greavance-Wizard-Attack_2
   - first:
-      213: 6373048116405451881
-    second: Idle_3
+      213: -5140834219914217575
+    second: Greavance-Wizard-Attack_3
   - first:
-      213: 7264182050183361747
-    second: Idle_4
-  - first:
-      213: -2834552850196481573
-    second: Idle_5
+      213: -8346289606154550904
+    second: Greavance-Wizard-Attack_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,133 +112,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle_0
+      name: Greavance-Wizard-Attack_0
       rect:
         serializedVersion: 2
-        x: 81
-        y: 48
-        width: 59
-        height: 88
+        x: 0
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 54d7a982679db8140800000000000000
-      internalID: 4723107735738678597
+      spriteID: 04e0e2c2a98698747bc48e28841e6556
+      internalID: -809334871
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_1
+      name: Greavance-Wizard-Attack_1
       rect:
         serializedVersion: 2
-        x: 312
-        y: 48
-        width: 59
-        height: 88
+        x: 48
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e596485bbd7608990800000000000000
-      internalID: -7385789195546760866
+      spriteID: 761ecb61c7770a142922a92cc8f335bb
+      internalID: 1777964409
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_2
+      name: Greavance-Wizard-Attack_2
       rect:
         serializedVersion: 2
-        x: 543
-        y: 48
-        width: 59
-        height: 88
+        x: 96
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 184dda4e3d6b3ec20800000000000000
-      internalID: 3234629978573100161
+      spriteID: 5041ef2cd9286ff46be9b7ee9abd215a
+      internalID: -112428293
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_3
+      name: Greavance-Wizard-Attack_3
       rect:
         serializedVersion: 2
-        x: 774
-        y: 48
-        width: 59
-        height: 88
+        x: 144
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 96cb1dafe7d917850800000000000000
-      internalID: 6373048116405451881
+      spriteID: 83acdf562a872b84fa21b76c5ea428fe
+      internalID: 1559329948
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle_4
+      name: Greavance-Wizard-Attack_4
       rect:
         serializedVersion: 2
-        x: 1005
-        y: 48
-        width: 59
-        height: 88
+        x: 192
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3d4b2fc561f8fc460800000000000000
-      internalID: 7264182050183361747
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle_5
-      rect:
-        serializedVersion: 2
-        x: 1236
-        y: 48
-        width: 59
-        height: 88
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bd9b7fa6335a9a8d0800000000000000
-      internalID: -2834552850196481573
+      spriteID: 5402916219f926e4283166d6f267b073
+      internalID: -763329659
       vertices: []
       indices: 
       edges: []
@@ -250,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ca53272fafd56fe4b9cb3019ff2bc5c3
     internalID: 0
     vertices: []
     indices: 
@@ -260,12 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Idle_0: 4723107735738678597
-      Idle_1: -7385789195546760866
-      Idle_2: 3234629978573100161
-      Idle_3: 6373048116405451881
-      Idle_4: 7264182050183361747
-      Idle_5: -2834552850196481573
+      Greavance-Wizard-Attack_0: -809334871
+      Greavance-Wizard-Attack_1: 1777964409
+      Greavance-Wizard-Attack_2: -112428293
+      Greavance-Wizard-Attack_3: 1559329948
+      Greavance-Wizard-Attack_4: -763329659
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

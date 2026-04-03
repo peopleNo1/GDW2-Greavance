@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: 95df09da797926940bd125f91023a98f
+guid: 68bd55a8552d7bd48b88ecd53588dd3c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -734102444529668662
-    second: Greavance-Wizard-Movement-SpriteSheet_0
+      213: 1865653282687561050
+    second: Greavance-Wizard-Hit-SpriteSheet_0
   - first:
-      213: -507702931357760663
-    second: Greavance-Wizard-Movement-SpriteSheet_1
+      213: 429112333557499187
+    second: Greavance-Wizard-Hit-SpriteSheet_1
   - first:
-      213: -1860924688408537541
-    second: Greavance-Wizard-Movement-SpriteSheet_2
-  - first:
-      213: -6952993591049740882
-    second: Greavance-Wizard-Movement-SpriteSheet_3
+      213: -5199881841304387808
+    second: Greavance-Wizard-Hit-SpriteSheet_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,12 +106,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Greavance-Wizard-Movement-SpriteSheet_0
+      name: Greavance-Wizard-Hit-SpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 8
+        x: 0
         y: 0
-        width: 40
+        width: 48
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -122,21 +119,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: acd201557b1ffc5f0800000000000000
-      internalID: -734102444529668662
+      spriteID: 45d9cefc63c92fa40a29e205c4746efd
+      internalID: 917212718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Greavance-Wizard-Movement-SpriteSheet_1
+      name: Greavance-Wizard-Hit-SpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 56
+        x: 48
         y: 0
-        width: 40
+        width: 48
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -144,21 +141,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9630ff4bfd644f8f0800000000000000
-      internalID: -507702931357760663
+      spriteID: 50bcdae8e367edd4187b26c667698d73
+      internalID: 484734268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Greavance-Wizard-Movement-SpriteSheet_2
+      name: Greavance-Wizard-Hit-SpriteSheet_2
       rect:
         serializedVersion: 2
-        x: 105
+        x: 96
         y: 0
-        width: 39
+        width: 48
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -166,32 +163,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b3697a10bdaac26e0800000000000000
-      internalID: -1860924688408537541
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Greavance-Wizard-Movement-SpriteSheet_3
-      rect:
-        serializedVersion: 2
-        x: 153
-        y: 0
-        width: 39
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ead99efda21028f90800000000000000
-      internalID: -6952993591049740882
+      spriteID: d698555aa8e99454cb3bd7814af7847b
+      internalID: -2090534917
       vertices: []
       indices: 
       edges: []
@@ -200,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9413a1203432d804cbe63f5ce1b08e72
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Greavance-Wizard-Movement-SpriteSheet_0: -734102444529668662
-      Greavance-Wizard-Movement-SpriteSheet_1: -507702931357760663
-      Greavance-Wizard-Movement-SpriteSheet_2: -1860924688408537541
-      Greavance-Wizard-Movement-SpriteSheet_3: -6952993591049740882
+      Greavance-Wizard-Hit-SpriteSheet_0: 917212718
+      Greavance-Wizard-Hit-SpriteSheet_1: 484734268
+      Greavance-Wizard-Hit-SpriteSheet_2: -2090534917
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
