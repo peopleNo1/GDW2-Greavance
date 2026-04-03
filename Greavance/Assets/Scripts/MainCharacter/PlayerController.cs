@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (start && _isGrounded && Input.anyKeyDown)
+        if (start && Input.anyKeyDown)
         {
             start = false;
             FindObjectOfType<Timer>().SetDone(true);
