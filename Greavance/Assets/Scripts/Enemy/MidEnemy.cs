@@ -47,27 +47,7 @@ public class MidEnemy : Enemy
 
     public override void TakeDamage(float damage)
     {
-        Debug.Log($"MidEnemy TakeDamage called on {gameObject.name}");
-        if (animator == null)
-        {
-            Debug.LogError($"Animator is NULL on MidEnemy: {gameObject.name}");
-            animator = GetComponent<Animator>();
-
-            if (animator == null)
-            {
-                Debug.LogError($"Still couldn't find Animator on {gameObject.name}");
-            }
-        }
-
-        if (animator != null)
-        {
-            Debug.Log($"Setting WasDamaged trigger on {gameObject.name}");
-            animator.SetTrigger("WasDamaged");
-        }
-        else
-        {
-            Debug.LogError($"Cannot play animation - animator is null on {gameObject.name}");
-        }
+        animator.SetTrigger("WasDamaged");
 
         base.TakeDamage(damage);
     }
