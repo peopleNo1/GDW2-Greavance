@@ -225,4 +225,10 @@ public class Boss : MonoBehaviour
         Instantiate(_basicAttackPrefab, _basicAttackFirePoint.position, _basicAttackFirePoint.rotation);
         Debug.Log("Basic Attack Used!");
     }
+
+    void OnDestroy()
+    {
+        Debug.Log($"BOSS DESTROYED! Health was: {_currentHealth}/{_maxHealth}");
+        Debug.Log($"Destroy called from: {StackTraceUtility.ExtractStackTrace()}");
+    }
 }
