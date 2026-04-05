@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -38,6 +39,8 @@ public class PlayerController : MonoBehaviour
 
     bool start = true;
     public bool isbossfight;
+    public GameObject playerIcon;
+    public Sprite deadImage;
 
     void Start()
     {
@@ -116,6 +119,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             _ani.SetBool("Dead", true);
+            playerIcon.GetComponent<Image>().sprite = deadImage;
             StartCoroutine(Die());
         }
     }

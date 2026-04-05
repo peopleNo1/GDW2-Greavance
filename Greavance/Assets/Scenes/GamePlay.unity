@@ -144843,9 +144843,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1907327085}
     - target: {fileID: 2343672279766566431, guid: 8176496852eb0fb46ab4aa3ae44ec9fd, type: 3}
+      propertyPath: deadImage
+      value: 
+      objectReference: {fileID: -3007393081564536141, guid: eae7813bb07da1a4a8ac4584bd9ac863, type: 3}
+    - target: {fileID: 2343672279766566431, guid: 8176496852eb0fb46ab4aa3ae44ec9fd, type: 3}
       propertyPath: _jumpForce
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2343672279766566431, guid: 8176496852eb0fb46ab4aa3ae44ec9fd, type: 3}
+      propertyPath: playerIcon
+      value: 
+      objectReference: {fileID: 1813371641}
     - target: {fileID: 2343672279766566431, guid: 8176496852eb0fb46ab4aa3ae44ec9fd, type: 3}
       propertyPath: cameraPlayer
       value: 
