@@ -12,6 +12,9 @@ public class CameraFollow : MonoBehaviour
     public float height = 3f; // height above the player
     private Transform target;
 
+    public bool isHead;
+    public bool isBoss;
+
     private void Start()
     {
         target = targetList[0];
@@ -20,6 +23,34 @@ public class CameraFollow : MonoBehaviour
     // LateUpdate() ensures camera moves after player movement
     void LateUpdate()
     {
+        if (!isBoss)
+        {
+            if (isHead)
+            {
+                StartCoroutine(Wait(0.25f));
+            }
+            else
+            {
+                // calculate camera position based on player's position, forward, and height
+
+                Vector3 pos = target.position
+                            - target.forward * distance
+                            + Vector3.up * height;
+
+                // Move the camera to that position
+                transform.position = pos;
+
+                // Make the camera look at the player
+                transform.LookAt(target);
+                isHead = false;
+            }
+        }
+    }
+
+    public IEnumerator Wait(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
         // calculate camera position based on player's position, forward, and height
 
         Vector3 pos = target.position
@@ -31,8 +62,7 @@ public class CameraFollow : MonoBehaviour
 
         // Make the camera look at the player
         transform.LookAt(target);
-
-
+        isHead = false;
     }
 
     public void ChangeTarget()
@@ -43,7 +73,7 @@ public class CameraFollow : MonoBehaviour
             Player.PlayerTurn = false;
             Head.HeadTurn = true;
             Head.TeleportHead(true);
-
+            isHead = true;
             target = targetList[1];
         }
         //Check if its head turn to switch to player
