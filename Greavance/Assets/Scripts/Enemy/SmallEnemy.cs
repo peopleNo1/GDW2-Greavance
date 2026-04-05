@@ -43,7 +43,7 @@ public class SmallEnemy : Enemy
     public override void TakeDamage(float damage)
     {
         animator.SetTrigger("WasDamaged");
-
+        Debug.Log(damage);
         base.TakeDamage(damage);
     }
 
