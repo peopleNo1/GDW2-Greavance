@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
     bool _calculatedThisFrame = false;
     public Vector3 _dirToPlayer;
     private bool changeDirection = false;
+    float time;
 
     protected virtual void Awake()
     {
@@ -212,13 +213,14 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Boss")) return;
         
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && Time.realtimeSinceStartup >= time)
         {
             PlayerController player = collision.gameObject.GetComponent<PlayerController>();
             if (player != null)
             {
                 float damage = GetDamageAmount();
                 player.TakeDamage(damage);
+                time = Time.realtimeSinceStartup + 1;
             }
         }
     }

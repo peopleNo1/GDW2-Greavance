@@ -93,7 +93,7 @@ MonoBehaviour:
   _dirToPlayer: {x: 0, y: 0, z: 0}
   animator: {fileID: 5959337283056956564}
   _desiredMaxHp: 50
-  _damage: 2
+  _damage: 3
   _arrowCooldown: 2
   _arrowPrefab: {fileID: 1778494449753329249, guid: d4b3d3c71fe28824e843a7d7bbf59259, type: 3}
   _firePoint: {fileID: 8648781402281814100}
