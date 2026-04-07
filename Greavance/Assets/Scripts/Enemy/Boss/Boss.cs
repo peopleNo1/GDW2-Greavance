@@ -226,9 +226,9 @@ public class Boss : MonoBehaviour
         Debug.Log("Basic Attack Used!");
     }
 
-    void OnDestroy()
-    {
-        Debug.Log($"BOSS DESTROYED! Health was: {_currentHealth}/{_maxHealth}");
-        Debug.Log($"Destroy called from: {StackTraceUtility.ExtractStackTrace()}");
-    }
+    // void OnDestroy()
+    // {
+    //     Debug.Log($"BOSS DESTROYED! Health was: {_currentHealth}/{_maxHealth}");
+    //     Debug.Log($"Destroy called from: {StackTraceUtility.ExtractStackTrace()}");
+    // }
 }

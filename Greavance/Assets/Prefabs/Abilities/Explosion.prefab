@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5789914512302567797}
   - component: {fileID: 2436136625760390288}
   - component: {fileID: 380055140551083046}
+  - component: {fileID: 4977254328281750427}
   m_Layer: 0
   m_Name: Explosion
   m_TagString: Untagged
@@ -147,3 +148,24 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.095
+--- !u!114 &4977254328281750427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8404159208937142083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4a7a1e544bf7d4d938f58e6c65c548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _warningPrefab: {fileID: 0}
+  _explosionPrefab: {fileID: 0}
+  _warningDuration: 0.1
+  _delayBetweenExplosions: 0.2
+  _groundWarningCount: 10
+  _platformWarningCount: 5
+  _damage: 20
+  _explosionLifeTime: 1
+  _platformCheckDistance: 1.5

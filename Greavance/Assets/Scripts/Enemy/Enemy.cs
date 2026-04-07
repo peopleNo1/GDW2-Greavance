@@ -209,6 +209,7 @@ public class Enemy : MonoBehaviour
     {
         switchSides = !switchSides;
     }
+
     protected virtual void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Boss")) return;
@@ -220,7 +221,7 @@ public class Enemy : MonoBehaviour
             {
                 float damage = GetDamageAmount();
                 player.TakeDamage(damage);
-                time = Time.realtimeSinceStartup + 1;
+                time = Time.realtimeSinceStartup + _damageCooldown;
             }
         }
     }
