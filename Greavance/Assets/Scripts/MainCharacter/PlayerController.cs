@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
     public bool _dead = false;
 
-    public bool _doubleJump = false;
+    //public bool _doubleJump = false;
     
 
     Rigidbody2D _rb;
@@ -99,10 +99,10 @@ public class PlayerController : MonoBehaviour
 
                 FlipSprite();
 
-                if (Input.GetButtonDown("Jump") && !_isGrounded && _doubleJump)
+                if (Input.GetButtonDown("Jump") && !_isGrounded )
                 {
                     _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, _jumpForce);
-                    _doubleJump = false;
+                   // _doubleJump = false;
                     Debug.Log("DoubleJump");
                 }
 
@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
                 {
                     _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, _jumpForce);
                     _isGrounded = false;
-                    _doubleJump = true;
+                    //_doubleJump = true;
                     _ani.SetBool("isJumping", !_isGrounded);
                 }
 
