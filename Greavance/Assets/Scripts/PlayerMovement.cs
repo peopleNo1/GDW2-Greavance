@@ -14,21 +14,25 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] Animated guideAni;
 
+    [SerializeField] private bool isBoss;
+
     ////replace by other code
     //private Vector2 input;
     //[SerializeField] private float moveSpeed = 12.0f;
 
     void Start()
-    {
-        //rb = GetComponent<Rigidbody2D>();
-        doors = GameObject.FindGameObjectsWithTag("Door");
-        keys = GameObject.FindGameObjectsWithTag("Key");
-
-        foreach (GameObject room in roomList)
+    {   if (!isBoss)
         {
-            if (room.name != levelAt.name)
+            //rb = GetComponent<Rigidbody2D>();
+            doors = GameObject.FindGameObjectsWithTag("Door");
+            keys = GameObject.FindGameObjectsWithTag("Key");
+
+            foreach (GameObject room in roomList)
             {
-                room.SetActive(false);
+                if (room.name != levelAt.name)
+                {
+                    room.SetActive(false);
+                }
             }
         }
     }
@@ -42,13 +46,23 @@ public class PlayerMovement : MonoBehaviour
         //input.Normalize();
 
         // climb stairs
-        if (Input.GetKeyDown(KeyCode.W))
+        if (!isBoss)
         {
             CheckDoors();
+           
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
             CheckKeys();
+            FindObjectOfType<AudioManager>().Play("PickUpKey");
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                CheckDoors();
+            }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                CheckKeys();
+            }
         }
         //test
         if (Input.GetKeyDown(KeyCode.F))
@@ -78,6 +92,7 @@ public class PlayerMovement : MonoBehaviour
                 tele.GetLevelAt().SetActive(false);
                 levelAt = tele.GetDestination();
                 levelAt.SetActive(true);
+                FindObjectOfType<AudioManager>().Play("Door");
 
                 transform.position = tele.GetEnterPosition().transform.position;
                 break;
@@ -103,6 +118,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (key != null)
             {
+                FindObjectOfType<AudioManager>().Play("PickUpKey");
                 KeyBehaviour qed = key.GetComponent<KeyBehaviour>();
                 if (qed.Enter())
                 {

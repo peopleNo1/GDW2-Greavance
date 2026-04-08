@@ -3,9 +3,20 @@ using UnityEngine.SceneManagement;
 
 public class SceneControl : MonoBehaviour
 {
+    private static bool isStart = true;
+
+    public void CheckStart()
+    {
+        if (isStart)
+        {
+            isStart = false;
+            FindObjectOfType<Leaderboard>().ResetBoard();
+        }
+    }
+
     public void GoToGamePlay()
     {
-        SceneManager.LoadScene("GamePlay");
+        SceneManager.LoadScene("FINALSCENE");
     }
 
     public void GoToTitlePage()

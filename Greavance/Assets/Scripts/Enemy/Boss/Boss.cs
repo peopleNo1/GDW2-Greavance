@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Boss : MonoBehaviour
     protected PhaseManager phaseManager;
     protected BossBasicAttacks bossBasicAttacks;
     [SerializeField] protected Slider slider;
+    [SerializeField] protected Text text;
 
     public Transform _playerPos;
 
@@ -86,7 +88,7 @@ public class Boss : MonoBehaviour
 
         _currentHealth -= damage;
         slider.value -= damage;
-
+        text.text = _currentHealth.ToString() + "/" + _maxHealth;
         Debug.Log($"Boss received {damage} damage!");
     }
 
@@ -94,8 +96,17 @@ public class Boss : MonoBehaviour
     {
         if (_currentHealth <= 0)
         {
-            Destroy(this.gameObject);
+            StartCoroutine(Die());
         }
+    }
+
+    private IEnumerator Die()
+    {
+        FindObjectOfType<Timer>().StopTiming();
+        Time.timeScale = 0.5f;
+        Destroy(this.gameObject);
+        yield return new WaitForSecondsRealtime(2);
+        SceneManager.LoadScene("Winning");
     }
 
     private void UpdatePhase1()

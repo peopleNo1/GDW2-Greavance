@@ -17,17 +17,21 @@ public class PlayerController : MonoBehaviour
     float horizontalInput;
     public float _moveSpeed = 5f;
 
+    public ParticleSystem AttackParticle;
+    public ParticleSystem DamageParticle;
 
     public float _jumpForce = 7f;
-    bool _jumped = false;
+    //bool _jumped = false;
     bool _isGrounded = false;
+    bool _walking = true;
+   // private Vector2 _moveInput;
 
-    bool _facingRight = false;
+    bool _facingRight = true;
     private Vector2 _moveInput;
 
     public bool _dead = false;
 
-    public bool _doubleJump = false;
+    //public bool _doubleJump = false;
     
 
     Rigidbody2D _rb;
@@ -42,13 +46,26 @@ public class PlayerController : MonoBehaviour
     public GameObject playerIcon;
     public Sprite deadImage;
 
+    void Awake()
+    {
+        Vector3 _dir = transform.localScale;
+        _dir.x *= -1f;
+        transform.localScale = _dir;
+    }
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _ani = GetComponent<Animator>();
         gamePlayControl = GetComponent<GamePlayControl>();
 
+        DamageParticle.Stop();
+        AttackParticle.Stop();
+
         ResetHealth();
+
+        start = false;
+        FindObjectOfType<Timer>().SetDone(true);
     }
 
     // Update is called once per frame
@@ -68,7 +85,7 @@ public class PlayerController : MonoBehaviour
         {
 
             //Makes head appear when pressing Q and player is grounded
-            if (Input.GetKeyDown(KeyCode.Q) && _isGrounded)
+            if (Input.GetKeyDown(KeyCode.Q) && _isGrounded && !FindObjectOfType<AttackController>().attack)
             {
                 //Camera changes to arm
                 cameraPlayer.ChangeTarget();
@@ -76,10 +93,12 @@ public class PlayerController : MonoBehaviour
                 if (!PlayerTurn)
                 {
                     _ani.SetBool("withHead", false);
+                   
                 }
                 else
                 {
                     _ani.SetBool("withHead", true);
+                    
                 }
             }
 
@@ -97,27 +116,47 @@ public class PlayerController : MonoBehaviour
                 //Horizontal Input system
                 horizontalInput = Input.GetAxis("Horizontal");
 
+                
                 FlipSprite();
 
+                /*
                 if (Input.GetButtonDown("Jump") && !_isGrounded && _doubleJump)
+                if (Input.GetButtonDown("Jump") && !_isGrounded)
                 {
                     _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, _jumpForce);
-                    _doubleJump = false;
+                    // _doubleJump = false;
                     Debug.Log("DoubleJump");
                 }
+                */
+
 
                 if (Input.GetButtonDown("Jump") && _isGrounded)
                 {
                     _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, _jumpForce);
                     _isGrounded = false;
-                    _doubleJump = true;
+                    //_doubleJump = true;
+                    FindObjectOfType<AudioManager>().Play("Jump");
                     _ani.SetBool("isJumping", !_isGrounded);
                 }
+
+                //Makes sure the sound of the footsteps dont repeat infinetly withouth finishing the sound effect
+                if (horizontalInput != 0 && _isGrounded && _walking)
+                {
+                    StartCoroutine(WalkingSound());
+                    _walking = false;
+                }
+                else if (_rb.linearVelocity.x == 0 && _isGrounded && !_walking)
+                {
+                    FindObjectOfType<AudioManager>().Stop("Walk");
+                }
+                
 
             }
         }
         else
         {
+            Time.timeScale = 0;
+            _ani.updateMode = AnimatorUpdateMode.UnscaledTime;
             _ani.SetBool("Dead", true);
             playerIcon.GetComponent<Image>().sprite = deadImage;
             StartCoroutine(Die());
@@ -126,8 +165,16 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator Die()
     {
-        yield return new WaitForSeconds(2.5f);
-        SceneManager.LoadScene("Death");
+        yield return new WaitForSecondsRealtime(2.5f);
+        SceneManager.LoadScene("Die");
+    }
+
+    public IEnumerator WalkingSound()
+    {
+        FindObjectOfType<AudioManager>().Play("Walk");
+        yield return new WaitForSeconds(0.45f);
+        FindObjectOfType<AudioManager>().Stop("Walk");
+        _walking = true;
     }
 
     private void FixedUpdate()
@@ -169,21 +216,16 @@ public class PlayerController : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
+        DamageParticle.Play();
 
         if (currentHealth <= 0f)
         {
-            if (!isbossfight)
-            {
-                gamePlayControl.setHealth(0);
-            }
+            gamePlayControl.setHealth(0);
             _dead = true;
         }
         else
         {
-            if (!isbossfight)
-            {
-                gamePlayControl.setHealth(currentHealth);
-            }
+            gamePlayControl.setHealth(currentHealth);
         }
     }
 

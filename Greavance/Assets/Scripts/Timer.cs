@@ -8,22 +8,26 @@ public class Timer : MonoBehaviour
     bool isStop;
     bool done;
     int time;
+    private Coroutine coroutine;
 
     void Start()
     {
+        time = PlayerPrefs.GetInt("totalRecords", 0);
+        Debug.Log(time);
         Continue();
     }
 
     void Update()
     {
         if (done)
-            StartCoroutine(CountUp());
+            coroutine = StartCoroutine(CountUp());
     }
 
     public void ResetTimer()
     {
         time = 0;
-        Pause();
+        PlayerPrefs.SetInt("totalRecords", 0);
+        PlayerPrefs.Save();
     }
 
     public bool GetIsStop()
@@ -35,10 +39,18 @@ public class Timer : MonoBehaviour
     {
         done = false;
         time++;
+        PlayerPrefs.SetInt("totalRecords", time);
+        PlayerPrefs.Save();
         text.text = "Timer: " + time;
 
         yield return new WaitForSeconds(1);
         done = true;
+    }
+
+    public void StopTiming()
+    {
+        StopCoroutine(coroutine);
+        SetDone(false);
     }
 
     public void SetDone(bool isDone)
