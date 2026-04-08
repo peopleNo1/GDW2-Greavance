@@ -74,6 +74,8 @@ public class Enemy : MonoBehaviour
     public virtual void TakeDamage(float damage)
     {
         _currentHealth -= damage;
+        GameObject bloodParticle = Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
+        Destroy(bloodParticle, _destroyDelay);
     }
 
     public void HealDamage(float heal)
