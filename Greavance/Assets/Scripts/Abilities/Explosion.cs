@@ -19,14 +19,15 @@ public class Explosion : Ability
     [Header("Detection")]
     [SerializeField] private float _platformCheckDistance = 1.5f;
 
-
     private Transform _player;
     private static LayerMask _groundLayer;
     private static LayerMask _platformLayer;
 
-
     private List<GameObject> _activeWarnings = new List<GameObject>();
     private List<Vector2> _explosionPositions = new List<Vector2>();
+
+    private bool _hasDamagedPlayer = false;
+    private bool _isAbilityExecution = false;
 
     static Explosion()
     {
@@ -59,6 +60,9 @@ public class Explosion : Ability
 
     public override IEnumerator Execute()
     {
+        _isAbilityExecution = true;
+        _hasDamagedPlayer = false;
+
         if (_player == null)
         {      
             GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
@@ -73,11 +77,7 @@ public class Explosion : Ability
         }
 
         bool playerOnPlatform = IsPlayerOnPlatform();
-        string targetType = playerOnPlatform ? "Platforms" : "Ground";
-        Debug.Log($"Explosion targeting {targetType}");
-
         int warningCount = playerOnPlatform ? _platformWarningCount : _groundWarningCount;
-
         GameObject[] targetObjects = FindTargetObjects(playerOnPlatform);
 
         if (targetObjects.Length == 0)
@@ -96,8 +96,6 @@ public class Explosion : Ability
 
         yield return new WaitForSeconds(_warningDuration);
 
-        bool hasDamagedPlayer = false;
-
         for (int i = 0; i < _explosionPositions.Count; i++)
         {
             if (_explosionPrefab != null)
@@ -105,17 +103,6 @@ public class Explosion : Ability
                 GameObject explosion = Instantiate(_explosionPrefab, _explosionPositions[i], Quaternion.identity);
 
                 StartCoroutine(DestroyExplosionAfterTime(explosion, _explosionLifeTime));
-            }
-
-            if (!hasDamagedPlayer && _player != null && Vector2.Distance(_player.position, _explosionPositions[i]) <= 2f)
-            {
-                PlayerController playerController = _player.GetComponent<PlayerController>();
-                if (playerController != null)
-                {
-                    playerController.TakeDamage(_damage);
-                    hasDamagedPlayer = true;
-                }
-                Debug.Log("Player hit by explosion");
             }
 
             if (i < _activeWarnings.Count && _activeWarnings[i] != null)
@@ -133,6 +120,7 @@ public class Explosion : Ability
         {
             if(warning != null){Destroy(warning);}
         }
+
         _activeWarnings.Clear();
         _explosionPositions.Clear();
     }
@@ -224,6 +212,8 @@ public class Explosion : Ability
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(_isAbilityExecution) return;
+        
         if (collision.gameObject.CompareTag("Boss"))
         {
             Boss boss = collision.gameObject.GetComponent<Boss>();
@@ -233,10 +223,12 @@ public class Explosion : Ability
                 return;
             }
         }
-        if (collision.gameObject.CompareTag("Player") && gameObject.CompareTag("Boss") == false)
+        if (collision.gameObject.CompareTag("Player") && gameObject.CompareTag("Boss") == false && !_hasDamagedPlayer)
         {
             PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
             playerController.TakeDamage(_damage);
+            Debug.Log("Explosion Damaged The Player");
+            _hasDamagedPlayer = true;
         }
         else if (collision.gameObject.CompareTag("Boss") || collision.gameObject.CompareTag("Enemy"))
         {
