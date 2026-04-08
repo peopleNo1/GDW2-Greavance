@@ -12130,17 +12130,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee02f081eea5fa5448920dba3812a343, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1346238146 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 590097723785797998, guid: 62cd2e56d63488640aecba71ede1c243, type: 3}
-  m_PrefabInstance: {fileID: 9173592362102722288}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410854220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc4a7a1e544bf7d4d938f58e6c65c548, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1363159784
 GameObject:
   m_ObjectHideFlags: 0
@@ -17943,6 +17932,17 @@ CapsuleCollider2D:
   m_Offset: {x: 0.05, y: 0}
   m_Size: {x: 0.45, y: 0.55}
   m_Direction: 0
+--- !u!114 &1578617449 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 590097723785797998, guid: 62cd2e56d63488640aecba71ede1c243, type: 3}
+  m_PrefabInstance: {fileID: 9173592362102722288}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410854220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4a7a1e544bf7d4d938f58e6c65c548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1591296527
 GameObject:
   m_ObjectHideFlags: 0
@@ -41975,7 +41975,7 @@ PrefabInstance:
     - target: {fileID: 1148988270608133220, guid: 62cd2e56d63488640aecba71ede1c243, type: 3}
       propertyPath: _explosionAbility
       value: 
-      objectReference: {fileID: 1346238146}
+      objectReference: {fileID: 1578617449}
     - target: {fileID: 1148988270608133220, guid: 62cd2e56d63488640aecba71ede1c243, type: 3}
       propertyPath: _regenerateAbility
       value: 

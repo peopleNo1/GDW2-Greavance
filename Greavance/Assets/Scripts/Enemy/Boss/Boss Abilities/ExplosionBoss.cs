@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Explosion : Ability
+public class ExplosionBoss : Ability
 {
     [Header("Explosion Prefabs")]
     [SerializeField] private GameObject _warningPrefab;
@@ -13,7 +13,7 @@ public class Explosion : Ability
     [SerializeField] private float _delayBetweenExplosions = 0.2f;
     [SerializeField] private int _groundWarningCount = 10;
     [SerializeField] private int _platformWarningCount = 5;
-    [SerializeField] private float _damage = 20f;
+    [SerializeField] public float _damage = 20f;
     [SerializeField] private float _explosionLifeTime = 1f;
 
     [Header("Detection")]
@@ -28,7 +28,7 @@ public class Explosion : Ability
     private List<GameObject> _activeWarnings = new List<GameObject>();
     private List<Vector2> _explosionPositions = new List<Vector2>();
 
-    static Explosion()
+    static ExplosionBoss()
     {
         _groundLayer = 1 << 10;
         _platformLayer = 1 << 12;
@@ -220,32 +220,5 @@ public class Explosion : Ability
         uniqueObjects.CopyTo(result);
 
         return result;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Boss"))
-        {
-            Boss boss = collision.gameObject.GetComponent<Boss>();
-            if (boss != null && gameObject.name.Contains("Explosion"))
-            {
-                Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.GetComponent<Collider2D>());
-                return;
-            }
-        }
-        if (collision.gameObject.CompareTag("Player") && gameObject.CompareTag("Boss") == false)
-        {
-            PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
-            playerController.TakeDamage(_damage);
-        }
-        else if (collision.gameObject.CompareTag("Boss") || collision.gameObject.CompareTag("Enemy"))
-        {
-            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), collision.GetComponent<Collider2D>());
-            return;
-        }
-        else
-        {
-            return;
-        }
     }
 }

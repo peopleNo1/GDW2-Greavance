@@ -89,7 +89,7 @@ public class Boss : MonoBehaviour
         _currentHealth -= damage;
         slider.value -= damage;
         text.text = _currentHealth.ToString() + "/" + _maxHealth;
-        Debug.Log($"Boss received {damage} damage!");
+        //Debug.Log($"Boss received {damage} damage!");
     }
 
     public void CheckIfDead()
