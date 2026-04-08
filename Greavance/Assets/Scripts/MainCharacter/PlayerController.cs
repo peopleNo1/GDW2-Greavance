@@ -27,6 +27,9 @@ public class PlayerController : MonoBehaviour
     bool _facingRight = false;
    // private Vector2 _moveInput;
 
+    bool _facingRight = true;
+    private Vector2 _moveInput;
+
     public bool _dead = false;
 
     //public bool _doubleJump = false;
@@ -44,6 +47,13 @@ public class PlayerController : MonoBehaviour
     public GameObject playerIcon;
     public Sprite deadImage;
 
+    void Awake()
+    {
+        Vector3 _dir = transform.localScale;
+        _dir.x *= -1f;
+        transform.localScale = _dir;
+    }
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -54,6 +64,9 @@ public class PlayerController : MonoBehaviour
         AttackParticle.Stop();
 
         ResetHealth();
+
+        start = false;
+        FindObjectOfType<Timer>().SetDone(true);
     }
 
     // Update is called once per frame
@@ -109,9 +122,10 @@ public class PlayerController : MonoBehaviour
 
                 /*
                 if (Input.GetButtonDown("Jump") && !_isGrounded && _doubleJump)
+                if (Input.GetButtonDown("Jump") && !_isGrounded)
                 {
                     _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, _jumpForce);
-                   // _doubleJump = false;
+                    // _doubleJump = false;
                     Debug.Log("DoubleJump");
                 }
                 */
@@ -142,6 +156,8 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            Time.timeScale = 0;
+            _ani.updateMode = AnimatorUpdateMode.UnscaledTime;
             _ani.SetBool("Dead", true);
             playerIcon.GetComponent<Image>().sprite = deadImage;
             StartCoroutine(Die());
@@ -150,7 +166,7 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator Die()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSecondsRealtime(2.5f);
         SceneManager.LoadScene("Death");
     }
 
@@ -205,18 +221,12 @@ public class PlayerController : MonoBehaviour
 
         if (currentHealth <= 0f)
         {
-            if (!isbossfight)
-            {
-                gamePlayControl.setHealth(0);
-            }
+            gamePlayControl.setHealth(0);
             _dead = true;
         }
         else
         {
-            if (!isbossfight)
-            {
-                gamePlayControl.setHealth(currentHealth);
-            }
+            gamePlayControl.setHealth(currentHealth);
         }
     }
 
