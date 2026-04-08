@@ -9,6 +9,7 @@ public class Boss : MonoBehaviour
     protected PhaseManager phaseManager;
     protected BossBasicAttacks bossBasicAttacks;
     [SerializeField] protected Slider slider;
+    [SerializeField] protected Text text;
 
     public Transform _playerPos;
 
@@ -86,7 +87,7 @@ public class Boss : MonoBehaviour
 
         _currentHealth -= damage;
         slider.value -= damage;
-
+        text.text = _currentHealth.ToString() + "/" + _maxHealth;
         Debug.Log($"Boss received {damage} damage!");
     }
 
