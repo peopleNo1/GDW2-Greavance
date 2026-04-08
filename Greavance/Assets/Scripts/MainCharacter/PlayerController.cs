@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
     //bool _jumped = false;
     bool _isGrounded = false;
     bool _walking = true;
-    bool _facingRight = false;
    // private Vector2 _moveInput;
 
     bool _facingRight = true;
