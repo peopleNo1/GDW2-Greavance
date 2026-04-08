@@ -166,7 +166,7 @@ public class PlayerController : MonoBehaviour
     public IEnumerator Die()
     {
         yield return new WaitForSecondsRealtime(2.5f);
-        SceneManager.LoadScene("Death");
+        SceneManager.LoadScene("Die");
     }
 
     public IEnumerator WalkingSound()
