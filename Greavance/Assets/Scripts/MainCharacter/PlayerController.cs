@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     bool _jumped = false;
     bool _isGrounded = false;
 
-    bool _facingRight = false;
+    bool _facingRight = true;
     private Vector2 _moveInput;
 
     public bool _dead = false;
@@ -41,6 +41,13 @@ public class PlayerController : MonoBehaviour
     public bool isbossfight;
     public GameObject playerIcon;
     public Sprite deadImage;
+
+    void Awake()
+    {
+        Vector3 _dir = transform.localScale;
+        _dir.x *= -1f;
+        transform.localScale = _dir;
+    }
 
     void Start()
     {
@@ -131,7 +138,7 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator Die()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSecondsRealtime(2.5f);
         SceneManager.LoadScene("Death");
     }
 
