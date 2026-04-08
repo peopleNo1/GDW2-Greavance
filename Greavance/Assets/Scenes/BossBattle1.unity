@@ -1504,7 +1504,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 9987cf7f8d3d0364cbcf4023fdfcf01d, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -1735,7 +1735,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: b73798d5829a4804797e70f0168204fe, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -2646,7 +2646,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 75633b001bfd00442bb9c8c3e9a4f3dc, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -2824,7 +2824,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 913828001657b674582ec699cdecaa7b, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -4208,7 +4208,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 5d0497d915306b74fb84501179930fbe, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -4774,13 +4774,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2019379742}
     - target: {fileID: 2343672279766566431, guid: 8176496852eb0fb46ab4aa3ae44ec9fd, type: 3}
+      propertyPath: deadImage
+      value: 
+      objectReference: {fileID: -3007393081564536141, guid: eae7813bb07da1a4a8ac4584bd9ac863, type: 3}
+    - target: {fileID: 2343672279766566431, guid: 8176496852eb0fb46ab4aa3ae44ec9fd, type: 3}
       propertyPath: maxHealth
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2343672279766566431, guid: 8176496852eb0fb46ab4aa3ae44ec9fd, type: 3}
       propertyPath: _jumpForce
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2343672279766566431, guid: 8176496852eb0fb46ab4aa3ae44ec9fd, type: 3}
+      propertyPath: playerIcon
+      value: 
+      objectReference: {fileID: 730623191}
     - target: {fileID: 2343672279766566431, guid: 8176496852eb0fb46ab4aa3ae44ec9fd, type: 3}
       propertyPath: isbossfight
       value: 1
@@ -4794,8 +4802,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 731942979}
     - target: {fileID: 4397562987987102716, guid: 8176496852eb0fb46ab4aa3ae44ec9fd, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1559643662}
+    - target: {fileID: 4397562987987102716, guid: 8176496852eb0fb46ab4aa3ae44ec9fd, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4598965815772202370, guid: 8176496852eb0fb46ab4aa3ae44ec9fd, type: 3}
       propertyPath: m_Name
@@ -4855,7 +4867,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 358419056748837426, guid: 8176496852eb0fb46ab4aa3ae44ec9fd, type: 3}
-    - {fileID: 4397562987987102716, guid: 8176496852eb0fb46ab4aa3ae44ec9fd, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -6572,7 +6583,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 0195536413faa1d4992d7a206aafc587, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -8469,7 +8480,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 595daa9c93e102745b1c61d36e646890, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -9641,7 +9652,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: dcbf96ecc3099ee409bdb34b25f4e9bc, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0

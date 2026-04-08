@@ -49,6 +49,9 @@ public class PlayerController : MonoBehaviour
         gamePlayControl = GetComponent<GamePlayControl>();
 
         ResetHealth();
+
+        start = false;
+        FindObjectOfType<Timer>().SetDone(true);
     }
 
     // Update is called once per frame
@@ -99,10 +102,10 @@ public class PlayerController : MonoBehaviour
 
                 FlipSprite();
 
-                if (Input.GetButtonDown("Jump") && !_isGrounded )
+                if (Input.GetButtonDown("Jump") && !_isGrounded)
                 {
                     _rb.linearVelocity = new Vector2(_rb.linearVelocity.x, _jumpForce);
-                   // _doubleJump = false;
+                    // _doubleJump = false;
                     Debug.Log("DoubleJump");
                 }
 
@@ -118,6 +121,8 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            Time.timeScale = 0;
+            _ani.updateMode = AnimatorUpdateMode.UnscaledTime;
             _ani.SetBool("Dead", true);
             playerIcon.GetComponent<Image>().sprite = deadImage;
             StartCoroutine(Die());
@@ -172,18 +177,12 @@ public class PlayerController : MonoBehaviour
 
         if (currentHealth <= 0f)
         {
-            if (!isbossfight)
-            {
-                gamePlayControl.setHealth(0);
-            }
+            gamePlayControl.setHealth(0);
             _dead = true;
         }
         else
         {
-            if (!isbossfight)
-            {
-                gamePlayControl.setHealth(currentHealth);
-            }
+            gamePlayControl.setHealth(currentHealth);
         }
     }
 
