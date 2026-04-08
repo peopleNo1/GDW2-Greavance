@@ -11,6 +11,8 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
+        time = PlayerPrefs.GetInt("totalRecords", 0);
+        Debug.Log(time);
         Continue();
     }
 
@@ -23,7 +25,8 @@ public class Timer : MonoBehaviour
     public void ResetTimer()
     {
         time = 0;
-        Pause();
+        PlayerPrefs.SetInt("totalRecords", 0);
+        PlayerPrefs.Save();
     }
 
     public bool GetIsStop()
@@ -35,6 +38,8 @@ public class Timer : MonoBehaviour
     {
         done = false;
         time++;
+        PlayerPrefs.SetInt("totalRecords", time);
+        PlayerPrefs.Save();
         text.text = "Timer: " + time;
 
         yield return new WaitForSeconds(1);
