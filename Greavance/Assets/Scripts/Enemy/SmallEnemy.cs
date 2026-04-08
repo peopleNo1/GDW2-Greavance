@@ -53,7 +53,6 @@ public class SmallEnemy : Enemy
 
     protected override void TriggerAttackAnimation()
     {
-        if (animator != null)
-            animator.SetTrigger("Attack");
+        if (animator != null){animator.SetTrigger("Attack");}
     }
 }

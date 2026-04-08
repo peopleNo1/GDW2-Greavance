@@ -5,12 +5,15 @@ using System.Collections.Generic;
 public class Enemy : MonoBehaviour
 {
     Rigidbody2D _rb;
+    private SpriteRenderer _spriteRenderer;
     protected PlayerController playerController;
+    private Animator _animator;
 
     [Header("Base Enemy Stats")]
     public float _damageCooldown = 1.0f;
     public float _enemySpeed = 1.0f;
     public float _visionRange = 1.0f;
+    public float _deathDuration = 1.0f;
 
     [Header("Border Controls")]
     private Vector2 startingPos;
@@ -20,6 +23,11 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float leftBoundary = -5f;
     [SerializeField] private float rightBoundary = 5f;
     [SerializeField] private bool switchSides = true; // True = right, False = left
+
+    [Header("Death Settings")]
+    [SerializeField] private GameObject _deathEffectPrefab;
+    [SerializeField] private float _destroyDelay = 0.5f;
+    private bool _isDying = false;
 
     [HideInInspector]
     public float _maxHealth = 150f;
@@ -34,6 +42,8 @@ public class Enemy : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
     }
 
     protected virtual void Start()
@@ -80,9 +90,35 @@ public class Enemy : MonoBehaviour
     {
         if (CheckIfDead())
         {
-            Debug.Log($"{this.gameObject} died!");
-            Destroy(gameObject);
+            StartCoroutine(Die());
         }
+    }
+
+    private IEnumerator Die()
+    {
+        _isDying = true;
+
+        _rb.bodyType = RigidbodyType2D.Static;
+
+        Collider2D col = GetComponent<Collider2D>();
+        if(col != null){col.enabled = false;}
+
+        if (_animator != null)
+        {
+            _animator.SetTrigger("Dead");
+
+            yield break;
+        }
+    }
+
+    private void DeathAnimComplete()
+    {
+        if (_deathEffectPrefab != null)
+        {
+            Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
+        }
+
+        Destroy(gameObject, _destroyDelay);
     }
 
     public bool CheckIfDead()
@@ -105,6 +141,11 @@ public class Enemy : MonoBehaviour
         float targetX;
         bool willHit;
 
+        if (_rb.bodyType == RigidbodyType2D.Static)
+        {
+            return;
+        }
+        
         if (CanSeePlayer(_visionRange))
         {
             targetX = dirToPlayer.x * _enemySpeed;
@@ -234,5 +275,20 @@ public class Enemy : MonoBehaviour
     protected virtual void TriggerAttackAnimation()
     {
         // Override in derived classes
+    }
+
+    public float GetLeftBoundary()
+    {
+        return leftBoundary;
+    }
+
+    public float GetRightBoundary()
+    {
+        return rightBoundary;
+    }
+
+    public void SetAnimator(Animator currentEnemy)
+    {
+        _animator = currentEnemy;
     }
 }
