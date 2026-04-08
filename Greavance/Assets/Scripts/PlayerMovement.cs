@@ -45,10 +45,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             CheckDoors();
+            FindObjectOfType<AudioManager>().Play("Door");
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
             CheckKeys();
+            FindObjectOfType<AudioManager>().Play("PickUpKey");
         }
         //test
         if (Input.GetKeyDown(KeyCode.F))

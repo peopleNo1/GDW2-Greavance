@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: dfe4343c9e774f547be043841d09d215
+guid: 5f0d323448f24f549802622e2d9b8271
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1094658077166654996
-    second: Bricks2_0
+      213: -590472279141423476
+    second: Greavance-Blood-3_0
+  - first:
+      213: 3784927875693023243
+    second: Greavance-Blood-3_1
+  - first:
+      213: -3189426460463812151
+    second: Greavance-Blood-3_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bricks2_0
+      name: Greavance-Blood-3_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 4
-        width: 256
-        height: 13
+        x: 20
+        y: 19
+        width: 62
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 416d700b8b1013f00800000000000000
-      internalID: 1094658077166654996
+      spriteID: c866f0037983ec7f0800000000000000
+      internalID: -590472279141423476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greavance-Blood-3_1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 29
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b00182b79d3c68430800000000000000
+      internalID: 3784927875693023243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Greavance-Blood-3_2
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 16
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c1b2d25881ecb3d0800000000000000
+      internalID: -3189426460463812151
       vertices: []
       indices: 
       edges: []
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bricks2_0: 1094658077166654996
+      Greavance-Blood-3_0: -590472279141423476
+      Greavance-Blood-3_1: 3784927875693023243
+      Greavance-Blood-3_2: -3189426460463812151
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

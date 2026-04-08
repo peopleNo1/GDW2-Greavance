@@ -3,8 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class AttackController : MonoBehaviour
-{
-    public ParticleSystem ArmParticle;
+{ 
     public PlayerController _player;
     public Transform _playerTrans;
     public float _speed = 2.0f;
@@ -30,7 +29,6 @@ public class AttackController : MonoBehaviour
     {
         myRenderer = GetComponent<Renderer>();
         myRenderer.enabled = false;
-        ArmParticle.Stop();
     }
 
     void Update()
@@ -43,9 +41,9 @@ public class AttackController : MonoBehaviour
             attackBack = false;
             attack = true;
             myRenderer.enabled = true;
-
+            FindObjectOfType<AudioManager>().Play("Attack");
             damagedEnemiesThisAttack.Clear(); // Clear the list for this new attack
-            ArmParticle.Play();
+            _player.AttackParticle.Play();
         }
 
         if (attack)
@@ -88,7 +86,7 @@ public class AttackController : MonoBehaviour
                 attackForward = false;
                 attack = false;
                 myRenderer.enabled = false;
-                ArmParticle.Stop();
+               
             }
         }
 
