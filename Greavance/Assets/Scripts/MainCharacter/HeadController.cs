@@ -32,33 +32,40 @@ public class HeadController : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
 
         _rb.position = _pos[1].transform.position;
+
+        FindObjectOfType<AudioManager>().Stop("RollingRight");
+        FindObjectOfType<AudioManager>().Stop("RollingLeft");
     }
 
 
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal"); // A/D keys, Left/Right arrow keys
-
-        Vector2 MoveDirection = new Vector2(horizontalInput * _moveSpeed, 0f);
-
-        _rb.AddForce(MoveDirection);
-
-        //Makes sure the sound of the rolling right dont repeat infinetly withouth finishing the sound effect
-        if (_rb.linearVelocity.x > _rollingSoundRange && _rollingRight)
+        if (!FindObjectOfType<PlayerController>().PlayerTurn)
         {
-            StartCoroutine(RollingRightSound());
-            _rollingRight = false;
-        }
-        //Makes sure the sound of the rolling left dont repeat infinetly withouth finishing the sound effect
-        else if (_rb.linearVelocity.x < _rollingSoundRange && _rollingLeft)
-        {
-            StartCoroutine(RollingLeftSound());
-            _rollingLeft = false;
-        }
-        else if (_rb.linearVelocity.x == _rollingSoundRange && !_rollingLeft && !_rollingRight)
-        {
-            FindObjectOfType<AudioManager>().Stop("RollingRight");
-            FindObjectOfType<AudioManager>().Stop("RollingLeft");
+
+            horizontalInput = Input.GetAxis("Horizontal"); // A/D keys, Left/Right arrow keys
+
+            Vector2 MoveDirection = new Vector2(horizontalInput * _moveSpeed, 0f);
+
+            _rb.AddForce(MoveDirection);
+
+            //Makes sure the sound of the rolling right dont repeat infinetly withouth finishing the sound effect
+            if (_rb.linearVelocity.x > _rollingSoundRange && _rollingRight)
+            {
+                StartCoroutine(RollingRightSound());
+                _rollingRight = false;
+            }
+            //Makes sure the sound of the rolling left dont repeat infinetly withouth finishing the sound effect
+            else if (_rb.linearVelocity.x < -_rollingSoundRange && _rollingLeft)
+            {
+                StartCoroutine(RollingLeftSound());
+                _rollingLeft = false;
+            }
+            else if (_rb.linearVelocity.x == _rollingSoundRange && !_rollingLeft && !_rollingRight)
+            {
+                FindObjectOfType<AudioManager>().Stop("RollingRight");
+                FindObjectOfType<AudioManager>().Stop("RollingLeft");
+            }
         }
     }
 

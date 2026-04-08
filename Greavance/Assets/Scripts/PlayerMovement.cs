@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
         if (!isBoss)
         {
             CheckDoors();
-            FindObjectOfType<AudioManager>().Play("Door");
+           
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -92,6 +92,7 @@ public class PlayerMovement : MonoBehaviour
                 tele.GetLevelAt().SetActive(false);
                 levelAt = tele.GetDestination();
                 levelAt.SetActive(true);
+                FindObjectOfType<AudioManager>().Play("Door");
 
                 transform.position = tele.GetEnterPosition().transform.position;
                 break;
@@ -117,6 +118,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (key != null)
             {
+                FindObjectOfType<AudioManager>().Play("PickUpKey");
                 KeyBehaviour qed = key.GetComponent<KeyBehaviour>();
                 if (qed.Enter())
                 {
