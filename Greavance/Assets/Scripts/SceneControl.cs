@@ -16,7 +16,7 @@ public class SceneControl : MonoBehaviour
 
     public void GoToGamePlay()
     {
-        SceneManager.LoadScene("GamePlay");
+        SceneManager.LoadScene("FINALSCENE");
     }
 
     public void GoToTitlePage()

@@ -52,14 +52,17 @@ MonoBehaviour:
   _damageCooldown: 1
   _enemySpeed: 1
   _visionRange: 2.5
+  _deathDuration: 1
+  leftBoundary: 0
+  rightBoundary: 0
   _playerPos: {fileID: 0}
-  leftBoundary: -8.136
-  rightBoundary: -0.985
   switchSides: 1
+  _deathEffectPrefab: {fileID: 7392857525066476138, guid: e981020f28453024e91e417d60b22235, type: 3}
+  _destroyDelay: 0.5
   _maxHealth: 50
   _currentHealth: 0
   _dirToPlayer: {x: 0, y: 0, z: 0}
-  animator: {fileID: 0}
+  animator: {fileID: 6767856429241318905}
   _desiredMaxHp: 50
   _damage: 5
 --- !u!50 &8088902591269908676

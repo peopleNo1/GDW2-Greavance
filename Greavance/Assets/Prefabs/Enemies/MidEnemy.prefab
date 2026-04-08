@@ -52,15 +52,16 @@ MonoBehaviour:
   _damageCooldown: 1
   _enemySpeed: 1
   _visionRange: 2
-  damage: 10
+  _deathDuration: 1
   _playerPos: {fileID: 0}
   leftBoundary: 1.554
   rightBoundary: 8.3
   switchSides: 1
+  _deathEffectPrefab: {fileID: 7392857525066476138, guid: e981020f28453024e91e417d60b22235, type: 3}
+  _destroyDelay: 0.5
   _maxHealth: 0
   _currentHealth: 0
   _dirToPlayer: {x: 0, y: 0, z: 0}
-  _lastDamageTime: 0
   animator: {fileID: 8171587958200395488}
   _desiredMaxHp: 150
   _desiredCooldown: 0.5
@@ -153,7 +154,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.01, y: 1.28}
+    oldSize: {x: 1.92, y: 1.92}
     newSize: {x: 1.01, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -199,7 +200,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.01, y: 1.28}
+    oldSize: {x: 1.92, y: 1.92}
     newSize: {x: 1.01, y: 1.28}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

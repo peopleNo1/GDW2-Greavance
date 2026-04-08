@@ -149,8 +149,6 @@ public class PlayerController : MonoBehaviour
                 {
                     FindObjectOfType<AudioManager>().Stop("Walk");
                 }
-                
-
             }
         }
         else
@@ -166,7 +164,7 @@ public class PlayerController : MonoBehaviour
     public IEnumerator Die()
     {
         yield return new WaitForSecondsRealtime(2.5f);
-        SceneManager.LoadScene("Death");
+        SceneManager.LoadScene("Die");
     }
 
     public IEnumerator WalkingSound()
