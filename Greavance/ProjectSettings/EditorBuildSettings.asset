@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: 4aa2b6b7a86d30241b215ba90cdb929a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GamePlay.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 0
@@ -17,12 +17,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BossBattle1.unity
     guid: e2fadd3e5fd33754cbeecfa2da1c3919
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Death.unity
     guid: 87b30eaac7c297c4da7fc38969ba8ac9
   - enabled: 1
     path: Assets/Scenes/Winning.unity
     guid: e84338722f6c86b48ab821c084d3b2ab
+  - enabled: 1
+    path: Assets/Scenes/DIE.unity
+    guid: 881ef92d34b4b194f8a1bc14f1f1d20b
+  - enabled: 1
+    path: Assets/Scenes/FINALSCENE.unity
+    guid: 7c3d19dfabe55744eb9a7024d3044937
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

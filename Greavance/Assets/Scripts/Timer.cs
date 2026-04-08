@@ -5,14 +5,24 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     [SerializeField] Text text;
+    [SerializeField] bool isBoss;
+    [SerializeField] bool recordOnly;
     bool isStop;
-    bool done;
+    bool done = false;
     int time;
     private Coroutine coroutine;
 
     void Start()
     {
-        time = PlayerPrefs.GetInt("totalRecords", 0);
+        if (!isBoss)
+        {
+            ResetTimer();
+        }
+        else if (!recordOnly)
+        {
+            done = true;
+        }
+        time = PlayerPrefs.GetInt("time", 0);
         Debug.Log(time);
         Continue();
     }
@@ -26,8 +36,9 @@ public class Timer : MonoBehaviour
     public void ResetTimer()
     {
         time = 0;
-        PlayerPrefs.SetInt("totalRecords", 0);
+        PlayerPrefs.SetInt("time", 0);
         PlayerPrefs.Save();
+        Debug.Log("time reset");
     }
 
     public bool GetIsStop()
@@ -39,9 +50,13 @@ public class Timer : MonoBehaviour
     {
         done = false;
         time++;
-        PlayerPrefs.SetInt("totalRecords", time);
+        PlayerPrefs.SetInt("time", time);
         PlayerPrefs.Save();
-        text.text = "Timer: " + time;
+        Debug.Log("time " + time);
+        if (text != null)
+        {
+            text.text = "Timer: " + time;
+        }
 
         yield return new WaitForSeconds(1);
         done = true;
