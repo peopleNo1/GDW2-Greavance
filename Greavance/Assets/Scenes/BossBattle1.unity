@@ -18322,6 +18322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1793558897}
+  isBoss: 1
 --- !u!114 &1793558897
 MonoBehaviour:
   m_ObjectHideFlags: 0

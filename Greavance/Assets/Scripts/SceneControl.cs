@@ -10,6 +10,7 @@ public class SceneControl : MonoBehaviour
         if (isStart)
         {
             isStart = false;
+            Debug.Log("start");
             FindObjectOfType<Leaderboard>().ResetBoard();
         }
     }
