@@ -191,11 +191,11 @@ public class Enemy : MonoBehaviour
     public bool WillHitBoundary(float targetX)
     {
         bool willHit;
-        if (targetX > 0 && transform.position.x >= rightBoundary)
+        if (targetX > 0 && transform.position.x > rightBoundary)
         {
             willHit = true;
         }
-        else if (targetX < 0 && transform.position.x <= leftBoundary)
+        else if (targetX < 0 && transform.position.x < leftBoundary)
         {
             willHit = true;
         }
