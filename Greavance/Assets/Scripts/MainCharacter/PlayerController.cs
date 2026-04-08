@@ -149,8 +149,6 @@ public class PlayerController : MonoBehaviour
                 {
                     FindObjectOfType<AudioManager>().Stop("Walk");
                 }
-                
-
             }
         }
         else

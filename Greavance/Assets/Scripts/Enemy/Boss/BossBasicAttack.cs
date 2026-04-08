@@ -28,9 +28,5 @@ public class BossBasicAttacks : MonoBehaviour
             Physics2D.IgnoreCollision(collision, GetComponent<Collider2D>());
             return;
         }
-        else
-        {
-            Destroy(gameObject);
-        }
     }
 }
