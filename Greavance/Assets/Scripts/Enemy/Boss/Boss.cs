@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Boss : MonoBehaviour
 {
@@ -95,8 +96,17 @@ public class Boss : MonoBehaviour
     {
         if (_currentHealth <= 0)
         {
-            Destroy(this.gameObject);
+            StartCoroutine(Die());
         }
+    }
+
+    private IEnumerator Die()
+    {
+        FindObjectOfType<Timer>().StopTiming();
+        Time.timeScale = 0.5f;
+        Destroy(this.gameObject);
+        yield return new WaitForSecondsRealtime(2);
+        SceneManager.LoadScene("Winning");
     }
 
     private void UpdatePhase1()

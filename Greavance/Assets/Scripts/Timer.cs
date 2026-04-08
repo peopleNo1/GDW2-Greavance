@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
     bool isStop;
     bool done;
     int time;
+    private Coroutine coroutine;
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class Timer : MonoBehaviour
     void Update()
     {
         if (done)
-            StartCoroutine(CountUp());
+            coroutine = StartCoroutine(CountUp());
     }
 
     public void ResetTimer()
@@ -44,6 +45,12 @@ public class Timer : MonoBehaviour
 
         yield return new WaitForSeconds(1);
         done = true;
+    }
+
+    public void StopTiming()
+    {
+        StopCoroutine(coroutine);
+        SetDone(false);
     }
 
     public void SetDone(bool isDone)
