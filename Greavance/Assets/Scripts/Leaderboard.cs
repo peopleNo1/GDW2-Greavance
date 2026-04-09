@@ -7,7 +7,6 @@ public class Leaderboard : MonoBehaviour
     [SerializeField] Text[] timeDisplay;
     [SerializeField] bool displaying;
 
-    public int[] records = new int[10];
     public int totalRecords;
     private string setName = "player";
 
@@ -19,7 +18,7 @@ public class Leaderboard : MonoBehaviour
 
     public void UpdateDisplay()
     {
-        for (int i = 0; i < records.Length; i++)
+        for (int i = 0; i < playerNameDisplay.Length; i++)
         {
             playerNameDisplay[i].text = PlayerPrefs.GetString(setName + "str" + i.ToString(), "¡X¡X¡X¡X¡X¡X¡X¡X¡X¡X¡X¡X¡X¡X¡X¡X¡X¡X¡X¡X¡X¡X¡X¡X");
             if (PlayerPrefs.GetInt(setName + i.ToString(), 0) == 0)
@@ -87,11 +86,12 @@ public class Leaderboard : MonoBehaviour
     {
         for (int i = 0; i < totalRecords; i++)
         {
-            if (records[i] == 0)
+            int compare = PlayerPrefs.GetInt(setName + i.ToString(), 0);
+            if (compare == 0)
             {
                 return i;
             }
-            if (records[i] > record)
+            if (compare > record)
             {
                 ShiftRecords(i);
                 return i;
@@ -107,7 +107,7 @@ public class Leaderboard : MonoBehaviour
             Debug.Log(j);
             if (j != 9)
             {
-                PlayerPrefs.SetString(setName + "str" + (j + 1).ToString(), PlayerPrefs.GetString(setName + j.ToString(), ""));
+                PlayerPrefs.SetString(setName + "str" + (j + 1).ToString(), PlayerPrefs.GetString(setName + "str" + j.ToString(), ""));
                 PlayerPrefs.SetInt(setName + (j + 1).ToString(), PlayerPrefs.GetInt(setName + j.ToString(), 0));
                 PlayerPrefs.Save();
             }
