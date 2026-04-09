@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
                     room.SetActive(false);
                 }
             }
+            guideAni.SetAni(true);
         }
     }
 
@@ -56,11 +57,6 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 CheckKeys();
-            }
-            //test
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                guideAni.Flip();
             }
         }
     }
@@ -117,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     FindObjectOfType<AudioManager>().Play("PickUpKey");
                     qed.Collected();
+                    guideAni.SetAni(true);
                     break;
                 }
             }

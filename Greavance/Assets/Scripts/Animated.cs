@@ -14,10 +14,9 @@ public class Animated : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    public void Flip()
+    public void SetAni(bool yea)
     {
-        isTrue = !isTrue;
+        isTrue = yea;
         animator.SetBool(boolName, isTrue);
-        
     }
 }
