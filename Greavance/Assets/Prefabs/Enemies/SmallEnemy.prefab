@@ -53,9 +53,9 @@ MonoBehaviour:
   _enemySpeed: 1
   _visionRange: 2.5
   _deathDuration: 1
+  _playerPos: {fileID: 0}
   leftBoundary: 0
   rightBoundary: 0
-  _playerPos: {fileID: 0}
   switchSides: 1
   _deathEffectPrefab: {fileID: 7392857525066476138, guid: e981020f28453024e91e417d60b22235, type: 3}
   _destroyDelay: 0.5
@@ -203,7 +203,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 197907575850270098, guid: 1d0334bbdc0f86e46a5ca856a5179b62, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

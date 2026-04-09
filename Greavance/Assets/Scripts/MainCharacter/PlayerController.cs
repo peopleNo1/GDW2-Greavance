@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
 
         start = false;
         FindObjectOfType<Timer>().SetDone(true);
+        FindObjectOfType<AudioManager>().Play("MainSong");
     }
 
     // Update is called once per frame
@@ -161,6 +162,7 @@ public class PlayerController : MonoBehaviour
             _ani.updateMode = AnimatorUpdateMode.UnscaledTime;
             _ani.SetBool("Dead", true);
             playerIcon.GetComponent<Image>().sprite = deadImage;
+            FindObjectOfType<AudioManager>().Stop("MainSong");
             StartCoroutine(Die());
         }
     }
