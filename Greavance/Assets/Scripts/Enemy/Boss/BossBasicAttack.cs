@@ -9,6 +9,7 @@ public class BossBasicAttacks : MonoBehaviour
     [SerializeField] public Animator _animator;
     private float _destroyDelayAfterCollide = 0.3f;
     private bool _hasCollided = false;
+    private bool _hasDealtDamage = false;
 
     private Vector2 _direction = Vector2.left;
 
@@ -30,27 +31,40 @@ public class BossBasicAttacks : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (_animator != null)
+            _hasCollided = true;
+
+            _speed = 0;
+            
+            _animator.SetTrigger("Collide");
+
+            if (!_hasDealtDamage)
             {
-                _animator.SetTrigger("Collide");
-                _hasCollided = true;
-
-                _speed = 0;
-
-                float animLength = GetCurrentAnimationLength();
-                Destroy(gameObject, animLength > 0 ? animLength : _destroyDelayAfterCollide);
+                PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
+                if (playerController != null)
+                {
+                    playerController.TakeDamage(_damage);
+                    _hasDealtDamage = true;
+                }
             }
 
-            PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
-            playerController.TakeDamage(_damage);
-            
+            float animLength = GetCurrentAnimationLength();
+            float destroyDelay = animLength > 0 ? animLength : _destroyDelayAfterCollide;
 
-            Destroy(gameObject);
+            Destroy(gameObject, destroyDelay);
         }
         else if (collision.gameObject.CompareTag("Boss") || collision.gameObject.CompareTag("Enemy"))
         {
             Physics2D.IgnoreCollision(collision, GetComponent<Collider2D>());
             return;
+        }
+        else if (collision.gameObject.CompareTag("Explosion"))
+        {
+            Physics2D.IgnoreCollision(collision, GetComponent<Collider2D>());
+            return;
+        }
+        else
+        {
+            Destroy(gameObject, _destroyDelayAfterCollide);
         }
     }
 
