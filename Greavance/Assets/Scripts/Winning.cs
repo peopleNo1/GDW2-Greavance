@@ -11,7 +11,7 @@ public class Winning : MonoBehaviour
     void Start()
     {
         time = PlayerPrefs.GetInt("time", 0);
-        text.text = "Your time: " + time;
+        text.text = "It tooks you " + time + " seconds";
     }
 
     public void GetPlayerName()
