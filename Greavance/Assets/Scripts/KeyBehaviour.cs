@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class KeyBehaviour : MonoBehaviour
 {
+    [SerializeField] GameObject image;
+
     private bool enter;
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -26,6 +29,7 @@ public class KeyBehaviour : MonoBehaviour
 
     public void Collected()
     {
+        image.GetComponent<Image>().color = Color.white;
         Destroy(gameObject);
     }
 }
