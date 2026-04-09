@@ -21,7 +21,8 @@ public class PlayerMovement : MonoBehaviour
     //[SerializeField] private float moveSpeed = 12.0f;
 
     void Start()
-    {   if (!isBoss)
+    {
+        if (!isBoss)
         {
             //rb = GetComponent<Rigidbody2D>();
             doors = GameObject.FindGameObjectsWithTag("Door");
@@ -46,23 +47,14 @@ public class PlayerMovement : MonoBehaviour
         //input.Normalize();
 
         // climb stairs
-        if (!isBoss)
+        if (Input.GetKeyDown(KeyCode.W))
         {
             CheckDoors();
-           
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
             CheckKeys();
             FindObjectOfType<AudioManager>().Play("PickUpKey");
-            if (Input.GetKeyDown(KeyCode.W))
-            {
-                CheckDoors();
-            }
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                CheckKeys();
-            }
         }
         //test
         if (Input.GetKeyDown(KeyCode.F))
@@ -102,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool Unlocked(GameObject[] keysForDoor)
     {
-        foreach(GameObject key in keysForDoor)
+        foreach (GameObject key in keysForDoor)
         {
             if (key != null)
             {

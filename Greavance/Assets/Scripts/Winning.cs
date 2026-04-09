@@ -21,11 +21,9 @@ public class Winning : MonoBehaviour
 
     public void SavePlayerName()
     {
-        Debug.Log("time: " + time);
         if (playerName != null)
         {
             FindObjectOfType<Leaderboard>().SetRecord(playerName, time);
-            Debug.Log(playerName);
         }
         else
         {
