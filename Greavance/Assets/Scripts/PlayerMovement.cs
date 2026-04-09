@@ -54,7 +54,6 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             CheckKeys();
-            FindObjectOfType<AudioManager>().Play("PickUpKey");
         }
         //test
         if (Input.GetKeyDown(KeyCode.F))
@@ -110,10 +109,10 @@ public class PlayerMovement : MonoBehaviour
         {
             if (key != null)
             {
-                FindObjectOfType<AudioManager>().Play("PickUpKey");
                 KeyBehaviour qed = key.GetComponent<KeyBehaviour>();
                 if (qed.Enter())
                 {
+                    FindObjectOfType<AudioManager>().Play("PickUpKey");
                     qed.Collected();
                     break;
                 }
