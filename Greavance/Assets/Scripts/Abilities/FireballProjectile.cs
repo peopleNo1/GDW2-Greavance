@@ -86,11 +86,11 @@ public class FireballProjectile : MonoBehaviour
             }
             Destroy(gameObject);
         }
-        else if (collision.gameObject.layer == LayerMask.NameToLayer("Platform") || collision.gameObject.layer == LayerMask.NameToLayer("Projectile") && _isFalling)
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Platform") || collision.gameObject.layer == LayerMask.NameToLayer("Projectile"))
         {
             return;
         }
-        else if (collision.gameObject.CompareTag("Boss") || collision.gameObject.CompareTag("Enemy"))
+        else if (collision.gameObject.CompareTag("Boss") || collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Head"))
         {
             return;
         }

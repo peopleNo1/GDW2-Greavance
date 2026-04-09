@@ -223,7 +223,7 @@ public class Explosion : Ability
                 return;
             }
         }
-        if (collision.gameObject.CompareTag("Player") && gameObject.CompareTag("Boss") == false && !_hasDamagedPlayer)
+        if (collision.gameObject.CompareTag("Player") && gameObject.CompareTag("Boss") == false && _hasDamagedPlayer == false)
         {
             PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
             playerController.TakeDamage(_damage);
