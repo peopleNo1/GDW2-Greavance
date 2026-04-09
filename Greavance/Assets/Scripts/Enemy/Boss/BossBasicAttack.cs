@@ -57,7 +57,7 @@ public class BossBasicAttacks : MonoBehaviour
             Physics2D.IgnoreCollision(collision, GetComponent<Collider2D>());
             return;
         }
-        else if (collision.gameObject.CompareTag("Explosion"))
+        else if (collision.gameObject.CompareTag("Explosion") || collision.gameObject.CompareTag("Head") || collision.gameObject.CompareTag("Fireball"))
         {
             Physics2D.IgnoreCollision(collision, GetComponent<Collider2D>());
             return;

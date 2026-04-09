@@ -9641,7 +9641,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 225e73b6bcd1b854ba6d721f62f8c213, type: 3}
     - target: {fileID: 2343672279766566431, guid: 8176496852eb0fb46ab4aa3ae44ec9fd, type: 3}
       propertyPath: maxHealth
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 2343672279766566431, guid: 8176496852eb0fb46ab4aa3ae44ec9fd, type: 3}
       propertyPath: _jumpForce
