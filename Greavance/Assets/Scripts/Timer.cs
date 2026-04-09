@@ -23,7 +23,6 @@ public class Timer : MonoBehaviour
             done = true;
         }
         time = PlayerPrefs.GetInt("time", 0);
-        Debug.Log(time);
         Continue();
     }
 
@@ -52,7 +51,6 @@ public class Timer : MonoBehaviour
         time++;
         PlayerPrefs.SetInt("time", time);
         PlayerPrefs.Save();
-        Debug.Log("time " + time);
         if (text != null)
         {
             text.text = "Timer: " + time;
