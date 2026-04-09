@@ -8218,6 +8218,16 @@ MonoBehaviour:
     volume: 0.834
     pitch: 1
     source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 848224321d4ed724d87420dd3ad52cfa, type: 3}
+    name: Hurt
+    volume: 0.834
+    pitch: 1
+    source: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 3bfcfb069720ab54fa9e90d21b7bd301, type: 3}
+    name: Death
+    volume: 0.834
+    pitch: 1
+    source: {fileID: 0}
 --- !u!4 &514720224
 Transform:
   m_ObjectHideFlags: 0

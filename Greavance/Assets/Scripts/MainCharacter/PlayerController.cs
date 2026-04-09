@@ -169,6 +169,7 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator Die()
     {
+        FindObjectOfType<AudioManager>().Play("Death");
         yield return new WaitForSecondsRealtime(2.5f);
         SceneManager.LoadScene("Die");
     }
@@ -221,7 +222,7 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth -= damage;
         DamageParticle.Play();
-
+        FindObjectOfType<AudioManager>().Play("Hurt");
         if (currentHealth <= 0f)
         {
             gamePlayControl.setHealth(0);
