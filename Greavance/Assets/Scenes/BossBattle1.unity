@@ -7456,7 +7456,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3000/3000
+  m_Text: 2500/2500
 --- !u!222 &421224557
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -46666,7 +46666,7 @@ PrefabInstance:
       objectReference: {fileID: 1282182044}
     - target: {fileID: 4329027422527110730, guid: 62cd2e56d63488640aecba71ede1c243, type: 3}
       propertyPath: _maxHealth
-      value: 3000
+      value: 2500
       objectReference: {fileID: 0}
     - target: {fileID: 4329027422527110730, guid: 62cd2e56d63488640aecba71ede1c243, type: 3}
       propertyPath: _currentHealth
