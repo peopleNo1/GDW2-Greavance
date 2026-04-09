@@ -6203,6 +6203,10 @@ PrefabInstance:
       propertyPath: _playerTrans
       value: 
       objectReference: {fileID: 1872548426}
+    - target: {fileID: 6970100098140796113, guid: 0add1383f0814fe409b3e8c7bbc8cee5, type: 3}
+      propertyPath: attackDamage
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 8875062155028164054, guid: 0add1383f0814fe409b3e8c7bbc8cee5, type: 3}
       propertyPath: m_Name
       value: AttackAngle
@@ -7452,7 +7456,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1000/1000
+  m_Text: 3000/3000
 --- !u!222 &421224557
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24023,7 +24027,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4669811, g: 0.10346404, b: 0.043137256, a: 1}
+  m_Color: {r: 0.5377358, g: 0.0025364957, b: 0.021904612, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -46662,7 +46666,7 @@ PrefabInstance:
       objectReference: {fileID: 1282182044}
     - target: {fileID: 4329027422527110730, guid: 62cd2e56d63488640aecba71ede1c243, type: 3}
       propertyPath: _maxHealth
-      value: 1000
+      value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 4329027422527110730, guid: 62cd2e56d63488640aecba71ede1c243, type: 3}
       propertyPath: _currentHealth
@@ -46728,6 +46732,10 @@ PrefabInstance:
       propertyPath: _fireballPrefab
       value: 
       objectReference: {fileID: 3209993210620870155, guid: d27a266574b4e9140b6110fece76c8ba, type: 3}
+    - target: {fileID: 5601252460638216015, guid: 62cd2e56d63488640aecba71ede1c243, type: 3}
+      propertyPath: _phase2HP
+      value: 75
+      objectReference: {fileID: 0}
     - target: {fileID: 5601252460638216015, guid: 62cd2e56d63488640aecba71ede1c243, type: 3}
       propertyPath: _startInPhase2
       value: 0
