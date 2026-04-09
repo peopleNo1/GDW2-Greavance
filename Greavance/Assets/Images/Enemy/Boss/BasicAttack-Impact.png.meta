@@ -1,0 +1,295 @@
+fileFormatVersion: 2
+guid: c05653abbbdb6fd4dbc352fbb091c204
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1278360775816828387
+    second: BasicAttack-Impact_0
+  - first:
+      213: 5856754380162877474
+    second: BasicAttack-Impact_1
+  - first:
+      213: -3988717253875165422
+    second: BasicAttack-Impact_2
+  - first:
+      213: 2862496593437207835
+    second: BasicAttack-Impact_3
+  - first:
+      213: -8991505405758083319
+    second: BasicAttack-Impact_4
+  - first:
+      213: -8075685804737038705
+    second: BasicAttack-Impact_5
+  - first:
+      213: 9083024630353965417
+    second: BasicAttack-Impact_6
+  - first:
+      213: -8159993642453523388
+    second: BasicAttack-Impact_7
+  - first:
+      213: -3762352924770791073
+    second: BasicAttack-Impact_8
+  - first:
+      213: 4478167571422137479
+    second: BasicAttack-Impact_9
+  - first:
+      213: 5443933539928308739
+    second: BasicAttack-Impact_10
+  - first:
+      213: 3181619604755467058
+    second: BasicAttack-Impact_11
+  - first:
+      213: -6227217448457359928
+    second: BasicAttack-Impact_12
+  - first:
+      213: 7202444338989221545
+    second: BasicAttack-Impact_13
+  - first:
+      213: 7856104007410618874
+    second: BasicAttack-Impact_14
+  - first:
+      213: -7735533686263506440
+    second: BasicAttack-Impact_15
+  - first:
+      213: 6500764140419268463
+    second: BasicAttack-Impact_16
+  - first:
+      213: 1721483989808622340
+    second: BasicAttack-Impact_17
+  - first:
+      213: 8140712685132632103
+    second: BasicAttack-Impact_18
+  - first:
+      213: -7538806880347669636
+    second: BasicAttack-Impact_19
+  - first:
+      213: 7165966855515084785
+    second: BasicAttack-Impact_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BasicAttack-Impact_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f75b62ff058297145ba32754f0031a4a
+      internalID: 519685061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicAttack-Impact_1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aed80ef43189e45439c42f54e06af7b2
+      internalID: -1485616808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicAttack-Impact_2
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db84a11664ed9df4b990f948e94014c1
+      internalID: -692135498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicAttack-Impact_3
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b30cd78b709de34584839040acab2ca
+      internalID: 1948383358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicAttack-Impact_4
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb8c5e15e488b494eb80a4279bb68c12
+      internalID: -538478846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: c4bac0395bc6a3a4a8e1729b5568ae78
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      BasicAttack-Impact_0: 519685061
+      BasicAttack-Impact_1: -1485616808
+      BasicAttack-Impact_2: -692135498
+      BasicAttack-Impact_3: 1948383358
+      BasicAttack-Impact_4: -538478846
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

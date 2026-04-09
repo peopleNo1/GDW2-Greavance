@@ -233,8 +233,7 @@ public class Boss : MonoBehaviour
 
     private void BasicAttack()
     {
-        Instantiate(_basicAttackPrefab, _basicAttackFirePoint.position, _basicAttackFirePoint.rotation);
-        Debug.Log("Basic Attack Used!");
+        Instantiate(_basicAttackPrefab, _basicAttackFirePoint.position, Quaternion.identity);
     }
 
 }

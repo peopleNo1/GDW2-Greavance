@@ -8,7 +8,7 @@ public class FireballProjectile : MonoBehaviour
     [SerializeField] private float _damage = 10.0f;
     [SerializeField] private float _waitTime = 1f;
     [SerializeField] private float _fallSpeed = 5f;
-    [SerializeField] private float _destroyDelay = 2f;
+    [SerializeField] private float _destroyDelay = 4f;
     
     [Header("Animation")]
     [SerializeField] private Animator _animator;
@@ -86,9 +86,17 @@ public class FireballProjectile : MonoBehaviour
             }
             Destroy(gameObject);
         }
-        else if (collision.gameObject.layer == LayerMask.NameToLayer("Platform") && _isFalling)
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Platform") || collision.gameObject.layer == LayerMask.NameToLayer("Projectile") && _isFalling)
         {
-            Destroy(gameObject);
+            return;
+        }
+        else if (collision.gameObject.CompareTag("Boss") || collision.gameObject.CompareTag("Enemy"))
+        {
+            return;
+        }
+        else
+        {
+            Destroy(this.gameObject);
         }
     }
 }

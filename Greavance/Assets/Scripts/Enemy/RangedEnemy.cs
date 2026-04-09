@@ -13,6 +13,7 @@ public class RangedEnemy : Enemy
     [SerializeField] private float _arrowCooldown = 2.0f;
     [SerializeField] private GameObject _arrowPrefab;
     [SerializeField] private Transform _firePoint;
+    private bool _isShooting = false;
 
     [HideInInspector]
     private float _timeSinceLastArrow = 0.0f;
@@ -26,6 +27,8 @@ public class RangedEnemy : Enemy
     protected override void Start()
     {
         base.Start();
+
+        animator = GetComponent<Animator>();
     }
 
     protected override void Update()
@@ -33,8 +36,6 @@ public class RangedEnemy : Enemy
         base.Update();
 
         _timeSinceLastArrow += Time.deltaTime;
-
-        animator = GetComponent<Animator>();
     }
 
     protected override void LateUpdate()
@@ -46,9 +47,9 @@ public class RangedEnemy : Enemy
     {
         KillIfDead();
 
-        if (_timeSinceLastArrow >= _arrowCooldown)
+        if (!_isShooting && _timeSinceLastArrow >= _arrowCooldown)
         {
-            ShootArrow();
+            StartCoroutine(ShootArrow());
         }
     }
 
@@ -59,9 +60,13 @@ public class RangedEnemy : Enemy
         base.TakeDamage(damage);
     }
 
-    private void ShootArrow()
+    private IEnumerator ShootArrow()
     {
+        _isShooting = true;
+
         animator.SetTrigger("Attack");
+
+        yield return new WaitForSeconds(GetAnimationLength("Attack"));
 
         if (_arrowPrefab != null && _firePoint != null)
         {
@@ -77,5 +82,21 @@ public class RangedEnemy : Enemy
         }
 
         _timeSinceLastArrow = 0f;
+        _isShooting = false;
+    }
+
+    private float GetAnimationLength(string animationName)
+    {
+        if (animator == null) return 0.5f;
+        
+        AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
+        foreach (AnimationClip clip in clips)
+        {
+            if (clip.name.ToLower().Contains(animationName.ToLower()))
+            {
+                return clip.length;
+            }
+        }
+        return 0.5f;
     }
 }

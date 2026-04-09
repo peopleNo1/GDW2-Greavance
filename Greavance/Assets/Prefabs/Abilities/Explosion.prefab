@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3227486353202566661}
   m_Layer: 0
   m_Name: Explosion
-  m_TagString: Untagged
+  m_TagString: Explosion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,3 +160,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc4a7a1e544bf7d4d938f58e6c65c548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _warningPrefab: {fileID: 0}
+  _explosionPrefab: {fileID: 0}
+  _warningDuration: 0.1
+  _delayBetweenExplosions: 0.2
+  _groundWarningCount: 10
+  _platformWarningCount: 5
+  _damage: 20
+  _explosionLifeTime: 1
+  _platformCheckDistance: 1.5
