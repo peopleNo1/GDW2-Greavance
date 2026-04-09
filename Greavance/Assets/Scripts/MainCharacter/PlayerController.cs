@@ -150,6 +150,10 @@ public class PlayerController : MonoBehaviour
                     FindObjectOfType<AudioManager>().Stop("Walk");
                 }
             }
+            else
+            {
+                _rb.linearVelocityX = 0;
+            }
         }
         else
         {
