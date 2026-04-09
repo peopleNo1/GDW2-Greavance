@@ -47,18 +47,21 @@ public class PlayerMovement : MonoBehaviour
         //input.Normalize();
 
         // climb stairs
-        if (Input.GetKeyDown(KeyCode.W))
+        if (!isBoss)
         {
-            CheckDoors();
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            CheckKeys();
-        }
-        //test
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            guideAni.Flip();
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                CheckDoors();
+            }
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                CheckKeys();
+            }
+            //test
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                guideAni.Flip();
+            }
         }
     }
 

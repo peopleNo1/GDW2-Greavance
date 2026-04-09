@@ -87,6 +87,10 @@ public class Boss : MonoBehaviour
         _animator.SetTrigger("WasDamaged");
 
         _currentHealth -= damage;
+        if ( _currentHealth < 0 )
+        {
+            _currentHealth = 0;
+        }
         slider.value -= damage;
         text.text = _currentHealth.ToString() + "/" + _maxHealth;
         //Debug.Log($"Boss received {damage} damage!");
@@ -104,8 +108,8 @@ public class Boss : MonoBehaviour
     {
         FindObjectOfType<Timer>().StopTiming();
         Time.timeScale = 0.5f;
-        Destroy(this.gameObject);
-        yield return new WaitForSecondsRealtime(2);
+        Destroy(this.gameObject, 2);
+        yield return new WaitForSecondsRealtime(1);
         SceneManager.LoadScene("Winning");
     }
 
