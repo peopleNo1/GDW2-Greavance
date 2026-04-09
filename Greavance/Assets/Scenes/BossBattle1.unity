@@ -18323,6 +18323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1793558897}
   isBoss: 1
+  recordOnly: 0
 --- !u!114 &1793558897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42085,6 +42086,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5106179307904306357, guid: 62cd2e56d63488640aecba71ede1c243, type: 3}
+      propertyPath: _fireballPrefab
+      value: 
+      objectReference: {fileID: 3209993210620870155, guid: d27a266574b4e9140b6110fece76c8ba, type: 3}
     - target: {fileID: 5601252460638216015, guid: 62cd2e56d63488640aecba71ede1c243, type: 3}
       propertyPath: _startInPhase2
       value: 0

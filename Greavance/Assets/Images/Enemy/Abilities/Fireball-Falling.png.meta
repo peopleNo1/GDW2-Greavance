@@ -1,0 +1,374 @@
+fileFormatVersion: 2
+guid: 638af8a485de7c643b6b4a7704fc62a9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4869660326531295766
+    second: Fireball-Falling_0
+  - first:
+      213: 1616348312543451508
+    second: Fireball-Falling_1
+  - first:
+      213: 177962882047846933
+    second: Fireball-Falling_2
+  - first:
+      213: -3099055251685554327
+    second: Fireball-Falling_3
+  - first:
+      213: -2233174572014055160
+    second: Fireball-Falling_4
+  - first:
+      213: 7196360225846586170
+    second: Fireball-Falling_5
+  - first:
+      213: -888716006280569720
+    second: Fireball-Falling_6
+  - first:
+      213: -8518895412238838707
+    second: Fireball-Falling_7
+  - first:
+      213: 4230003813862720575
+    second: Fireball-Falling_8
+  - first:
+      213: 2130728047598873422
+    second: Fireball-Falling_9
+  - first:
+      213: -6727068216175156145
+    second: Fireball-Falling_10
+  - first:
+      213: -8380802631010685017
+    second: Fireball-Falling_11
+  - first:
+      213: -4430659198154219863
+    second: Fireball-Falling_12
+  - first:
+      213: -661041174984019849
+    second: Fireball-Falling_13
+  - first:
+      213: 1372077772684993277
+    second: Fireball-Falling_14
+  - first:
+      213: -4969708749415087695
+    second: Fireball-Falling_15
+  - first:
+      213: 3181849676633811111
+    second: Fireball-Falling_16
+  - first:
+      213: 7311934790153073912
+    second: Fireball-Falling_17
+  - first:
+      213: 5984352093668905232
+    second: Fireball-Falling_18
+  - first:
+      213: 3109374757672593152
+    second: Fireball-Falling_19
+  - first:
+      213: -4526115624999081508
+    second: Fireball-Falling_20
+  - first:
+      213: -2850953008858862182
+    second: Fireball-Falling_21
+  - first:
+      213: -6642590752079608432
+    second: Fireball-Falling_22
+  - first:
+      213: -7530136628618738963
+    second: Fireball-Falling_23
+  - first:
+      213: -4845354914588162384
+    second: Fireball-Falling_24
+  - first:
+      213: 8996067140609040390
+    second: Fireball-Falling_25
+  - first:
+      213: 8544112594621966956
+    second: Fireball-Falling_26
+  - first:
+      213: -7012956555829492410
+    second: Fireball-Falling_27
+  - first:
+      213: -1164050326581866368
+    second: Fireball-Falling_28
+  - first:
+      213: -259610994004952597
+    second: Fireball-Falling_29
+  - first:
+      213: -8196432783613810756
+    second: Fireball-Falling_30
+  - first:
+      213: -8892669429729892981
+    second: Fireball-Falling_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Fireball-Falling_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de67ea6b790957a4493e741b1925d61c
+      internalID: -1451852421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fireball-Falling_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f1b185954cb6e5418cca9be7ef970c3
+      internalID: 170132332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fireball-Falling_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 108a7d5504d2ecf468c87365cdddc143
+      internalID: -1466926849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fireball-Falling_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab4b86ecec2e3b84d876e56c1040c7db
+      internalID: 440695692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fireball-Falling_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b691fb7a0e62f7459efb889f481a514
+      internalID: 905000649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fireball-Falling_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55249de4bad1791459f13f576f716a3c
+      internalID: -528487667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Fireball-Falling_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82d0d7c268219b449a527d1cbc6f4502
+      internalID: -1807759272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a73c827b576e0f94582d2ef53dadbaea
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Fireball-Falling_0: -1451852421
+      Fireball-Falling_1: 170132332
+      Fireball-Falling_2: -1466926849
+      Fireball-Falling_3: 440695692
+      Fireball-Falling_4: 905000649
+      Fireball-Falling_5: -528487667
+      Fireball-Falling_6: -1807759272
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

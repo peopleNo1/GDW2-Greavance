@@ -10,6 +10,10 @@ public class Fireball : Ability
     [SerializeField] private float _fireballHeight = 4f;
     [SerializeField] private float _damage = 10.0f;
 
+    [Header("Wait and Fall Settings")]
+    [SerializeField] private float _waitTime = 1f;
+    [SerializeField] private float _fallSpeed = 5f;
+
     private Transform _player;
 
     protected override void Awake()
@@ -24,28 +28,17 @@ public class Fireball : Ability
         Debug.Log("Boss: Fireball!");
 
         Vector3 _spawnPos = _player.position + Vector3.up * _fireballHeight;
+
+        GameObject fireball = Instantiate(_fireballPrefab, _spawnPos, Quaternion.identity);
         
-        Instantiate(_fireballPrefab, _spawnPos, Quaternion.identity);
+        FireballProjectile projectile = fireball.GetComponent<FireballProjectile>();
+
+        if (projectile != null)
+        {
+            projectile.Initialize(_damage, _waitTime, _fallSpeed);
+        }
 
         yield return new WaitForSeconds(0.3f);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player") && gameObject.CompareTag("Boss") == false)
-        {
-            PlayerController playerController = collision.gameObject.GetComponent<PlayerController>();
-            playerController.TakeDamage(_damage);
-            Destroy(this.gameObject);
-        }
-        else if (collision.gameObject.CompareTag("Boss") || collision.gameObject.CompareTag("Enemy"))
-        {
-            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), GetComponent<Collider2D>());
-            return;
-        }
-        else if (collision.gameObject.layer == LayerMask.NameToLayer("Platform"))
-        {
-            return;
-        }
-    }
 }
