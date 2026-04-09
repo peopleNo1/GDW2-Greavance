@@ -61,7 +61,7 @@ public class Leaderboard : MonoBehaviour
         if (i != 10)
         {
             PlayerPrefs.SetString(setName + "str" + i.ToString(), "Unnamed user");
-            PlayerPrefs.SetInt(setName + i.ToString(), 0);
+            PlayerPrefs.SetInt(setName + i.ToString(), record);
             PlayerPrefs.Save();
         }
     }
