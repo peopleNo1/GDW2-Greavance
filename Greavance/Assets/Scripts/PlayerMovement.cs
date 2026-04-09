@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] private PlayerController playerController;
+
     //private Rigidbody2D rb;
     [SerializeField] private GameObject levelAt;
     [SerializeField] private GameObject[] roomList;
@@ -50,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         // climb stairs
         if (!isBoss)
         {
-            if (Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.W) && playerController.GetPlayerTurn())
             {
                 CheckDoors();
             }

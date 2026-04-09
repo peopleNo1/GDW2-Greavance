@@ -11,12 +11,18 @@ public class TeleportDoor : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        isAtDoor = true;
+        if (collision.CompareTag("Player"))
+        {
+            isAtDoor = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        isAtDoor = false;
+        if (collision.CompareTag("Player"))
+        {
+            isAtDoor = false;
+        }
     }
 
     public bool IsAtDoor()

@@ -107,10 +107,10 @@ public class PlayerController : MonoBehaviour
 
             //Hotkey for player dead  FIX THIS PART TO CONNECT WITH HEALTH
             //now jusst test is working
-            if (Input.GetKeyDown(KeyCode.K) && _isGrounded)
-            {
-                _dead = true;
-            }
+            //if (Input.GetKeyDown(KeyCode.K) && _isGrounded)
+            //{
+            //    _dead = true;
+            //}
 
             if (PlayerTurn)
             {
@@ -237,5 +237,10 @@ public class PlayerController : MonoBehaviour
     public float GetCurrentHealth()
     {
         return currentHealth;
+    }
+
+    public bool GetPlayerTurn()
+    {
+        return PlayerTurn;
     }
 }
