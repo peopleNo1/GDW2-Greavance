@@ -218,6 +218,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2104951246}
     m_Modifications:
+    - target: {fileID: 678764690008901562, guid: 64156cfe938acd84c83a86b428ebd6e0, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4842390832664563776, guid: 64156cfe938acd84c83a86b428ebd6e0, type: 3}
       propertyPath: m_Name
       value: Something (2)
@@ -19005,6 +19009,10 @@ PrefabInstance:
     - target: {fileID: 3317775787029349905, guid: e07bb936e9119da4b839ae6aff0998e2, type: 3}
       propertyPath: m_Name
       value: Something (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4013951338315161168, guid: e07bb936e9119da4b839ae6aff0998e2, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
