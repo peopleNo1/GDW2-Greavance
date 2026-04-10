@@ -102,10 +102,10 @@ public class Leaderboard : MonoBehaviour
 
     public void ShiftRecords(int i)
     {
-        for (int j = totalRecords - 1; j > i; j--)
+        for (int j = totalRecords; j > i; j--)
         {
             Debug.Log(j);
-            if (j != 9)
+            if (j < 9)
             {
                 PlayerPrefs.SetString(setName + "str" + (j + 1).ToString(), PlayerPrefs.GetString(setName + "str" + j.ToString(), ""));
                 PlayerPrefs.SetInt(setName + (j + 1).ToString(), PlayerPrefs.GetInt(setName + j.ToString(), 0));
